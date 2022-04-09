@@ -279,7 +279,8 @@
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                     </stackView>
                                 </subviews>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="bottom" secondItem="zMV-8K-1lF" secondAttribute="bottom" id="2bg-r7-HA8"/>
                                     <constraint firstItem="zMV-8K-1lF" firstAttribute="top" secondItem="LYe-al-qJY" secondAttribute="top" id="G7A-1S-AN9"/>
@@ -302,7 +303,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="18.840579710144929" y="97.767857142857139"/>
+            <point key="canvasLocation" x="2355" y="11"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="Ow7-7O-CV8">
