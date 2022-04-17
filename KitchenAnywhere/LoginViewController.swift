@@ -14,6 +14,12 @@ class LoginViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
 
+    @IBAction func Login(_ sender: UIButton) {
+        let storyboard = self.storyboard?.instantiateViewController(withIdentifier: "HomeVC") as! HomeViewController
+        self.navigationController?.pushViewController(storyboard, animated: true)
+
+
+    }
     @IBAction func signUp(_ sender: UIButton) {
         let storyboard = self.storyboard?.instantiateViewController(withIdentifier: "SignupViewController") as! SignupViewController
         self.navigationController?.pushViewController(storyboard, animated: true)
