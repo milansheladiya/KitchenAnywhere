@@ -122,4 +122,23 @@ extension HomeViewController:UICollectionViewDelegate,UICollectionViewDataSource
 
         
     }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        
+        
+        if collectionView == categoryCollectionView {
+            
+        } else
+        {
+            var controller = DetailDishViewController.instantiate()
+            
+            controller.dish = collectionView == popularDishesCollectionView ? popularDishes[indexPath.row] : popularDishes[indexPath.row] 
+            
+            
+            navigationController?.pushViewController(controller, animated: true)
+        }
+        
+        
+        
+    }
 }
