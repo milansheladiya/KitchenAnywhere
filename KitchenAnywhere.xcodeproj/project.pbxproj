@@ -30,6 +30,10 @@
 		B670A2E627F343BE001E5CBE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B670A2E427F343BE001E5CBE /* Main.storyboard */; };
 		B670A2E827F343BE001E5CBE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B670A2E727F343BE001E5CBE /* Assets.xcassets */; };
 		B670A2EB27F343BE001E5CBE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B670A2E927F343BE001E5CBE /* LaunchScreen.storyboard */; };
+		B688FA7E280F2ED2002E89A7 /* CFDishList.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B688FA7D280F2ED2002E89A7 /* CFDishList.storyboard */; };
+		B688FA86280F3353002E89A7 /* CFDIshListCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B688FA85280F3353002E89A7 /* CFDIshListCollectionViewCell.swift */; };
+		B688FA88280F3405002E89A7 /* CFDishListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B688FA87280F3405002E89A7 /* CFDishListViewController.swift */; };
+		B688FA8A280F3756002E89A7 /* Model_DishList.swift in Sources */ = {isa = PBXBuildFile; fileRef = B688FA89280F3756002E89A7 /* Model_DishList.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -51,7 +55,7 @@
 		AE905EA7F1F702198A8AEE6E /* Pods-KitchenAnywhere.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KitchenAnywhere.release.xcconfig"; path = "Target Support Files/Pods-KitchenAnywhere/Pods-KitchenAnywhere.release.xcconfig"; sourceTree = "<group>"; };
 		B54CC4E6280CC48F00A96FA7 /* DetailDishViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailDishViewController.swift; sourceTree = "<group>"; };
 		B54CC4E8280CC89000A96FA7 /* UiViewController+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UiViewController+Extensions.swift"; sourceTree = "<group>"; };
-		B54CC4EC280CDDC400A96FA7 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
+		B54CC4EC280CDDC400A96FA7 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../IOS/KitchenAnywhere/KitchenAnywhere/GoogleService-Info.plist"; sourceTree = SOURCE_ROOT; };
 		B670A2DB27F343BE001E5CBE /* KitchenAnywhere.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = KitchenAnywhere.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B670A2DE27F343BE001E5CBE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B670A2E027F343BE001E5CBE /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -60,6 +64,10 @@
 		B670A2E727F343BE001E5CBE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B670A2EA27F343BE001E5CBE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		B670A2EC27F343BE001E5CBE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B688FA7D280F2ED2002E89A7 /* CFDishList.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = CFDishList.storyboard; sourceTree = "<group>"; };
+		B688FA85280F3353002E89A7 /* CFDIshListCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CFDIshListCollectionViewCell.swift; sourceTree = "<group>"; };
+		B688FA87280F3405002E89A7 /* CFDishListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CFDishListViewController.swift; sourceTree = "<group>"; };
+		B688FA89280F3756002E89A7 /* Model_DishList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model_DishList.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -118,6 +126,7 @@
 				4DC2CD6A2808704800C82D52 /* DishCategory.swift */,
 				4DC2CD6D2808710000C82D52 /* DishCategoryBrain.swift */,
 				4DC2CD7A2808A92500C82D52 /* Dish.swift */,
+				B688FA89280F3756002E89A7 /* Model_DishList.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -178,6 +187,7 @@
 		B670A2DD27F343BE001E5CBE /* KitchenAnywhere */ = {
 			isa = PBXGroup;
 			children = (
+				B688FA7A280F2E9C002E89A7 /* View */,
 				B54CC4EC280CDDC400A96FA7 /* GoogleService-Info.plist */,
 				4DC2CD6F28087B5F00C82D52 /* Extensions */,
 				4DC2CD6C2808705F00C82D52 /* Model */,
@@ -193,6 +203,32 @@
 				4D1753712800E14500CB815C /* SignupViewController.swift */,
 			);
 			path = KitchenAnywhere;
+			sourceTree = "<group>";
+		};
+		B688FA7A280F2E9C002E89A7 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				B688FA7B280F2EA3002E89A7 /* Chef */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		B688FA7B280F2EA3002E89A7 /* Chef */ = {
+			isa = PBXGroup;
+			children = (
+				B688FA7C280F2EAA002E89A7 /* CFDishList */,
+			);
+			path = Chef;
+			sourceTree = "<group>";
+		};
+		B688FA7C280F2EAA002E89A7 /* CFDishList */ = {
+			isa = PBXGroup;
+			children = (
+				B688FA7D280F2ED2002E89A7 /* CFDishList.storyboard */,
+				B688FA85280F3353002E89A7 /* CFDIshListCollectionViewCell.swift */,
+				B688FA87280F3405002E89A7 /* CFDishListViewController.swift */,
+			);
+			path = CFDishList;
 			sourceTree = "<group>";
 		};
 		E0C9F71CC9C82EBEBC876A05 /* Frameworks */ = {
@@ -264,6 +300,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				4D3D00E328086A3800BD5EAD /* CategoryCollectionViewCell.xib in Resources */,
+				B688FA7E280F2ED2002E89A7 /* CFDishList.storyboard in Resources */,
 				B670A2EB27F343BE001E5CBE /* LaunchScreen.storyboard in Resources */,
 				B670A2E827F343BE001E5CBE /* Assets.xcassets in Resources */,
 				B670A2E627F343BE001E5CBE /* Main.storyboard in Resources */,
@@ -325,11 +362,14 @@
 				4D3D00DC28085C6900BD5EAD /* HomeViewController.swift in Sources */,
 				4DC2CD7128087B7700C82D52 /* String+Extension.swift in Sources */,
 				B670A2E327F343BE001E5CBE /* LoginViewController.swift in Sources */,
+				B688FA8A280F3756002E89A7 /* Model_DishList.swift in Sources */,
 				B670A2DF27F343BE001E5CBE /* AppDelegate.swift in Sources */,
 				4DC2CD742808989E00C82D52 /* CardView.swift in Sources */,
+				B688FA86280F3353002E89A7 /* CFDIshListCollectionViewCell.swift in Sources */,
 				4D1753722800E14500CB815C /* SignupViewController.swift in Sources */,
 				4DC2CD6E2808710000C82D52 /* DishCategoryBrain.swift in Sources */,
 				4D3D00E228086A3800BD5EAD /* CategoryCollectionViewCell.swift in Sources */,
+				B688FA88280F3405002E89A7 /* CFDishListViewController.swift in Sources */,
 				4DC2CD6B2808704800C82D52 /* DishCategory.swift in Sources */,
 				B54CC4E9280CC89000A96FA7 /* UiViewController+Extensions.swift in Sources */,
 				4DC2CD7B2808A92500C82D52 /* Dish.swift in Sources */,
