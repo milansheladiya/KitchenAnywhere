@@ -33,7 +33,19 @@ class LoginViewController: UIViewController {
         var passwordFromUI = (passwordController.text != nil) ? passwordController.text : ""
         
         loginWithFirebase(email: (emailController.text != nil) ? emailController.text! : "" , password: (passwordController.text != nil) ? passwordController.text! : "")
+        
+        
+        
+        
     }
+    
+    func navigateToHomeScreen(){
+        
+        self.performSegue(withIdentifier: "goToCFDishList", sender: self)
+        
+//        self.performSegue(withIdentifier: "goToHomeScreen", sender: self)
+    }
+    
     
     func loginWithFirebase(email: String , password: String)
     {
@@ -53,9 +65,11 @@ class LoginViewController: UIViewController {
                 self?.signedIn = true
             }
             
-            let storyboard = self?.storyboard?.instantiateViewController(withIdentifier: "HomeVC") as! HomeViewController
-            self?.navigationController?.pushViewController(storyboard, animated: true)
+//            let storyboard = self?.storyboard?.instantiateViewController(withIdentifier: "HomeVC") as! HomeViewController
+//            self?.navigationController?.pushViewController(storyboard, animated: true)
 
+            self?
+                .navigateToHomeScreen()
 
         }
         
@@ -63,8 +77,12 @@ class LoginViewController: UIViewController {
     
     
     @IBAction func signUp(_ sender: UIButton) {
-        let storyboard = self.storyboard?.instantiateViewController(withIdentifier: "SignupViewController") as! SignupViewController
-        self.navigationController?.pushViewController(storyboard, animated: true)
+//        let storyboard = self.storyboard?.instantiateViewController(withIdentifier: "SignupViewController") as! SignupViewController
+//        self.navigationController?.pushViewController(storyboard, animated: true)
+        
+        self.navigateToHomeScreen()
+        
+        
     }
     
 }
