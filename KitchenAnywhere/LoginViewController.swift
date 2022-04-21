@@ -41,7 +41,10 @@ class LoginViewController: UIViewController {
     
     func navigateToHomeScreen(){
         
-        self.performSegue(withIdentifier: "goToCFDishList", sender: self)
+//        self.performSegue(withIdentifier: "goToCFDishList", sender: self)
+        
+        
+        self.performSegue(withIdentifier: "goToAddDish", sender: self)
         
 //        self.performSegue(withIdentifier: "goToHomeScreen", sender: self)
     }
