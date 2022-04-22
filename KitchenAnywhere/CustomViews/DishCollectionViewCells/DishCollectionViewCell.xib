@@ -71,6 +71,9 @@
                                                         </fragment>
                                                     </attributedString>
                                                 </buttonConfiguration>
+                                                <connections>
+                                                    <action selector="incrementBtn:" destination="gTV-IL-0wX" eventType="touchUpInside" id="vwA-LF-fgY"/>
+                                                </connections>
                                             </button>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bYF-BC-nnU">
                                                 <rect key="frame" x="75" y="0.0" width="12" height="30"/>
@@ -91,6 +94,9 @@
                                                         </fragment>
                                                     </attributedString>
                                                 </buttonConfiguration>
+                                                <connections>
+                                                    <action selector="decrementBtn:" destination="gTV-IL-0wX" eventType="touchUpInside" id="OYl-Vp-fZy"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                         <constraints>
@@ -125,10 +131,8 @@
             </constraints>
             <size key="customSize" width="158" height="260"/>
             <connections>
-                <outlet property="decrementBtn" destination="ZOp-u7-Dnh" id="iB1-Px-Krc"/>
                 <outlet property="descriptionLabel" destination="aaI-jn-msZ" id="fNq-Po-oem"/>
                 <outlet property="dishImageView" destination="Sc8-Kb-k6h" id="nBR-Hu-Y28"/>
-                <outlet property="incrementBtn" destination="jF7-yQ-zCr" id="aSb-7W-Zpv"/>
                 <outlet property="quantityLabel" destination="bYF-BC-nnU" id="JRa-8z-CsW"/>
                 <outlet property="titleLable" destination="wTV-KO-6HB" id="udD-A7-eqe"/>
                 <outlet property="typeLabel" destination="HhE-me-pH2" id="LYr-ex-JzQ"/>
