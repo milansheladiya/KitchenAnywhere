@@ -200,6 +200,14 @@
             </objects>
             <point key="canvasLocation" x="1626" y="171"/>
         </scene>
+        <!--addDishCV-->
+        <scene sceneID="s9w-Ed-hiB">
+            <objects>
+                <viewControllerPlaceholder storyboardName="CFAddDish" referencedIdentifier="addDishCV" id="raF-cv-4YS" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Er3-Xf-6AK" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="962" y="674"/>
+        </scene>
         <!--CFDishListVC-->
         <scene sceneID="Csz-zb-vVc">
             <objects>

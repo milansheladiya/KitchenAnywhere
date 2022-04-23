@@ -44,6 +44,9 @@
 		B688FA86280F3353002E89A7 /* CFDIshListCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B688FA85280F3353002E89A7 /* CFDIshListCollectionViewCell.swift */; };
 		B688FA88280F3405002E89A7 /* CFDishListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B688FA87280F3405002E89A7 /* CFDishListViewController.swift */; };
 		B688FA8A280F3756002E89A7 /* Model_DishList.swift in Sources */ = {isa = PBXBuildFile; fileRef = B688FA89280F3756002E89A7 /* Model_DishList.swift */; };
+		B6B24DA7281084C1008844FC /* CFAddDish.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B6B24DA6281084C1008844FC /* CFAddDish.storyboard */; };
+		B6B24DAC2810928A008844FC /* CFAddDishViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6B24DAB2810928A008844FC /* CFAddDishViewController.swift */; };
+		B6B24DAF2810EFBD008844FC /* UtilClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6B24DAE2810EFBD008844FC /* UtilClass.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -88,6 +91,9 @@
 		B688FA85280F3353002E89A7 /* CFDIshListCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CFDIshListCollectionViewCell.swift; sourceTree = "<group>"; };
 		B688FA87280F3405002E89A7 /* CFDishListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CFDishListViewController.swift; sourceTree = "<group>"; };
 		B688FA89280F3756002E89A7 /* Model_DishList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model_DishList.swift; sourceTree = "<group>"; };
+		B6B24DA6281084C1008844FC /* CFAddDish.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = CFAddDish.storyboard; sourceTree = "<group>"; };
+		B6B24DAB2810928A008844FC /* CFAddDishViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CFAddDishViewController.swift; sourceTree = "<group>"; };
+		B6B24DAE2810EFBD008844FC /* UtilClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UtilClass.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -232,6 +238,7 @@
 		B670A2DD27F343BE001E5CBE /* KitchenAnywhere */ = {
 			isa = PBXGroup;
 			children = (
+				B6B24DAD2810EF99008844FC /* Utils */,
 				B688FA7A280F2E9C002E89A7 /* View */,
 				B54CC4EC280CDDC400A96FA7 /* GoogleService-Info.plist */,
 				4DC2CD6F28087B5F00C82D52 /* Extensions */,
@@ -262,6 +269,7 @@
 		B688FA7B280F2EA3002E89A7 /* Chef */ = {
 			isa = PBXGroup;
 			children = (
+				B6983992280F495C003B1E0F /* CFAddDish */,
 				B688FA7C280F2EAA002E89A7 /* CFDishList */,
 			);
 			path = Chef;
@@ -275,6 +283,23 @@
 				B688FA87280F3405002E89A7 /* CFDishListViewController.swift */,
 			);
 			path = CFDishList;
+			sourceTree = "<group>";
+		};
+		B6983992280F495C003B1E0F /* CFAddDish */ = {
+			isa = PBXGroup;
+			children = (
+				B6B24DA6281084C1008844FC /* CFAddDish.storyboard */,
+				B6B24DAB2810928A008844FC /* CFAddDishViewController.swift */,
+			);
+			path = CFAddDish;
+			sourceTree = "<group>";
+		};
+		B6B24DAD2810EF99008844FC /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				B6B24DAE2810EFBD008844FC /* UtilClass.swift */,
+			);
+			path = Utils;
 			sourceTree = "<group>";
 		};
 		E0C9F71CC9C82EBEBC876A05 /* Frameworks */ = {
@@ -345,6 +370,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B6B24DA7281084C1008844FC /* CFAddDish.storyboard in Resources */,
 				4D3D00E328086A3800BD5EAD /* CategoryCollectionViewCell.xib in Resources */,
 				4DCFD56E2812277200AF7ABE /* AdminDashboard.storyboard in Resources */,
 				4D38F36328109563005BAE50 /* DasboardTableViewCell.xib in Resources */,
@@ -418,8 +444,10 @@
 				B670A2DF27F343BE001E5CBE /* AppDelegate.swift in Sources */,
 				4D1F41222812453F0045B46F /* CartList.swift in Sources */,
 				4DC2CD742808989E00C82D52 /* CardView.swift in Sources */,
+				B6B24DAF2810EFBD008844FC /* UtilClass.swift in Sources */,
 				B688FA86280F3353002E89A7 /* CFDIshListCollectionViewCell.swift in Sources */,
 				4D1753722800E14500CB815C /* SignupViewController.swift in Sources */,
+				B6B24DAC2810928A008844FC /* CFAddDishViewController.swift in Sources */,
 				4DC2CD6E2808710000C82D52 /* DishCategoryBrain.swift in Sources */,
 				4D3D00E228086A3800BD5EAD /* CategoryCollectionViewCell.swift in Sources */,
 				B688FA88280F3405002E89A7 /* CFDishListViewController.swift in Sources */,
