@@ -12,7 +12,7 @@
         <!--Login View Controller-->
         <scene sceneID="skr-zW-v1n">
             <objects>
-                <viewController storyboardIdentifier="LoginVC" id="2Pv-yg-RoC" customClass="LoginViewController" customModule="KitchenAnywhere" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="LoginVC" modalPresentationStyle="fullScreen" id="2Pv-yg-RoC" customClass="LoginViewController" customModule="KitchenAnywhere" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="RmN-C7-oV5">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -194,6 +194,8 @@
                         <segue destination="lFg-YP-dif" kind="presentation" identifier="goToHomeScreen" modalPresentationStyle="fullScreen" modalTransitionStyle="partialCurl" id="NoH-G5-Ydw"/>
                         <segue destination="Vqr-5f-Xu1" kind="presentation" identifier="goToCFDishList" modalPresentationStyle="fullScreen" id="nIU-vi-kyA"/>
                         <segue destination="4Ui-AB-XRy" kind="presentation" identifier="goToDashboard" modalPresentationStyle="fullScreen" id="uhc-Eo-7oy"/>
+                        <segue destination="raF-cv-4YS" kind="presentation" identifier="goToAddDish" modalPresentationStyle="fullScreen" id="Lk8-BD-6WF"/>
+                        <segue destination="QqC-IO-bxl" kind="presentation" identifier="goToViewOrder" modalPresentationStyle="fullScreen" modalTransitionStyle="flipHorizontal" id="UWk-24-4MI"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="71J-vK-lxM" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -223,6 +225,13 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9Gn-k9-X23" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2341" y="712"/>
+        <!--CFViewOrderVC-->
+        <scene sceneID="OVX-hR-otz">
+            <objects>
+                <viewControllerPlaceholder storyboardName="CFViewOrder" referencedIdentifier="CFViewOrderVC" id="QqC-IO-bxl" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="uZs-XX-pff" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2051" y="677"/>
         </scene>
         <!--Signup View Controller-->
         <scene sceneID="tne-QT-ifu">
