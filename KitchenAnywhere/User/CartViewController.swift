@@ -30,7 +30,17 @@ class CartViewController: UIViewController, UITableViewDelegate, UITableViewData
         return cell
     }
     
-
+    @IBAction func GoToCheckOut(_ sender: UIButton) {
+//
+        self.navigationController?.performSegue(withIdentifier: "GoToCheckOut", sender: self)
+//
+//        let controller = PaymentViewController.instantiate()
+        
+        
+//        navigationController?.pushViewController(controller, animated: true)
+        
+    }
+    
     @IBOutlet weak var listView: UITableView!
     override func viewDidLoad() {
         super.viewDidLoad()
