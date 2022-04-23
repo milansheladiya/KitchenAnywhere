@@ -33,7 +33,7 @@ class CFViewOrderViewController: UIViewController,UITableViewDelegate,UITableVie
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tblViewOrderList.dequeueReusableCell(withIdentifier: "CFViewOrderTableView1Cell",for: indexPath) as! CFViewOrderTableView1Cell
-        cell.setup(with: CFViewOrderCollection[0])
+        cell.setup(with: CFViewOrderCollection[indexPath.row])
         return cell
     }
 

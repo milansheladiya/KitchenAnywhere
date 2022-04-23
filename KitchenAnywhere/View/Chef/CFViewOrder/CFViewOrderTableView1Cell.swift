@@ -18,10 +18,11 @@ class CFViewOrderTableView1Cell: UITableViewCell {
     @IBOutlet weak var imgFoodType: UIImageView!
     
     let util = MainUtil()
+    let cardV = CardView()
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        self.backgroundColor = util.getUIColor(hex: "#E9EFC0")
+//        self.backgroundColor = util.getUIColor(hex: "#E9EFC0")
         // Initialization code
     }
 
@@ -38,6 +39,12 @@ class CFViewOrderTableView1Cell: UITableViewCell {
     
     func setup(with order: Order) {
         
+        self.layer.shadowColor = UIColor.black.cgColor
+        self.layer.shadowOffset = .zero
+        self.layer.cornerRadius = 10
+        self.layer.shadowOpacity = 0.2
+        self.layer.cornerRadius = 10
+        
         imgFood.kf.setImage(with: order.image?.asUrl)
         lblTitle.text = order.title
         lblQty.text = String(order.orderQuantity)
@@ -47,6 +54,8 @@ class CFViewOrderTableView1Cell: UITableViewCell {
         lblFoodieContact.text = order.contactOfFoodie
         
         imgFoodType.image = order.type == "Veg" ? #imageLiteral(resourceName: "veg") :  #imageLiteral(resourceName: "non-veg")
+        
+        
         
         }
     
