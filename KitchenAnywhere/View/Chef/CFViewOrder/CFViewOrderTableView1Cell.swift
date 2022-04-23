@@ -57,6 +57,6 @@ class CFViewOrderTableView1Cell: UITableViewCell {
         
         
         
-        }
+    }
     
 }
