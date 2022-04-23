@@ -43,8 +43,11 @@ class LoginViewController: UIViewController {
         
 //        self.performSegue(withIdentifier: "goToCFDishList", sender: self)
         
+        // for screen add dish
+//        self.performSegue(withIdentifier: "goToAddDish", sender: self)
         
-        self.performSegue(withIdentifier: "goToAddDish", sender: self)
+        self.performSegue(withIdentifier: "goToViewOrder", sender: self)
+        
         
 //        self.performSegue(withIdentifier: "goToHomeScreen", sender: self)
     }

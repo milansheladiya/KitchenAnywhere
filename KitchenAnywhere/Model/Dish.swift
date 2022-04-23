@@ -14,5 +14,4 @@ struct Dish{
     let image: String?
     let type: String
     let price: Double
-        
 }
