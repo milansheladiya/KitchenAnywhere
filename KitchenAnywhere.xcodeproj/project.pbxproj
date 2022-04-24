@@ -34,6 +34,9 @@
 		B54CC4E7280CC48F00A96FA7 /* DetailDishViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B54CC4E6280CC48F00A96FA7 /* DetailDishViewController.swift */; };
 		B54CC4E9280CC89000A96FA7 /* UiViewController+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B54CC4E8280CC89000A96FA7 /* UiViewController+Extensions.swift */; };
 		B54CC4ED280CDDC400A96FA7 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = B54CC4EC280CDDC400A96FA7 /* GoogleService-Info.plist */; };
+		B5D0BE782814E56D003FF259 /* FavouriteCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5D0BE762814E56D003FF259 /* FavouriteCollectionViewCell.swift */; };
+		B5D0BE792814E56D003FF259 /* FavouriteCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B5D0BE772814E56D003FF259 /* FavouriteCollectionViewCell.xib */; };
+		B5D0BE7B2814EC55003FF259 /* FavouriteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5D0BE7A2814EC55003FF259 /* FavouriteViewController.swift */; };
 		B5E5B0ED2813B11F004ADB24 /* PaymentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5E5B0EC2813B11F004ADB24 /* PaymentViewController.swift */; };
 		B670A2DF27F343BE001E5CBE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B670A2DE27F343BE001E5CBE /* AppDelegate.swift */; };
 		B670A2E127F343BE001E5CBE /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B670A2E027F343BE001E5CBE /* SceneDelegate.swift */; };
@@ -87,6 +90,9 @@
 		B54CC4E6280CC48F00A96FA7 /* DetailDishViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailDishViewController.swift; sourceTree = "<group>"; };
 		B54CC4E8280CC89000A96FA7 /* UiViewController+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UiViewController+Extensions.swift"; sourceTree = "<group>"; };
 		B54CC4EC280CDDC400A96FA7 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		B5D0BE762814E56D003FF259 /* FavouriteCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavouriteCollectionViewCell.swift; sourceTree = "<group>"; };
+		B5D0BE772814E56D003FF259 /* FavouriteCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FavouriteCollectionViewCell.xib; sourceTree = "<group>"; };
+		B5D0BE7A2814EC55003FF259 /* FavouriteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavouriteViewController.swift; sourceTree = "<group>"; };
 		B5E5B0EC2813B11F004ADB24 /* PaymentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentViewController.swift; sourceTree = "<group>"; };
 		B670A2DB27F343BE001E5CBE /* KitchenAnywhere.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = KitchenAnywhere.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B670A2DE27F343BE001E5CBE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -152,6 +158,7 @@
 				4D1F4123281247780045B46F /* CartViewController.swift */,
 				B5E5B0EC2813B11F004ADB24 /* PaymentViewController.swift */,
 				4D5356A028149EF1006F0F83 /* OrderListViewController.swift */,
+				B5D0BE7A2814EC55003FF259 /* FavouriteViewController.swift */,
 			);
 			path = User;
 			sourceTree = "<group>";
@@ -159,6 +166,7 @@
 		4D3D00DD2808698600BD5EAD /* CustomViews */ = {
 			isa = PBXGroup;
 			children = (
+				B5D0BE752814E514003FF259 /* Favourite View Cell */,
 				4D53569928149B94006F0F83 /* OrderListTableViewCell */,
 				4D1F411A281238D10045B46F /* CartCell */,
 				4D9C6352280C73A80053CAC2 /* ChefSpecialCollectionViewCell */,
@@ -243,6 +251,15 @@
 				AE905EA7F1F702198A8AEE6E /* Pods-KitchenAnywhere.release.xcconfig */,
 			);
 			path = Pods;
+			sourceTree = "<group>";
+		};
+		B5D0BE752814E514003FF259 /* Favourite View Cell */ = {
+			isa = PBXGroup;
+			children = (
+				B5D0BE762814E56D003FF259 /* FavouriteCollectionViewCell.swift */,
+				B5D0BE772814E56D003FF259 /* FavouriteCollectionViewCell.xib */,
+			);
+			path = "Favourite View Cell";
 			sourceTree = "<group>";
 		};
 		B670A2D227F343BE001E5CBE = {
@@ -422,6 +439,7 @@
 				B670A2E627F343BE001E5CBE /* Main.storyboard in Resources */,
 				4D1F411E281239730045B46F /* CartTableViewCell.xib in Resources */,
 				4D9C6356280C73CB0053CAC2 /* ChefSpecialCollectionViewCell.xib in Resources */,
+				B5D0BE792814E56D003FF259 /* FavouriteCollectionViewCell.xib in Resources */,
 				4DC2CD792808A5EE00C82D52 /* DishCollectionViewCell.xib in Resources */,
 				B54CC4ED280CDDC400A96FA7 /* GoogleService-Info.plist in Resources */,
 				B6B24DFB2812444B008844FC /* CFViewOrder.storyboard in Resources */,
@@ -479,6 +497,7 @@
 			files = (
 				4D38F35D281086C0005BAE50 /* DashboardViewController.swift in Sources */,
 				4D3D00DC28085C6900BD5EAD /* HomeViewController.swift in Sources */,
+				B5D0BE7B2814EC55003FF259 /* FavouriteViewController.swift in Sources */,
 				4D53569C28149C04006F0F83 /* OrderListTableViewCell.swift in Sources */,
 				4DC2CD7128087B7700C82D52 /* String+Extension.swift in Sources */,
 				B670A2E327F343BE001E5CBE /* LoginViewController.swift in Sources */,
@@ -496,6 +515,7 @@
 				B6B24DAC2810928A008844FC /* CFAddDishViewController.swift in Sources */,
 				B6B24E02281457BB008844FC /* Order.swift in Sources */,
 				4D3D00E228086A3800BD5EAD /* CategoryCollectionViewCell.swift in Sources */,
+				B5D0BE782814E56D003FF259 /* FavouriteCollectionViewCell.swift in Sources */,
 				B6B24DFE2812448B008844FC /* CFViewOrderViewController.swift in Sources */,
 				B688FA88280F3405002E89A7 /* CFDishListViewController.swift in Sources */,
 				B54CC4E9280CC89000A96FA7 /* UiViewController+Extensions.swift in Sources */,
