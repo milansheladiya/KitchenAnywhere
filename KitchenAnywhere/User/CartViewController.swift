@@ -32,7 +32,7 @@ class CartViewController: UIViewController, UITableViewDelegate, UITableViewData
     
     @IBAction func GoToCheckOut(_ sender: UIButton) {
 //
-        self.navigationController?.performSegue(withIdentifier: "GoToCheckOut", sender: self)
+        self.performSegue(withIdentifier: "goToCheckOut", sender: self)
 //
 //        let controller = PaymentViewController.instantiate()
         
@@ -50,17 +50,6 @@ class CartViewController: UIViewController, UITableViewDelegate, UITableViewData
         
         
     }
-    
-    
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
 }
     
 extension CartViewController: CartTableViewCellDelegate{

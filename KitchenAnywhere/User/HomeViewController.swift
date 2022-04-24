@@ -44,6 +44,8 @@ class HomeViewController: UIViewController, UISearchResultsUpdating, UISearchBar
         registerCells()
         
         //Search Controller
+        self.navigationItem.setHidesBackButton(true, animated: true)
+
         searchController.loadViewIfNeeded()
         searchController.searchResultsUpdater = self
         
@@ -78,6 +80,9 @@ class HomeViewController: UIViewController, UISearchResultsUpdating, UISearchBar
 
     }
    
+    @IBAction func cartBuuton(_ sender: UIBarButtonItem) {
+        self.performSegue(withIdentifier: "goToCart", sender: self)
+    }
 }
 
 extension HomeViewController:UICollectionViewDelegate,UICollectionViewDataSource,DishCollectionViewCellDelegate
