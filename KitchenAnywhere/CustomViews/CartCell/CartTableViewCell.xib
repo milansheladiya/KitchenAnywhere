@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="211" id="KGk-i7-Jjw" customClass="CartTableViewCell" customModule="KitchenAnywhere" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="333" height="211"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="333" height="211"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gbn-oG-lSu" customClass="CardView" customModule="KitchenAnywhere" customModuleProvider="target">
+                        <rect key="frame" x="4" y="15" width="325" height="99"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="BPA-GF-lTn">
+                                <rect key="frame" x="15" y="15" width="295" height="69"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="ckp-sx-lpI">
+                                        <rect key="frame" x="0.0" y="0.0" width="68" height="69"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="68" id="q5C-Zz-YIR"/>
+                                            <constraint firstAttribute="width" constant="68" id="qe5-sB-bow"/>
+                                        </constraints>
+                                    </imageView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="diR-3y-lnu" userLabel="dishDetail stack">
+                                        <rect key="frame" x="83" y="0.0" width="94.5" height="69"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="61g-go-pAz">
+                                                <rect key="frame" x="0.0" y="0.0" width="94.5" height="23"/>
+                                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="19"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="35C-yh-pDI">
+                                                <rect key="frame" x="0.0" y="23" width="94.5" height="23"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mBi-3U-jsd" userLabel="Price">
+                                                <rect key="frame" x="0.0" y="46" width="94.5" height="23"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="tV2-LY-lOA" userLabel="qty delete stack">
+                                        <rect key="frame" x="192.5" y="0.0" width="102.5" height="69"/>
+                                        <subviews>
+                                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="JWQ-aV-gnL">
+                                                <rect key="frame" x="0.0" y="0.0" width="102.5" height="30"/>
+                                                <subviews>
+                                                    <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1Hc-r7-77e">
+                                                        <rect key="frame" x="0.0" y="0.0" width="39" height="30"/>
+                                                        <color key="tintColor" systemColor="labelColor"/>
+                                                        <state key="normal" title="Button"/>
+                                                        <buttonConfiguration key="configuration" style="plain">
+                                                            <attributedString key="attributedTitle">
+                                                                <fragment content="+">
+                                                                    <attributes>
+                                                                        <color key="NSColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                                                        <font key="NSFont" size="25" name="Helvetica"/>
+                                                                    </attributes>
+                                                                </fragment>
+                                                            </attributedString>
+                                                        </buttonConfiguration>
+                                                        <connections>
+                                                            <action selector="incrementDecrementHandler:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="HjD-yl-iPQ"/>
+                                                        </connections>
+                                                    </button>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mRI-OH-ycp">
+                                                        <rect key="frame" x="49" y="0.0" width="7.5" height="30"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zlU-8Q-VZu">
+                                                        <rect key="frame" x="66.5" y="0.0" width="36" height="30"/>
+                                                        <color key="tintColor" systemColor="labelColor"/>
+                                                        <state key="normal" title="Button"/>
+                                                        <buttonConfiguration key="configuration" style="plain">
+                                                            <attributedString key="attributedTitle">
+                                                                <fragment content="-">
+                                                                    <attributes>
+                                                                        <font key="NSFont" size="35" name="Helvetica"/>
+                                                                    </attributes>
+                                                                </fragment>
+                                                            </attributedString>
+                                                        </buttonConfiguration>
+                                                        <connections>
+                                                            <action selector="incrementDecrementHandler:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="mKk-ZD-uOU"/>
+                                                        </connections>
+                                                    </button>
+                                                </subviews>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="30" id="6Sn-yv-hZ2"/>
+                                                </constraints>
+                                            </stackView>
+                                            <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2ea-9d-R7x" userLabel="Reject">
+                                                <rect key="frame" x="0.0" y="30" width="102.5" height="39"/>
+                                                <color key="tintColor" red="0.84705882349999995" green="0.12941176469999999" blue="0.28235294119999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                <state key="normal" title="Button"/>
+                                                <buttonConfiguration key="configuration" style="tinted" image="trash.fill" catalog="system"/>
+                                                <connections>
+                                                    <action selector="ItemDeleteHandler:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="jNC-yT-JGt"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstItem="2ea-9d-R7x" firstAttribute="centerX" secondItem="tV2-LY-lOA" secondAttribute="centerX" id="MeW-X9-Ssa"/>
+                                        </constraints>
+                                    </stackView>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="diR-3y-lnu" firstAttribute="leading" secondItem="ckp-sx-lpI" secondAttribute="trailing" constant="15" id="WEg-l5-mIC"/>
+                                </constraints>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="BPA-GF-lTn" firstAttribute="leading" secondItem="gbn-oG-lSu" secondAttribute="leading" constant="15" id="5hs-UT-dgP"/>
+                            <constraint firstAttribute="bottom" secondItem="BPA-GF-lTn" secondAttribute="bottom" constant="15" id="CW4-9z-UfL"/>
+                            <constraint firstAttribute="trailing" secondItem="BPA-GF-lTn" secondAttribute="trailing" constant="15" id="RhS-tQ-AWU"/>
+                            <constraint firstItem="BPA-GF-lTn" firstAttribute="top" secondItem="gbn-oG-lSu" secondAttribute="top" constant="15" id="WSk-X1-2dl"/>
+                        </constraints>
+                    </view>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="gbn-oG-lSu" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="4" id="4EW-N7-blk"/>
+                    <constraint firstAttribute="bottom" secondItem="gbn-oG-lSu" secondAttribute="bottom" constant="15" id="KJJ-hp-AOf"/>
+                    <constraint firstItem="gbn-oG-lSu" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="15" id="bxU-0Q-NgR"/>
+                    <constraint firstAttribute="trailing" secondItem="gbn-oG-lSu" secondAttribute="trailing" constant="4" id="h4g-SZ-LDR"/>
+                </constraints>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="decrementBtn" destination="zlU-8Q-VZu" id="bwZ-ys-0oN"/>
+                <outlet property="delete" destination="2ea-9d-R7x" id="s71-Sw-cff"/>
+                <outlet property="dishImage" destination="ckp-sx-lpI" id="SEC-rh-9b0"/>
+                <outlet property="dishNameLabel" destination="61g-go-pAz" id="Gpa-lc-09m"/>
+                <outlet property="dishPrice" destination="mBi-3U-jsd" id="IMh-jd-wlP"/>
+                <outlet property="dishTypeLabel" destination="35C-yh-pDI" id="EC0-Gh-bN0"/>
+                <outlet property="incrementBtn" destination="1Hc-r7-77e" id="BuH-N4-2yx"/>
+                <outlet property="qty" destination="mRI-OH-ycp" id="UGo-HM-cMt"/>
+            </connections>
+            <point key="canvasLocation" x="147.10144927536234" y="19.754464285714285"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="trash.fill" catalog="system" width="121" height="128"/>
+        <systemColor name="labelColor">
+            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

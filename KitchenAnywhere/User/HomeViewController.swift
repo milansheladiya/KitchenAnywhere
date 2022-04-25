@@ -21,12 +21,12 @@ class HomeViewController: UIViewController, UISearchResultsUpdating, UISearchBar
     ]
     
     var popularDishes:[Dish] = [
-        .init(id:1, title: "Crock Pot Roast",description:"This is the best I have ever tasted",image:"https://images.immediate.co.uk/production/volatile/sites/30/2020/08/chorizo-mozarella-gnocchi-bake-cropped-9ab73a3.jpg?quality=90&webp=true&resize=440,400",type:"Veg",price: 2.3),
-        .init(id:2, title: "Garri",description:"This is the best I have ever tasted",image:"https://images.immediate.co.uk/production/volatile/sites/30/2020/08/classic-lasange-4a66137.jpg?quality=90&webp=true&resize=440,400",type:"Veg",price: 2.3),
-        .init(id:3, title: "Vegetarian chilli",description:"This is the best I have ever tasted",image:"https://images.immediate.co.uk/production/volatile/sites/30/2020/08/veggie-chilli-4a57c04.jpg?quality=90&webp=true&resize=440,400",type:"Veg",price: 2.3),
-        .init(id:4, title: "Huevos Rancheros",description:"This is the best I have ever tasted",image:"https://images.immediate.co.uk/production/volatile/sites/30/2020/08/easy-huevos-rancheros-38e94de.jpg?quality=90&webp=true&resize=440,400",type:"Veg",price: 2.3),
-        .init(id:5, title: "Chocolate Motlen Cake",description:"Bake an impressive dinner party dessert with minimum fuss – these chocolate puddings, also known as chocolate fondant or lava cake, have a lovely gooey centre",image:"https://images.immediate.co.uk/production/volatile/sites/30/2020/08/easy-chocolate-molten-cakes-37a25eb.jpg?quality=90&webp=true&resize=440,400",type:"Veg",price: 2.3),
-        .init(id:6, title: "Mince pies",description:"This is the best I have ever tasted",image:"https://images.immediate.co.uk/production/volatile/sites/30/2020/08/recipe-image-legacy-id-901483_10-af0bd6b.jpg?quality=90&webp=true&resize=440,400",type:"Veg",price: 2.3)
+        .init(id:1, title: "Crock Pot Roast",description:"This is the best I have ever tasted",image:"https://images.immediate.co.uk/production/volatile/sites/30/2020/08/chorizo-mozarella-gnocchi-bake-cropped-9ab73a3.jpg?quality=90&webp=true&resize=440,400",type:"Veg",price: 2.3,qty: 0,isFavorite:false),
+        .init(id:2, title: "Garri",description:"This is the best I have ever tasted",image:"https://images.immediate.co.uk/production/volatile/sites/30/2020/08/classic-lasange-4a66137.jpg?quality=90&webp=true&resize=440,400",type:"Veg",price: 2.3,qty: 0,isFavorite:false),
+        .init(id:3, title: "Vegetarian chilli",description:"This is the best I have ever tasted",image:"https://images.immediate.co.uk/production/volatile/sites/30/2020/08/veggie-chilli-4a57c04.jpg?quality=90&webp=true&resize=440,400",type:"Veg",price: 2.3,qty: 0,isFavorite:false),
+        .init(id:4, title: "Huevos Rancheros",description:"This is the best I have ever tasted",image:"https://images.immediate.co.uk/production/volatile/sites/30/2020/08/easy-huevos-rancheros-38e94de.jpg?quality=90&webp=true&resize=440,400",type:"Veg",price: 2.3,qty: 0,isFavorite:false),
+        .init(id:5, title: "Chocolate Motlen Cake",description:"Bake an impressive dinner party dessert with minimum fuss – these chocolate puddings, also known as chocolate fondant or lava cake, have a lovely gooey centre",image:"https://images.immediate.co.uk/production/volatile/sites/30/2020/08/easy-chocolate-molten-cakes-37a25eb.jpg?quality=90&webp=true&resize=440,400",type:"Veg",price: 2.3,qty: 0,isFavorite:false),
+        .init(id:6, title: "Mince pies",description:"This is the best I have ever tasted",image:"https://images.immediate.co.uk/production/volatile/sites/30/2020/08/recipe-image-legacy-id-901483_10-af0bd6b.jpg?quality=90&webp=true&resize=440,400",type:"Veg",price: 2.3,qty: 0,isFavorite:false)
 
     ]
 
@@ -44,14 +44,18 @@ class HomeViewController: UIViewController, UISearchResultsUpdating, UISearchBar
         registerCells()
         
         //Search Controller
+        self.navigationItem.setHidesBackButton(true, animated: true)
+
         searchController.loadViewIfNeeded()
         searchController.searchResultsUpdater = self
-        navigationItem.hidesSearchBarWhenScrolling = false
+        
         navigationItem.searchController = searchController
+
         searchController.searchBar.enablesReturnKeyAutomatically = false
         searchController.searchBar.returnKeyType = UIReturnKeyType.done
         definesPresentationContext = true
         searchController.searchBar.delegate = self
+        navigationItem.hidesSearchBarWhenScrolling = false
 
     }
     func updateSearchResults(for searchController: UISearchController) {
@@ -60,7 +64,6 @@ class HomeViewController: UIViewController, UISearchResultsUpdating, UISearchBar
         filteredArr = popularDishes.filter
         {
             dish in
-            print("inside filter",searchText,dish)
             if(searchText != ""){
                 let searchTextMatched =  dish.title.lowercased().contains(searchText.lowercased())
                 return searchTextMatched
@@ -77,10 +80,15 @@ class HomeViewController: UIViewController, UISearchResultsUpdating, UISearchBar
 
     }
    
+    @IBAction func cartBuuton(_ sender: UIBarButtonItem) {
+        self.performSegue(withIdentifier: "goToCart", sender: self)
+    }
 }
 
-extension HomeViewController:UICollectionViewDelegate,UICollectionViewDataSource
+extension HomeViewController:UICollectionViewDelegate,UICollectionViewDataSource,DishCollectionViewCellDelegate
 {
+    
+    
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         switch collectionView{
         case categoryCollectionView:
@@ -111,6 +119,7 @@ extension HomeViewController:UICollectionViewDelegate,UICollectionViewDataSource
             }else{
                 cell.setUp(dish: popularDishes[indexPath.row])
             }
+            cell.delegate = self
             return cell
         case chefSpecialCollectionView:
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: ChefSpecialCollectionViewCell.identifier, for: indexPath) as! ChefSpecialCollectionViewCell
@@ -130,15 +139,16 @@ extension HomeViewController:UICollectionViewDelegate,UICollectionViewDataSource
             
         } else
         {
-            var controller = DetailDishViewController.instantiate()
+            let controller = DetailDishViewController.instantiate()
             
             controller.dish = collectionView == popularDishesCollectionView ? popularDishes[indexPath.row] : popularDishes[indexPath.row] 
             
             
             navigationController?.pushViewController(controller, animated: true)
         }
-        
-        
-        
+    }
+    func toggleFavoriteDish(dishId: Int) {
+        let index = dishId-1
+        popularDishes[index].isFavorite = !popularDishes[dishId-1].isFavorite
     }
 }

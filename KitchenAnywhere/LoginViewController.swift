@@ -43,8 +43,9 @@ class LoginViewController: UIViewController {
         
 //        self.performSegue(withIdentifier: "goToCFDishList", sender: self)
         
+        self.performSegue(withIdentifier: "goToDashboard", sender: self)
         
-        self.performSegue(withIdentifier: "goToAddDish", sender: self)
+        
         
 //        self.performSegue(withIdentifier: "goToHomeScreen", sender: self)
     }
@@ -68,11 +69,11 @@ class LoginViewController: UIViewController {
                 self?.signedIn = true
             }
             
-//            let storyboard = self?.storyboard?.instantiateViewController(withIdentifier: "HomeVC") as! HomeViewController
-//            self?.navigationController?.pushViewController(storyboard, animated: true)
+            let storyboard = self?.storyboard?.instantiateViewController(withIdentifier: "HomeVC") as! HomeViewController
+            self?.navigationController?.pushViewController(storyboard, animated: true)
 
-            self?
-                .navigateToHomeScreen()
+//            self?
+//                .navigateToHomeScreen()
 
         }
         
