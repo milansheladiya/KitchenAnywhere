@@ -28,7 +28,7 @@ class MainUtil {
         return Int(txt)!
     }
     
-    func getUIColor(hex: String, alpha: Double = 1.0) -> UIColor? {
+    static func getUIColor(hex: String, alpha: Double = 1.0) -> UIColor? {
         var cleanString = hex.trimmingCharacters(in: .whitespacesAndNewlines).uppercased()
 
         if (cleanString.hasPrefix("#")) {
