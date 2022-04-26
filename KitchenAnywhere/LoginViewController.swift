@@ -92,8 +92,7 @@ class LoginViewController: UIViewController {
 //            let storyboard = self?.storyboard?.instantiateViewController(withIdentifier: "HomeVC") as! HomeViewController
 //            self?.navigationController?.pushViewController(storyboard, animated: true)
 
-            self?
-                .navigateToHomeScreen()
+            self?.navigateToHomeScreen()
 
         }
         
@@ -104,9 +103,7 @@ class LoginViewController: UIViewController {
 //        let storyboard = self.storyboard?.instantiateViewController(withIdentifier: "SignupViewController") as! SignupViewController
 //        self.navigationController?.pushViewController(storyboard, animated: true)
         
-        self.navigateToHomeScreen()
-        
-        
+        self.performSegue(withIdentifier: "goToSignup", sender: self)
     }
     
     

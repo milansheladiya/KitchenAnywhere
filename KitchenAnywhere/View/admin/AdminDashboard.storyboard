@@ -22,7 +22,7 @@
                                 <items>
                                     <navigationItem title="Admin" id="sAc-xe-QCd">
                                         <barButtonItem key="rightBarButtonItem" style="plain" id="h3P-0R-jM5">
-                                            <button key="customView" opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" id="Ono-so-zBl">
+                                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" id="Ono-so-zBl">
                                                 <rect key="frame" x="287.5" y="5" width="106.5" height="34.5"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <state key="normal" title="Button"/>
