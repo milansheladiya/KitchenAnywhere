@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Kc6-n5-WuB">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19455" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Kc6-n5-WuB">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19454"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="collection view cell content view" minToolsVersion="11.0"/>
@@ -191,16 +191,34 @@
                     <connections>
                         <outlet property="emailController" destination="c8E-aA-4Rc" id="Ieb-QF-yjh"/>
                         <outlet property="passwordController" destination="Icj-JL-SiK" id="62M-PD-5du"/>
-                        <segue destination="lFg-YP-dif" kind="presentation" identifier="goToHomeScreen" modalPresentationStyle="fullScreen" modalTransitionStyle="partialCurl" id="NoH-G5-Ydw"/>
                         <segue destination="Vqr-5f-Xu1" kind="presentation" identifier="goToCFDishList" modalPresentationStyle="fullScreen" id="nIU-vi-kyA"/>
                         <segue destination="4Ui-AB-XRy" kind="presentation" identifier="goToDashboard" modalPresentationStyle="fullScreen" id="uhc-Eo-7oy"/>
                         <segue destination="raF-cv-4YS" kind="presentation" identifier="goToAddDish" modalPresentationStyle="fullScreen" id="Lk8-BD-6WF"/>
                         <segue destination="QqC-IO-bxl" kind="presentation" identifier="goToViewOrder" modalPresentationStyle="fullScreen" modalTransitionStyle="flipHorizontal" id="UWk-24-4MI"/>
+                        <segue destination="0Do-uB-WbJ" kind="presentation" identifier="goToHomeScreenBar" modalPresentationStyle="fullScreen" id="5i7-I1-7sU"/>
+                        <segue destination="VjA-O9-aLE" kind="presentation" identifier="goToAdmin" modalPresentationStyle="fullScreen" id="ho2-KH-L3q"/>
+                        <segue destination="dRI-88-OLo" kind="presentation" identifier="goToChefHomeScreen" modalPresentationStyle="fullScreen" id="Vza-8p-wYg"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="71J-vK-lxM" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1626" y="171"/>
+        </scene>
+        <!--DashboardVC-->
+        <scene sceneID="u6T-pR-1bc">
+            <objects>
+                <viewControllerPlaceholder storyboardName="AdminDashboard" referencedIdentifier="DashboardVC" id="VjA-O9-aLE" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="pPH-n7-OsW" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="580" y="553"/>
+        </scene>
+        <!--CFHomeScreenVC-->
+        <scene sceneID="4rm-7s-Aoy">
+            <objects>
+                <viewControllerPlaceholder storyboardName="CFHomeScreen" referencedIdentifier="CFHomeScreenVC" id="dRI-88-OLo" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="RrI-id-2tg" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="438" y="712"/>
         </scene>
         <!--addDishCV-->
         <scene sceneID="s9w-Ed-hiB">
@@ -225,6 +243,24 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9Gn-k9-X23" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2341" y="712"/>
+        </scene>
+        <!--Tab Bar Controller-->
+        <scene sceneID="3gw-3o-0tt">
+            <objects>
+                <tabBarController id="0Do-uB-WbJ" sceneMemberID="viewController">
+                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="ezS-en-2Xb">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="49"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="l9U-gG-UAf" kind="relationship" relationship="viewControllers" id="bJk-7d-gOu"/>
+                        <segue destination="fGe-3i-BiP" kind="relationship" relationship="viewControllers" id="Vly-qn-0gp"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="LpW-7C-ByX" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2872" y="611"/>
         </scene>
         <!--CFViewOrderVC-->
         <scene sceneID="OVX-hR-otz">
@@ -372,7 +408,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dzx-rR-zrn">
-                                <rect key="frame" x="0.0" y="44" width="414" height="852"/>
+                                <rect key="frame" x="0.0" y="88" width="414" height="808"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="5Mg-1n-ney">
                                         <rect key="frame" x="0.0" y="0.0" width="414" height="746"/>
@@ -550,6 +586,7 @@
                             <constraint firstItem="dzx-rR-zrn" firstAttribute="leading" secondItem="zvc-Mv-lmC" secondAttribute="leading" id="vzP-9Q-aE7"/>
                         </constraints>
                     </view>
+                    <tabBarItem key="tabBarItem" title="Home" selectedImage="homekit" catalog="system" id="T0g-KQ-puZ"/>
                     <toolbarItems/>
                     <navigationItem key="navigationItem" title="Kitchen Anywhere" id="rhl-y0-DNx">
                         <barButtonItem key="rightBarButtonItem" title="Item" image="cart" catalog="system" id="Ljz-dv-9GO">
@@ -679,6 +716,7 @@
                                         </buttonConfiguration>
                                         <connections>
                                             <action selector="AddToCart:" destination="7H7-eK-Int" eventType="touchUpInside" id="qnQ-B5-V67"/>
+                                            <action selector="addToCart:" destination="7H7-eK-Int" eventType="touchUpInside" id="tct-rF-CNK"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -709,16 +747,17 @@
                         <outlet property="DishTitle" destination="nIJ-n7-HAS" id="T4J-xi-5LP"/>
                         <outlet property="DishType" destination="V5z-ra-UjM" id="Je3-47-amI"/>
                         <outlet property="dishImageView" destination="wmJ-q7-aSu" id="elM-PG-QAV"/>
+                        <segue destination="4vU-Xe-bfl" kind="presentation" identifier="goToCart" id="lQl-BT-O3F"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1b3-Qp-t20" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="4883" y="-284"/>
         </scene>
-        <!--View Controller-->
+        <!--Profile-->
         <scene sceneID="ckO-Vc-9dE">
             <objects>
-                <viewController id="fGe-3i-BiP" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="userProfileCV" id="fGe-3i-BiP" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="kHG-jF-VaY">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -779,14 +818,22 @@
                                     <color key="baseBackgroundColor" red="0.25664006649999999" green="0.49763257579999998" blue="0.26370709190000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 </buttonConfiguration>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="User Profile" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1cT-eE-DJ9">
+                                <rect key="frame" x="149" y="65" width="119" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="k2G-ft-2F0"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
+                    <tabBarItem key="tabBarItem" title="Profile" image="person.fill" catalog="system" selectedImage="person.fill" id="Z8i-g2-0KY"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="eq3-VK-tAD" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5654" y="-418"/>
+            <point key="canvasLocation" x="4840.579710144928" y="1245.5357142857142"/>
         </scene>
         <!--Order List View Controller-->
         <scene sceneID="Qvi-fb-PyJ">
@@ -834,7 +881,7 @@
             <objects>
                 <viewController storyboardIdentifier="CartVC" id="4vU-Xe-bfl" customClass="CartViewController" customModule="KitchenAnywhere" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Xu0-8O-JV0">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <navigationBar contentMode="scaleToFill" id="hHu-Ct-rrL">
@@ -847,14 +894,14 @@
                                 </items>
                             </navigationBar>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="Zwi-8V-1r2">
-                                <rect key="frame" x="20" y="88" width="374" height="768"/>
+                                <rect key="frame" x="20" y="88" width="374" height="714"/>
                                 <subviews>
                                     <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="VuM-8M-nRf">
-                                        <rect key="frame" x="0.0" y="0.0" width="374" height="594"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="374" height="540"/>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                     </tableView>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="57q-So-k9g" userLabel="total ">
-                                        <rect key="frame" x="0.0" y="614" width="374" height="154"/>
+                                        <rect key="frame" x="0.0" y="560" width="374" height="154"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" translatesAutoresizingMaskIntoConstraints="NO" id="xZx-kh-5QC" userLabel="SubTotal">
                                                 <rect key="frame" x="0.0" y="0.0" width="374" height="27"/>
@@ -957,7 +1004,7 @@
             </objects>
             <point key="canvasLocation" x="6441" y="-167"/>
         </scene>
-        <!--Payment View Controller-->
+        <!--Item-->
         <scene sceneID="MFz-JW-ccu">
             <objects>
                 <viewController storyboardIdentifier="PaymentViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Bqo-1N-3vs" customClass="PaymentViewController" customModule="KitchenAnywhere" customModuleProvider="target" sceneMemberID="viewController">
@@ -1110,7 +1157,7 @@
                                         <rect key="frame" x="0.0" y="79.5" width="374" height="35"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Delivery Fees" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6L4-0K-K1H">
-                                                <rect key="frame" x="0.0" y="0.0" width="187.5" height="35"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="187" height="35"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="35" id="bU3-Fz-onw"/>
                                                 </constraints>
@@ -1177,6 +1224,7 @@
                             <constraint firstItem="MSX-w2-TtX" firstAttribute="top" secondItem="erk-em-pdl" secondAttribute="top" constant="202" id="zGV-Ni-F2o"/>
                         </constraints>
                     </view>
+                    <tabBarItem key="tabBarItem" title="Item" id="WiE-lr-0jl"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="uE7-tY-TbC" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -1200,10 +1248,11 @@
             </objects>
             <point key="canvasLocation" x="734.78260869565224" y="97.767857142857139"/>
         </scene>
-        <!--Navigation Controller-->
+        <!--Home-->
         <scene sceneID="JRn-E6-Pgx">
             <objects>
                 <navigationController storyboardIdentifier="HomeNC" automaticallyAdjustsScrollViewInsets="NO" id="l9U-gG-UAf" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Home" image="homekit" catalog="system" selectedImage="homekit" id="kmK-x3-e17"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="JqR-gc-bLX">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
@@ -1219,19 +1268,21 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="yT3-Qs-0kd" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3163.7681159420295" y="-167.41071428571428"/>
+            <point key="canvasLocation" x="3525" y="-167"/>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="NoH-G5-Ydw"/>
+        <segue reference="lQl-BT-O3F"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="Facebook" width="513" height="513"/>
         <image name="TD_card" width="548" height="344"/>
         <image name="cart" catalog="system" width="128" height="102"/>
         <image name="chevron.backward" catalog="system" width="96" height="128"/>
+        <image name="homekit" catalog="system" width="128" height="106"/>
         <image name="icons8-google-144()" width="48" height="48"/>
         <image name="person.crop.circle" catalog="system" width="128" height="121"/>
+        <image name="person.fill" catalog="system" width="128" height="120"/>
         <image name="rating" width="760" height="400"/>
         <image name="splashMainLogo" width="167" height="137"/>
         <image name="square.and.arrow.up" catalog="system" width="115" height="128"/>

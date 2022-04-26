@@ -1,0 +1,210 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19455" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19454"/>
+        <capability name="Image references" minToolsVersion="12.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Home Screen View Controller-->
+        <scene sceneID="hjM-z2-jXa">
+            <objects>
+                <viewController storyboardIdentifier="CFHomeScreenVC" id="dV3-tH-ysL" customClass="CFHomeScreenViewController" customModule="KitchenAnywhere" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="G9g-6A-oq5">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" showsTouchWhenHighlighted="YES" adjustsImageSizeForAccessibilityContentSizeCategory="YES" lineBreakMode="middleTruncation" pointerInteraction="YES" changesSelectionAsPrimaryAction="YES" role="primary" preferredBehavioralStyle="mac" translatesAutoresizingMaskIntoConstraints="NO" id="Ug0-Ip-WsV">
+                                <rect key="frame" x="58" y="347" width="298" height="116"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="298" id="JHk-VW-cNX"/>
+                                    <constraint firstAttribute="height" constant="116" id="RHU-0W-VSE"/>
+                                </constraints>
+                                <color key="tintColor" systemColor="systemBrownColor"/>
+                                <size key="titleShadowOffset" width="7" height="9"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="filled" title="Orders" imagePadding="3" cornerStyle="large">
+                                    <imageReference key="image" image="megaphone.fill" catalog="system" symbolScale="large"/>
+                                    <color key="baseBackgroundColor" systemColor="systemBrownColor"/>
+                                </buttonConfiguration>
+                                <connections>
+                                    <action selector="OrdersPressed:" destination="dV3-tH-ysL" eventType="touchUpInside" id="PP4-sg-nqz"/>
+                                </connections>
+                            </button>
+                            <stackView opaque="NO" contentMode="scaleToFill" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="ErG-Mc-Yql">
+                                <rect key="frame" x="105" y="39" width="268" height="59"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Dashboard" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UXI-AR-O9n">
+                                        <rect key="frame" x="0.0" y="0.0" width="204" height="59"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="59" id="21P-o0-gbX"/>
+                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="204" id="Pgx-KS-eH9"/>
+                                            <constraint firstAttribute="width" constant="204" id="yLI-sY-5Vg"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="30"/>
+                                        <color key="textColor" red="0.5905072093" green="0.19581538439999999" blue="0.48797327280000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" pointerInteraction="YES" role="destructive" translatesAutoresizingMaskIntoConstraints="NO" id="gzV-aU-Hpw">
+                                        <rect key="frame" x="220" y="0.0" width="48" height="59"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="59" id="Gak-cG-shV"/>
+                                            <constraint firstAttribute="width" constant="48" id="Zjl-pm-f5C"/>
+                                        </constraints>
+                                        <color key="tintColor" red="0.97722500560000003" green="0.29952576759999999" blue="0.32546114920000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" title="Logout" cornerStyle="capsule">
+                                            <imageReference key="image" image="rectangle.portrait.and.arrow.right.fill" catalog="system" symbolScale="large"/>
+                                            <preferredSymbolConfiguration key="preferredSymbolConfigurationForImage" scale="large" weight="bold"/>
+                                        </buttonConfiguration>
+                                        <connections>
+                                            <action selector="logoutPressed:" destination="dV3-tH-ysL" eventType="touchUpInside" id="cHb-3I-7uY"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sLp-L6-U9r">
+                                <rect key="frame" x="53" y="758" width="308" height="52"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="308" id="Oye-ZH-57v"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="filled" imagePlacement="top" cornerStyle="capsule">
+                                    <imageReference key="image" image="person.fill.checkmark" catalog="system" symbolScale="large"/>
+                                    <attributedString key="attributedTitle">
+                                        <fragment content="User Profile">
+                                            <attributes>
+                                                <font key="NSFont" size="18" name="Helvetica"/>
+                                            </attributes>
+                                        </fragment>
+                                    </attributedString>
+                                    <color key="baseBackgroundColor" systemColor="systemTealColor"/>
+                                </buttonConfiguration>
+                                <connections>
+                                    <action selector="profilePressed:" destination="dV3-tH-ysL" eventType="touchUpInside" id="oCN-mb-f6T"/>
+                                </connections>
+                            </button>
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" spacing="64" translatesAutoresizingMaskIntoConstraints="NO" id="X4Z-dM-IKd" userLabel="addAndView">
+                                <rect key="frame" x="68" y="164" width="298" height="116"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" adjustsImageSizeForAccessibilityContentSizeCategory="YES" lineBreakMode="middleTruncation" pointerInteraction="YES" changesSelectionAsPrimaryAction="YES" role="primary" translatesAutoresizingMaskIntoConstraints="NO" id="wjx-OX-SkQ">
+                                        <rect key="frame" x="0.0" y="0.0" width="117" height="116"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="116" id="K1W-4x-rQ0"/>
+                                            <constraint firstAttribute="width" constant="117" id="ZfE-12-3Mb"/>
+                                        </constraints>
+                                        <color key="tintColor" red="0.1450980392" green="0.4039215686" blue="0.074509803920000006" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="filled" title="New Dish" imagePadding="3" cornerStyle="large">
+                                            <imageReference key="image" image="plus" catalog="system" symbolScale="large"/>
+                                            <color key="baseBackgroundColor" red="0.1450980392" green="0.4039215686" blue="0.074509803920000006" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        </buttonConfiguration>
+                                        <connections>
+                                            <action selector="addDishPressed:" destination="dV3-tH-ysL" eventType="touchUpInside" id="Y4T-7f-EC5"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" adjustsImageSizeForAccessibilityContentSizeCategory="YES" lineBreakMode="middleTruncation" pointerInteraction="YES" changesSelectionAsPrimaryAction="YES" role="primary" translatesAutoresizingMaskIntoConstraints="NO" id="nnT-Xf-nav">
+                                        <rect key="frame" x="181" y="0.0" width="117" height="116"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="117" id="Zds-Zv-7Ia"/>
+                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="117" id="dLt-A8-0ne"/>
+                                            <constraint firstAttribute="height" constant="116" id="t1b-Ij-NFj"/>
+                                            <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="116" id="yRQ-5r-sIa"/>
+                                        </constraints>
+                                        <color key="tintColor" red="0.1450980392" green="0.4039215686" blue="0.074509803920000006" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="filled" title="Dishes" imagePadding="6" cornerStyle="large">
+                                            <imageReference key="image" image="character.book.closed.fill.hi" catalog="system" symbolScale="large"/>
+                                            <color key="baseBackgroundColor" red="0.1450980392" green="0.4039215686" blue="0.074509803920000006" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        </buttonConfiguration>
+                                        <connections>
+                                            <action selector="viewDishesPressed:" destination="dV3-tH-ysL" eventType="touchUpInside" id="kwz-4F-rhn"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="116" id="slK-Iy-0Ff"/>
+                                    <constraint firstAttribute="width" constant="298" id="utd-zq-NAm"/>
+                                </constraints>
+                            </stackView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="uy6-L1-HMU"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="Ug0-Ip-WsV" firstAttribute="top" secondItem="X4Z-dM-IKd" secondAttribute="bottom" constant="67" id="CRP-d1-4oY"/>
+                            <constraint firstItem="Ug0-Ip-WsV" firstAttribute="leading" secondItem="uy6-L1-HMU" secondAttribute="leading" constant="58" id="L5p-2s-Uuc"/>
+                            <constraint firstItem="Ug0-Ip-WsV" firstAttribute="top" secondItem="X4Z-dM-IKd" secondAttribute="bottom" constant="67" id="Lbn-tG-iiD"/>
+                            <constraint firstItem="uy6-L1-HMU" firstAttribute="trailing" secondItem="Ug0-Ip-WsV" secondAttribute="trailing" constant="58" id="OV9-Cn-pep"/>
+                            <constraint firstItem="uy6-L1-HMU" firstAttribute="trailing" secondItem="ErG-Mc-Yql" secondAttribute="trailing" constant="41" id="Sj9-gh-zGu"/>
+                            <constraint firstItem="sLp-L6-U9r" firstAttribute="centerX" secondItem="Ug0-Ip-WsV" secondAttribute="centerX" id="bno-Oe-dh5"/>
+                            <constraint firstItem="ErG-Mc-Yql" firstAttribute="leading" secondItem="uy6-L1-HMU" secondAttribute="leading" constant="105" id="dvf-uy-l7Z"/>
+                            <constraint firstItem="uy6-L1-HMU" firstAttribute="bottom" secondItem="sLp-L6-U9r" secondAttribute="bottom" constant="52" id="fcj-Ly-G7R"/>
+                            <constraint firstItem="X4Z-dM-IKd" firstAttribute="top" secondItem="ErG-Mc-Yql" secondAttribute="bottom" constant="66" id="w42-21-ik7"/>
+                            <constraint firstItem="ErG-Mc-Yql" firstAttribute="top" secondItem="G9g-6A-oq5" secondAttribute="top" constant="39" id="zAQ-so-Rue"/>
+                            <constraint firstItem="uy6-L1-HMU" firstAttribute="trailing" secondItem="X4Z-dM-IKd" secondAttribute="trailing" constant="48" id="zHO-zi-vfs"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <segue destination="MiT-SI-JcN" kind="presentation" identifier="goToAddDishes" id="3Av-CU-SdD"/>
+                        <segue destination="GzR-xN-IbN" kind="presentation" identifier="goToDishes" id="rec-YZ-5zw"/>
+                        <segue destination="Q6W-dh-475" kind="presentation" identifier="goToOrders" id="ah3-dZ-G9j"/>
+                        <segue destination="8bJ-VU-NTZ" kind="presentation" identifier="goToUserProfile" id="ya9-Ap-8iZ"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Wq0-3K-awm" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-4.3478260869565224" y="92.410714285714278"/>
+        </scene>
+        <!--addDishCV-->
+        <scene sceneID="MqE-Hp-3Ma">
+            <objects>
+                <viewControllerPlaceholder storyboardName="CFAddDish" referencedIdentifier="addDishCV" id="MiT-SI-JcN" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="yPO-Z9-brX" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-561" y="566"/>
+        </scene>
+        <!--CFDishListVC-->
+        <scene sceneID="1P4-us-MHA">
+            <objects>
+                <viewControllerPlaceholder storyboardName="CFDishList" referencedIdentifier="CFDishListVC" id="GzR-xN-IbN" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Tgs-Hp-6H7" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2" y="563"/>
+        </scene>
+        <!--userProfileCV-->
+        <scene sceneID="54s-N2-Arp">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Main" referencedIdentifier="userProfileCV" id="8bJ-VU-NTZ" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="4sD-aS-Yr9" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1087" y="431"/>
+        </scene>
+        <!--CFViewOrderVC-->
+        <scene sceneID="btX-2E-Oco">
+            <objects>
+                <viewControllerPlaceholder storyboardName="CFViewOrder" referencedIdentifier="CFViewOrderVC" id="Q6W-dh-475" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="JTH-ue-AJJ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="459" y="556"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="character.book.closed.fill.hi" catalog="system" width="115" height="128"/>
+        <image name="megaphone.fill" catalog="system" width="128" height="114"/>
+        <image name="person.fill.checkmark" catalog="system" width="128" height="88"/>
+        <image name="plus" catalog="system" width="128" height="113"/>
+        <image name="rectangle.portrait.and.arrow.right.fill" catalog="system" width="128" height="108"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemBrownColor">
+            <color red="0.63529411764705879" green="0.51764705882352946" blue="0.36862745098039218" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemTealColor">
+            <color red="0.18823529411764706" green="0.69019607843137254" blue="0.7803921568627451" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
+</document>

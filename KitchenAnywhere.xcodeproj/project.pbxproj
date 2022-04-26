@@ -55,6 +55,9 @@
 		B6B24E0628145F8F008844FC /* DishCategory.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6B24E0528145F8F008844FC /* DishCategory.swift */; };
 		B6B24E092814622D008844FC /* CFViewOrderTableView1Cell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6B24E072814622D008844FC /* CFViewOrderTableView1Cell.swift */; };
 		B6B24E0A2814622D008844FC /* CFViewOrderTableView1Cell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B6B24E082814622D008844FC /* CFViewOrderTableView1Cell.xib */; };
+		B6BCDA242818602E0012A2F9 /* Firebase.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6BCDA232818602E0012A2F9 /* Firebase.swift */; };
+		B6BCDA27281867900012A2F9 /* CFHomeScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B6BCDA26281867900012A2F9 /* CFHomeScreen.storyboard */; };
+		B6BCDA2D28186CAB0012A2F9 /* CFHomeScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6BCDA2C28186CAB0012A2F9 /* CFHomeScreenViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -110,6 +113,9 @@
 		B6B24E0528145F8F008844FC /* DishCategory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DishCategory.swift; sourceTree = "<group>"; };
 		B6B24E072814622D008844FC /* CFViewOrderTableView1Cell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CFViewOrderTableView1Cell.swift; sourceTree = "<group>"; };
 		B6B24E082814622D008844FC /* CFViewOrderTableView1Cell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CFViewOrderTableView1Cell.xib; sourceTree = "<group>"; };
+		B6BCDA232818602E0012A2F9 /* Firebase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Firebase.swift; sourceTree = "<group>"; };
+		B6BCDA26281867900012A2F9 /* CFHomeScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = CFHomeScreen.storyboard; sourceTree = "<group>"; };
+		B6BCDA2C28186CAB0012A2F9 /* CFHomeScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CFHomeScreenViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -266,6 +272,7 @@
 		B670A2DD27F343BE001E5CBE /* KitchenAnywhere */ = {
 			isa = PBXGroup;
 			children = (
+				B6BCDA22281860040012A2F9 /* Firebase */,
 				B6B24DAD2810EF99008844FC /* Utils */,
 				B688FA7A280F2E9C002E89A7 /* View */,
 				B54CC4EC280CDDC400A96FA7 /* GoogleService-Info.plist */,
@@ -297,6 +304,7 @@
 		B688FA7B280F2EA3002E89A7 /* Chef */ = {
 			isa = PBXGroup;
 			children = (
+				B6BCDA25281867790012A2F9 /* HomeScreen */,
 				B6983992280F495C003B1E0F /* CFAddDish */,
 				B688FA7C280F2EAA002E89A7 /* CFDishList */,
 				B6B24DFC2812445A008844FC /* CFViewOrder */,
@@ -340,6 +348,23 @@
 				B6B24E082814622D008844FC /* CFViewOrderTableView1Cell.xib */,
 			);
 			path = CFViewOrder;
+			sourceTree = "<group>";
+		};
+		B6BCDA22281860040012A2F9 /* Firebase */ = {
+			isa = PBXGroup;
+			children = (
+				B6BCDA232818602E0012A2F9 /* Firebase.swift */,
+			);
+			path = Firebase;
+			sourceTree = "<group>";
+		};
+		B6BCDA25281867790012A2F9 /* HomeScreen */ = {
+			isa = PBXGroup;
+			children = (
+				B6BCDA26281867900012A2F9 /* CFHomeScreen.storyboard */,
+				B6BCDA2C28186CAB0012A2F9 /* CFHomeScreenViewController.swift */,
+			);
+			path = HomeScreen;
 			sourceTree = "<group>";
 		};
 		E0C9F71CC9C82EBEBC876A05 /* Frameworks */ = {
@@ -410,6 +435,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B6BCDA27281867900012A2F9 /* CFHomeScreen.storyboard in Resources */,
 				B6B24DA7281084C1008844FC /* CFAddDish.storyboard in Resources */,
 				B6B24E0A2814622D008844FC /* CFViewOrderTableView1Cell.xib in Resources */,
 				4D3D00E328086A3800BD5EAD /* CategoryCollectionViewCell.xib in Resources */,
@@ -491,10 +517,12 @@
 				B6B24DAF2810EFBD008844FC /* UtilClass.swift in Sources */,
 				B6B24E0628145F8F008844FC /* DishCategory.swift in Sources */,
 				B688FA86280F3353002E89A7 /* CFDIshListCollectionViewCell.swift in Sources */,
+				B6BCDA2D28186CAB0012A2F9 /* CFHomeScreenViewController.swift in Sources */,
 				4D1753722800E14500CB815C /* SignupViewController.swift in Sources */,
 				4D5356A128149EF1006F0F83 /* OrderListViewController.swift in Sources */,
 				B6B24DAC2810928A008844FC /* CFAddDishViewController.swift in Sources */,
 				B6B24E02281457BB008844FC /* Order.swift in Sources */,
+				B6BCDA242818602E0012A2F9 /* Firebase.swift in Sources */,
 				4D3D00E228086A3800BD5EAD /* CategoryCollectionViewCell.swift in Sources */,
 				B6B24DFE2812448B008844FC /* CFViewOrderViewController.swift in Sources */,
 				B688FA88280F3405002E89A7 /* CFDishListViewController.swift in Sources */,

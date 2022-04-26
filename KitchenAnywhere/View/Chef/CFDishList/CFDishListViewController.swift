@@ -23,7 +23,7 @@ class CFDishListViewController: UIViewController {
     
     @IBAction func GoBack(_ sender: UIButton) {
         print("Back")
-//        self.dismiss(animated: true, completion: nil)
+        self.dismiss(animated: true, completion: nil)
         
 //        self.performSegue(withIdentifier: "goToLogin", sender: self)
 //
