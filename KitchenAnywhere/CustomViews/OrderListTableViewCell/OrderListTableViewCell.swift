@@ -28,8 +28,8 @@ class OrderListTableViewCell: UITableViewCell {
         qauntityLabel.text = String(order.orderQuantity)
         priceLabel.text = "$ " + String ( order.price )
         pickupStatusLabel.text = order.pickupStatus
-        pickupStatusLabel.textColor = order.pickupStatus == "Pending" ? util.getUIColor(hex:"#FFD93D") :
-            util.getUIColor(hex:"#6BCB77")
+        pickupStatusLabel.textColor = order.pickupStatus == "Pending" ? MainUtil.getUIColor(hex:"#FFD93D") :
+        MainUtil.getUIColor(hex:"#6BCB77")
         dishImage.kf.setImage(with: order.image?.asUrl )
         dishImage.layer.cornerRadius = 10
         imgFoodType.image = order.type == "Veg" ? #imageLiteral(resourceName: "veg") :  #imageLiteral(resourceName: "non-veg")
