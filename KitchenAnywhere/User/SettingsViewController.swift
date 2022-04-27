@@ -7,16 +7,42 @@
 
 import UIKit
 
-class SettingsViewController: UIViewController {
+class SettingsViewController: UIViewController,UITableViewDelegate {
     var settingCollection = SettingCollection();
     
     @IBOutlet weak var settingListTableView: UITableView!
     override func viewDidLoad() {
         super.viewDidLoad()
         settingListTableView.dataSource = self
+        settingListTableView.delegate = self
+        
         // Do any additional setup after loading the view.
         settingListTableView.register(UINib(nibName: SettingTableViewCell.identifier, bundle: nil), forCellReuseIdentifier: SettingTableViewCell.identifier)
 
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        
+        
+        switch settingCollection.settings[indexPath.row].title
+        {
+        case "Orders":
+            navigateToOrders()
+        case "Favorite":
+            navigateToFavorite()
+        default:
+            print("no option")
+        }
+        
+    }
+    
+    func navigateToOrders() {
+        performSegue(withIdentifier: "goToOrders", sender: self)
+    }
+    
+    func navigateToFavorite() {
+//        performSegue(withIdentifier: <#T##String#>, sender: self)
     }
     
 

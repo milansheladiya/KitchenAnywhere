@@ -19,6 +19,7 @@ class SettingTableViewCell: UITableViewCell {
         settingImgIcon.image = setting.icon
     }
     override func setSelected(_ selected: Bool, animated: Bool) {
+        
         if selected {
             self.contentView.backgroundColor = MainUtil.getUIColor(hex: "#F0F0F0")
         }else{

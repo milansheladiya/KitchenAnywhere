@@ -136,6 +136,13 @@ class CFAddDishViewController: UIViewController, UIImagePickerControllerDelegate
         self.dismiss(animated: true, completion: nil)
     }
     
+    
+    @IBAction func dismissPressed(_ sender: UIButton) {
+        
+        self.dismiss(animated: true, completion: nil)
+        
+    }
+    
     // add permission to info file
     
     /*

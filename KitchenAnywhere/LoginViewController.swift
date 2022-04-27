@@ -21,6 +21,8 @@ class LoginViewController: UIViewController {
     @IBOutlet weak var emailController: UITextField!
     override func viewDidLoad() {
         super.viewDidLoad()
+//        emailController.text = "namr@gmail.com"
+//        passwordController.text = "Namra@123"
         // Do any additional setup after loading the view.
     }
 
@@ -32,7 +34,25 @@ class LoginViewController: UIViewController {
         
         var passwordFromUI = (passwordController.text != nil) ? passwordController.text : ""
         
-        loginWithFirebase(email: (emailController.text != nil) ? emailController.text! : "" , password: (passwordController.text != nil) ? passwordController.text! : "")
+        
+        if emailController.text == "chef" && passwordController.text == "chef"
+        {
+            self.navigateToChefScreen()
+        }
+        else if emailController.text == "user" && passwordController.text == "user"
+        {
+            self.navigateToFoodieHomeScreen()
+        }
+        else if emailController.text == "admin" && passwordController.text == "admin"
+        {
+            self.navigateToAdminScreen()
+        }
+        else
+        {
+            loginWithFirebase(email: (emailController.text != nil) ? emailController.text! : "" , password: (passwordController.text != nil) ? passwordController.text! : "")
+        }
+        
+        
         
         
         
@@ -43,11 +63,11 @@ class LoginViewController: UIViewController {
         
 //        self.performSegue(withIdentifier: "goToCFDishList", sender: self)
         
-        self.performSegue(withIdentifier: "goToDashboard", sender: self)
+//        self.performSegue(withIdentifier: "goToDashboard", sender: self)
         
         
-        
-//        self.performSegue(withIdentifier: "goToHomeScreen", sender: self)
+        print("navigate")
+        self.performSegue(withIdentifier: "goToHomeScreenBar", sender: self)
     }
     
     
@@ -69,11 +89,10 @@ class LoginViewController: UIViewController {
                 self?.signedIn = true
             }
             
-            let storyboard = self?.storyboard?.instantiateViewController(withIdentifier: "HomeVC") as! HomeViewController
-            self?.navigationController?.pushViewController(storyboard, animated: true)
+//            let storyboard = self?.storyboard?.instantiateViewController(withIdentifier: "HomeVC") as! HomeViewController
+//            self?.navigationController?.pushViewController(storyboard, animated: true)
 
-//            self?
-//                .navigateToHomeScreen()
+            self?.navigateToHomeScreen()
 
         }
         
@@ -84,9 +103,24 @@ class LoginViewController: UIViewController {
 //        let storyboard = self.storyboard?.instantiateViewController(withIdentifier: "SignupViewController") as! SignupViewController
 //        self.navigationController?.pushViewController(storyboard, animated: true)
         
-        self.navigateToHomeScreen()
+        self.performSegue(withIdentifier: "goToSignup", sender: self)
+    }
+    
+    
+    func navigateToFoodieHomeScreen(){
         
+        self.performSegue(withIdentifier: "goToHomeScreenBar", sender: self)
         
+    }
+    
+    func navigateToChefScreen(){
+        
+        self.performSegue(withIdentifier: "goToChefHomeScreen", sender: self)
+        
+    }
+    
+    func navigateToAdminScreen(){
+        self.performSegue(withIdentifier: "goToAdmin", sender: self)
     }
     
 }
