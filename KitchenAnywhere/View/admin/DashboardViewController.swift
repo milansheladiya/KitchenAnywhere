@@ -160,6 +160,14 @@ class DashboardViewController: UIViewController,UITableViewDataSource {
         return cell
         
     }
+    
+    @IBAction func logoutPressed(_ sender: UIButton) {
+        
+        self.dismiss(animated: true, completion: nil)
+        
+    }
+    
+    
 }
 extension DashboardViewController: DasboardTableViewCellDelegate{
     func profileApproveRejectHandler(userId: Int,btnTag:Int) {

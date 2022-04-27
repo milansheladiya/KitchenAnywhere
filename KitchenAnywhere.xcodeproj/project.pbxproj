@@ -19,6 +19,10 @@
 		4D3D00DC28085C6900BD5EAD /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D3D00DB28085C6900BD5EAD /* HomeViewController.swift */; };
 		4D3D00E228086A3800BD5EAD /* CategoryCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D3D00E028086A3800BD5EAD /* CategoryCollectionViewCell.swift */; };
 		4D3D00E328086A3800BD5EAD /* CategoryCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4D3D00E128086A3800BD5EAD /* CategoryCollectionViewCell.xib */; };
+		4D45E475281862040054A07D /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D45E474281862040054A07D /* SettingsViewController.swift */; };
+		4D45E479281862670054A07D /* SettingTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D45E477281862670054A07D /* SettingTableViewCell.swift */; };
+		4D45E47A281862670054A07D /* SettingTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4D45E478281862670054A07D /* SettingTableViewCell.xib */; };
+		4D45E47C281865760054A07D /* Setting.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D45E47B281865760054A07D /* Setting.swift */; };
 		4D53569C28149C04006F0F83 /* OrderListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D53569A28149C04006F0F83 /* OrderListTableViewCell.swift */; };
 		4D53569D28149C04006F0F83 /* OrderListTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4D53569B28149C04006F0F83 /* OrderListTableViewCell.xib */; };
 		4D5356A128149EF1006F0F83 /* OrderListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D5356A028149EF1006F0F83 /* OrderListViewController.swift */; };
@@ -34,6 +38,9 @@
 		B54CC4E7280CC48F00A96FA7 /* DetailDishViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B54CC4E6280CC48F00A96FA7 /* DetailDishViewController.swift */; };
 		B54CC4E9280CC89000A96FA7 /* UiViewController+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B54CC4E8280CC89000A96FA7 /* UiViewController+Extensions.swift */; };
 		B54CC4ED280CDDC400A96FA7 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = B54CC4EC280CDDC400A96FA7 /* GoogleService-Info.plist */; };
+		B5D0BE782814E56D003FF259 /* FavouriteCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5D0BE762814E56D003FF259 /* FavouriteCollectionViewCell.swift */; };
+		B5D0BE792814E56D003FF259 /* FavouriteCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B5D0BE772814E56D003FF259 /* FavouriteCollectionViewCell.xib */; };
+		B5D0BE7B2814EC55003FF259 /* FavouriteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5D0BE7A2814EC55003FF259 /* FavouriteViewController.swift */; };
 		B5E5B0ED2813B11F004ADB24 /* PaymentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5E5B0EC2813B11F004ADB24 /* PaymentViewController.swift */; };
 		B670A2DF27F343BE001E5CBE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B670A2DE27F343BE001E5CBE /* AppDelegate.swift */; };
 		B670A2E127F343BE001E5CBE /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B670A2E027F343BE001E5CBE /* SceneDelegate.swift */; };
@@ -55,6 +62,9 @@
 		B6B24E0628145F8F008844FC /* DishCategory.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6B24E0528145F8F008844FC /* DishCategory.swift */; };
 		B6B24E092814622D008844FC /* CFViewOrderTableView1Cell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6B24E072814622D008844FC /* CFViewOrderTableView1Cell.swift */; };
 		B6B24E0A2814622D008844FC /* CFViewOrderTableView1Cell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B6B24E082814622D008844FC /* CFViewOrderTableView1Cell.xib */; };
+		B6BCDA242818602E0012A2F9 /* Firebase.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6BCDA232818602E0012A2F9 /* Firebase.swift */; };
+		B6BCDA27281867900012A2F9 /* CFHomeScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B6BCDA26281867900012A2F9 /* CFHomeScreen.storyboard */; };
+		B6BCDA2D28186CAB0012A2F9 /* CFHomeScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6BCDA2C28186CAB0012A2F9 /* CFHomeScreenViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -72,6 +82,10 @@
 		4D3D00DB28085C6900BD5EAD /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		4D3D00E028086A3800BD5EAD /* CategoryCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryCollectionViewCell.swift; sourceTree = "<group>"; };
 		4D3D00E128086A3800BD5EAD /* CategoryCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CategoryCollectionViewCell.xib; sourceTree = "<group>"; };
+		4D45E474281862040054A07D /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
+		4D45E477281862670054A07D /* SettingTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingTableViewCell.swift; sourceTree = "<group>"; };
+		4D45E478281862670054A07D /* SettingTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SettingTableViewCell.xib; sourceTree = "<group>"; };
+		4D45E47B281865760054A07D /* Setting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Setting.swift; sourceTree = "<group>"; };
 		4D53569A28149C04006F0F83 /* OrderListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderListTableViewCell.swift; sourceTree = "<group>"; };
 		4D53569B28149C04006F0F83 /* OrderListTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = OrderListTableViewCell.xib; sourceTree = "<group>"; };
 		4D5356A028149EF1006F0F83 /* OrderListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderListViewController.swift; sourceTree = "<group>"; };
@@ -87,6 +101,9 @@
 		B54CC4E6280CC48F00A96FA7 /* DetailDishViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailDishViewController.swift; sourceTree = "<group>"; };
 		B54CC4E8280CC89000A96FA7 /* UiViewController+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UiViewController+Extensions.swift"; sourceTree = "<group>"; };
 		B54CC4EC280CDDC400A96FA7 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		B5D0BE762814E56D003FF259 /* FavouriteCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavouriteCollectionViewCell.swift; sourceTree = "<group>"; };
+		B5D0BE772814E56D003FF259 /* FavouriteCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FavouriteCollectionViewCell.xib; sourceTree = "<group>"; };
+		B5D0BE7A2814EC55003FF259 /* FavouriteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavouriteViewController.swift; sourceTree = "<group>"; };
 		B5E5B0EC2813B11F004ADB24 /* PaymentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentViewController.swift; sourceTree = "<group>"; };
 		B670A2DB27F343BE001E5CBE /* KitchenAnywhere.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = KitchenAnywhere.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B670A2DE27F343BE001E5CBE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -110,6 +127,9 @@
 		B6B24E0528145F8F008844FC /* DishCategory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DishCategory.swift; sourceTree = "<group>"; };
 		B6B24E072814622D008844FC /* CFViewOrderTableView1Cell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CFViewOrderTableView1Cell.swift; sourceTree = "<group>"; };
 		B6B24E082814622D008844FC /* CFViewOrderTableView1Cell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CFViewOrderTableView1Cell.xib; sourceTree = "<group>"; };
+		B6BCDA232818602E0012A2F9 /* Firebase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Firebase.swift; sourceTree = "<group>"; };
+		B6BCDA26281867900012A2F9 /* CFHomeScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = CFHomeScreen.storyboard; sourceTree = "<group>"; };
+		B6BCDA2C28186CAB0012A2F9 /* CFHomeScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CFHomeScreenViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -152,6 +172,8 @@
 				4D1F4123281247780045B46F /* CartViewController.swift */,
 				B5E5B0EC2813B11F004ADB24 /* PaymentViewController.swift */,
 				4D5356A028149EF1006F0F83 /* OrderListViewController.swift */,
+				4D45E474281862040054A07D /* SettingsViewController.swift */,
+				B5D0BE7A2814EC55003FF259 /* FavouriteViewController.swift */,
 			);
 			path = User;
 			sourceTree = "<group>";
@@ -159,6 +181,8 @@
 		4D3D00DD2808698600BD5EAD /* CustomViews */ = {
 			isa = PBXGroup;
 			children = (
+				4D45E4762818623B0054A07D /* SettingTableViewCell */,
+				B5D0BE752814E514003FF259 /* Favourite View Cell */,
 				4D53569928149B94006F0F83 /* OrderListTableViewCell */,
 				4D1F411A281238D10045B46F /* CartCell */,
 				4D9C6352280C73A80053CAC2 /* ChefSpecialCollectionViewCell */,
@@ -176,6 +200,15 @@
 				4D3D00E128086A3800BD5EAD /* CategoryCollectionViewCell.xib */,
 			);
 			path = CategoryCollectionViewCell;
+			sourceTree = "<group>";
+		};
+		4D45E4762818623B0054A07D /* SettingTableViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				4D45E477281862670054A07D /* SettingTableViewCell.swift */,
+				4D45E478281862670054A07D /* SettingTableViewCell.xib */,
+			);
+			path = SettingTableViewCell;
 			sourceTree = "<group>";
 		};
 		4D53569928149B94006F0F83 /* OrderListTableViewCell */ = {
@@ -206,6 +239,7 @@
 				B6B24E01281457BB008844FC /* Order.swift */,
 				B6B24E0328145CC1008844FC /* CFViewOrderBrain.swift */,
 				B6B24E0528145F8F008844FC /* DishCategory.swift */,
+				4D45E47B281865760054A07D /* Setting.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -245,6 +279,15 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
+		B5D0BE752814E514003FF259 /* Favourite View Cell */ = {
+			isa = PBXGroup;
+			children = (
+				B5D0BE762814E56D003FF259 /* FavouriteCollectionViewCell.swift */,
+				B5D0BE772814E56D003FF259 /* FavouriteCollectionViewCell.xib */,
+			);
+			path = "Favourite View Cell";
+			sourceTree = "<group>";
+		};
 		B670A2D227F343BE001E5CBE = {
 			isa = PBXGroup;
 			children = (
@@ -266,6 +309,7 @@
 		B670A2DD27F343BE001E5CBE /* KitchenAnywhere */ = {
 			isa = PBXGroup;
 			children = (
+				B6BCDA22281860040012A2F9 /* Firebase */,
 				B6B24DAD2810EF99008844FC /* Utils */,
 				B688FA7A280F2E9C002E89A7 /* View */,
 				B54CC4EC280CDDC400A96FA7 /* GoogleService-Info.plist */,
@@ -297,6 +341,7 @@
 		B688FA7B280F2EA3002E89A7 /* Chef */ = {
 			isa = PBXGroup;
 			children = (
+				B6BCDA25281867790012A2F9 /* HomeScreen */,
 				B6983992280F495C003B1E0F /* CFAddDish */,
 				B688FA7C280F2EAA002E89A7 /* CFDishList */,
 				B6B24DFC2812445A008844FC /* CFViewOrder */,
@@ -340,6 +385,23 @@
 				B6B24E082814622D008844FC /* CFViewOrderTableView1Cell.xib */,
 			);
 			path = CFViewOrder;
+			sourceTree = "<group>";
+		};
+		B6BCDA22281860040012A2F9 /* Firebase */ = {
+			isa = PBXGroup;
+			children = (
+				B6BCDA232818602E0012A2F9 /* Firebase.swift */,
+			);
+			path = Firebase;
+			sourceTree = "<group>";
+		};
+		B6BCDA25281867790012A2F9 /* HomeScreen */ = {
+			isa = PBXGroup;
+			children = (
+				B6BCDA26281867900012A2F9 /* CFHomeScreen.storyboard */,
+				B6BCDA2C28186CAB0012A2F9 /* CFHomeScreenViewController.swift */,
+			);
+			path = HomeScreen;
 			sourceTree = "<group>";
 		};
 		E0C9F71CC9C82EBEBC876A05 /* Frameworks */ = {
@@ -410,6 +472,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B6BCDA27281867900012A2F9 /* CFHomeScreen.storyboard in Resources */,
 				B6B24DA7281084C1008844FC /* CFAddDish.storyboard in Resources */,
 				B6B24E0A2814622D008844FC /* CFViewOrderTableView1Cell.xib in Resources */,
 				4D3D00E328086A3800BD5EAD /* CategoryCollectionViewCell.xib in Resources */,
@@ -420,8 +483,10 @@
 				B670A2EB27F343BE001E5CBE /* LaunchScreen.storyboard in Resources */,
 				B670A2E827F343BE001E5CBE /* Assets.xcassets in Resources */,
 				B670A2E627F343BE001E5CBE /* Main.storyboard in Resources */,
+				4D45E47A281862670054A07D /* SettingTableViewCell.xib in Resources */,
 				4D1F411E281239730045B46F /* CartTableViewCell.xib in Resources */,
 				4D9C6356280C73CB0053CAC2 /* ChefSpecialCollectionViewCell.xib in Resources */,
+				B5D0BE792814E56D003FF259 /* FavouriteCollectionViewCell.xib in Resources */,
 				4DC2CD792808A5EE00C82D52 /* DishCollectionViewCell.xib in Resources */,
 				B54CC4ED280CDDC400A96FA7 /* GoogleService-Info.plist in Resources */,
 				B6B24DFB2812444B008844FC /* CFViewOrder.storyboard in Resources */,
@@ -479,6 +544,8 @@
 			files = (
 				4D38F35D281086C0005BAE50 /* DashboardViewController.swift in Sources */,
 				4D3D00DC28085C6900BD5EAD /* HomeViewController.swift in Sources */,
+				4D45E475281862040054A07D /* SettingsViewController.swift in Sources */,
+				B5D0BE7B2814EC55003FF259 /* FavouriteViewController.swift in Sources */,
 				4D53569C28149C04006F0F83 /* OrderListTableViewCell.swift in Sources */,
 				4DC2CD7128087B7700C82D52 /* String+Extension.swift in Sources */,
 				B670A2E327F343BE001E5CBE /* LoginViewController.swift in Sources */,
@@ -486,20 +553,25 @@
 				B688FA8A280F3756002E89A7 /* Model_DishList.swift in Sources */,
 				4D1F411D281239730045B46F /* CartTableViewCell.swift in Sources */,
 				B670A2DF27F343BE001E5CBE /* AppDelegate.swift in Sources */,
+				4D45E479281862670054A07D /* SettingTableViewCell.swift in Sources */,
 				4D1F41222812453F0045B46F /* CartList.swift in Sources */,
 				4DC2CD742808989E00C82D52 /* CardView.swift in Sources */,
 				B6B24DAF2810EFBD008844FC /* UtilClass.swift in Sources */,
 				B6B24E0628145F8F008844FC /* DishCategory.swift in Sources */,
 				B688FA86280F3353002E89A7 /* CFDIshListCollectionViewCell.swift in Sources */,
+				B6BCDA2D28186CAB0012A2F9 /* CFHomeScreenViewController.swift in Sources */,
 				4D1753722800E14500CB815C /* SignupViewController.swift in Sources */,
 				4D5356A128149EF1006F0F83 /* OrderListViewController.swift in Sources */,
 				B6B24DAC2810928A008844FC /* CFAddDishViewController.swift in Sources */,
 				B6B24E02281457BB008844FC /* Order.swift in Sources */,
+				B6BCDA242818602E0012A2F9 /* Firebase.swift in Sources */,
 				4D3D00E228086A3800BD5EAD /* CategoryCollectionViewCell.swift in Sources */,
+				B5D0BE782814E56D003FF259 /* FavouriteCollectionViewCell.swift in Sources */,
 				B6B24DFE2812448B008844FC /* CFViewOrderViewController.swift in Sources */,
 				B688FA88280F3405002E89A7 /* CFDishListViewController.swift in Sources */,
 				B54CC4E9280CC89000A96FA7 /* UiViewController+Extensions.swift in Sources */,
 				B5E5B0ED2813B11F004ADB24 /* PaymentViewController.swift in Sources */,
+				4D45E47C281865760054A07D /* Setting.swift in Sources */,
 				4DC2CD7B2808A92500C82D52 /* Dish.swift in Sources */,
 				4D9C6355280C73CB0053CAC2 /* ChefSpecialCollectionViewCell.swift in Sources */,
 				4DC2CD782808A5EE00C82D52 /* DishCollectionViewCell.swift in Sources */,
