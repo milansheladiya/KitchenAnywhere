@@ -31,6 +31,8 @@ class SettingsViewController: UIViewController,UITableViewDelegate {
             navigateToOrders()
         case "Favorite":
             navigateToFavorite()
+        case "Logout":
+            Logout()
         default:
             print("no option")
         }
@@ -42,7 +44,14 @@ class SettingsViewController: UIViewController,UITableViewDelegate {
     }
     
     func navigateToFavorite() {
-//        performSegue(withIdentifier: <#T##String#>, sender: self)
+        performSegue(withIdentifier: "goToFavorite", sender: self)
+    }
+    
+    func Logout(){
+        
+//        performSegue(withIdentifier: "goToFavorite", sender: self)
+        self.dismiss(animated: true, completion: nil)
+        
     }
     
 
