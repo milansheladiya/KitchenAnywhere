@@ -9,6 +9,12 @@
 
 - **Note** - If project will open directly it will not run because of cocoapods so **Step-5** is mandatory.
 
+## Team Members
+
+  - Milan Sheladiya
+  - Namra Patel
+  - Nency Patel
+  - Dishant Desai
 
 ## Project Credentials
 
