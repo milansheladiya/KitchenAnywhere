@@ -9,6 +9,17 @@ import UIKit
 import SwiftUI
 
 class CFAddDishViewController: UIViewController, UIImagePickerControllerDelegate,UINavigationControllerDelegate {
+    
+    var isEdit:Bool = false
+    
+    var txtTitle_:String = "apple"
+    var txtPrice_:String = "2.5"
+    var txtType_:String = "Veg"
+    var txtCusine_:String = "Asian"
+    var txtStatus_:String = "Active"
+    var txtQty_:String = "5"
+    var txtDescription_:String = "all is wll"
+    var imgURL:String = "https://cdn.cocoacasts.com/cc00ceb0c6bff0d536f25454d50223875d5c79f1/above-the-clouds.jpg"
 
     @IBOutlet weak var txtDishTitle: UITextField!
     
@@ -31,6 +42,9 @@ class CFAddDishViewController: UIViewController, UIImagePickerControllerDelegate
     
     @IBOutlet weak var txtDescription: UITextField!
     
+    @IBOutlet weak var btnSubmit: UIButton!
+    
+    
     // 0 = veg    ,  1 = nonveg
     var FoodType = 0
     
@@ -42,10 +56,41 @@ class CFAddDishViewController: UIViewController, UIImagePickerControllerDelegate
     override func viewDidLoad() {
         super.viewDidLoad()
     
-//        imgFood.layer.borderWidth = 2
-//        imgFood.layer.cornerRadius = 10
-        mainUtil.RadioFillBorder(btn: rdbVegetarian)
-        mainUtil.RadioFillBorder(btn: rdbActive)
+        print(isEdit)
+        if isEdit{
+            txtDishTitle.text = txtTitle_
+            txtPricePerDish.text = txtPrice_
+            if txtType_ == "Veg"{
+                mainUtil.RadioFillBorder(btn: rdbVegetarian)
+            }
+            else
+            {
+                mainUtil.RadioFillBorder(btn: rdbNonvegetarian)
+            }
+            mainUtil.RadioFillBorder(btn: rdbActive)
+            txtCusine.text = txtCusine_
+            txtQuantityPerDay.text = txtQty_
+            btnSubmit.titleLabel?.text = "Update"
+            txtDescription.text = txtDescription_
+            
+            let url = URL(string: imgURL)!
+
+                // Fetch Image Data
+                if let data = try? Data(contentsOf: url) {
+                    // Create Image and Update Image View
+                    imgFood.image = UIImage(data: data)
+                }
+            
+        }
+        else
+        {
+            //        imgFood.layer.borderWidth = 2
+            //        imgFood.layer.cornerRadius = 10
+                    mainUtil.RadioFillBorder(btn: rdbVegetarian)
+                    mainUtil.RadioFillBorder(btn: rdbActive)
+        }
+        
+
 
     }
     
