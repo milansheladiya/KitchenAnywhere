@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19455" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19454"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="collection view cell content view" minToolsVersion="11.0"/>
@@ -119,6 +119,7 @@
                                                 </collectionViewCellContentView>
                                                 <size key="customSize" width="233" height="244"/>
                                                 <connections>
+                                                    <outlet property="editButton" destination="BcD-Fb-wfP" id="f2p-ga-pSY"/>
                                                     <outlet property="imgFood" destination="iXw-Wh-mwy" id="Z5g-lp-Pri"/>
                                                     <outlet property="imgFoodType" destination="ef7-lF-Twe" id="HNc-qK-eXT"/>
                                                     <outlet property="lblPrice" destination="V47-Qf-2Kt" id="bBm-xg-hJN"/>
@@ -166,11 +167,20 @@
                     <connections>
                         <outlet property="collectionView" destination="XLI-ug-jw1" id="jcx-3g-xx9"/>
                         <segue destination="9Me-89-vaQ" kind="presentation" identifier="goToLogin" modalPresentationStyle="automatic" id="Xey-qx-Spq"/>
+                        <segue destination="h8u-jI-se9" kind="presentation" identifier="goToAddDishes" id="5Jv-4S-BXF"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-13.043478260869566" y="106.47321428571428"/>
+        </scene>
+        <!--addDishCV-->
+        <scene sceneID="ZfV-2m-zdr">
+            <objects>
+                <viewControllerPlaceholder storyboardName="CFAddDish" referencedIdentifier="addDishCV" id="h8u-jI-se9" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="IL1-0K-5pE" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="928" y="31"/>
         </scene>
     </scenes>
     <resources>

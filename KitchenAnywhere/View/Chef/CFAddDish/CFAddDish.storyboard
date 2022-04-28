@@ -179,6 +179,7 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
                     <connections>
+                        <outlet property="btnSubmit" destination="jJI-dN-gnf" id="s3q-u6-vcL"/>
                         <outlet property="btnUploadImage" destination="KEF-KP-yzh" id="pUX-jg-PCB"/>
                         <outlet property="imgFood" destination="uH1-Ml-nKO" id="Qfp-E0-ZHe"/>
                         <outlet property="rdbActive" destination="J01-h0-bwK" id="A0E-1h-uPl"/>

@@ -13,6 +13,8 @@ class CFDIshListCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var lblTitle: UILabel!
     @IBOutlet weak var lblPrice: UILabel!
     @IBOutlet weak var imgFoodType: UIImageView!
+    @IBOutlet weak var editButton: UIButton!
+    
     
     
     func setup(with dish: Dish) {
@@ -21,10 +23,11 @@ class CFDIshListCollectionViewCell: UICollectionViewCell {
         lblTitle.text = dish.title
         
         imgFoodType.image = dish.type == "Veg" ? #imageLiteral(resourceName: "veg") :  #imageLiteral(resourceName: "non-veg")
-        
         lblPrice.text = "$ " + String ( dish.price )
         
         }
+    
+    
     
     
 }
