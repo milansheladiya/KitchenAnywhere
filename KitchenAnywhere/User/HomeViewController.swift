@@ -83,6 +83,13 @@ class HomeViewController: UIViewController, UISearchResultsUpdating, UISearchBar
     @IBAction func cartBuuton(_ sender: UIBarButtonItem) {
         self.performSegue(withIdentifier: "goToCart", sender: self)
     }
+    
+    @IBAction func viewMorePressed(_ sender: UIButton) {
+        
+        self.performSegue(withIdentifier: "goToViewMore", sender: self)
+        
+    }
+    
 }
 
 extension HomeViewController:UICollectionViewDelegate,UICollectionViewDataSource,DishCollectionViewCellDelegate
@@ -151,4 +158,7 @@ extension HomeViewController:UICollectionViewDelegate,UICollectionViewDataSource
         let index = dishId-1
         popularDishes[index].isFavorite = !popularDishes[dishId-1].isFavorite
     }
+    
+    
+    
 }
