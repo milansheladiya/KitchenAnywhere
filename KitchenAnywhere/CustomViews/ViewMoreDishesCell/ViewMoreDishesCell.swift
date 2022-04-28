@@ -35,6 +35,7 @@ class ViewMoreDishesCell: UICollectionViewCell {
     func setUp(dish: Dish){
         self.dishId = dish.id
         self.isFavotite = dish.isFavorite
+        self.layer.cornerRadius = 6
         titleLable.text = dish.title
         dishImageView.kf.setImage(with: dish.image?.asUrl )
         typeLabel.text = dish.type

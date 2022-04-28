@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19455" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Kc6-n5-WuB">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Kc6-n5-WuB">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19454"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="collection view cell content view" minToolsVersion="11.0"/>
@@ -622,7 +622,7 @@
                         <outlet property="categoryCollectionView" destination="af2-sG-mZd" id="lU5-DZ-gzu"/>
                         <outlet property="chefSpecialCollectionView" destination="XLl-ek-Cdw" id="dFh-Zk-s6V"/>
                         <outlet property="popularDishesCollectionView" destination="pcY-8S-Woi" id="lfs-aW-qd9"/>
-                        <segue destination="SeS-U4-5mN" kind="presentation" identifier="goToViewMore" modalPresentationStyle="fullScreen" id="avY-Re-sUK"/>
+                        <segue destination="SeS-U4-5mN" kind="presentation" identifier="goToViewMore" modalPresentationStyle="automatic" id="avY-Re-sUK"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="w1R-65-a71" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -908,27 +908,27 @@
             <objects>
                 <viewController id="R5K-Rr-J8Z" customClass="ViewMoreDishesViewController" customModule="KitchenAnywhere" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="LIK-1p-KLt">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VDC-kM-mV0">
-                                <rect key="frame" x="0.0" y="93" width="414" height="44"/>
+                                <rect key="frame" x="0.0" y="11" width="414" height="56"/>
                                 <items>
                                     <navigationItem title="Dishes" id="UbJ-lM-zrV"/>
                                 </items>
                             </navigationBar>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="qHV-d3-xJ1">
-                                <rect key="frame" x="0.0" y="122" width="414" height="652"/>
+                                <rect key="frame" x="0.0" y="67" width="414" height="708"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="dsM-og-O0j">
                                     <size key="itemSize" width="172" height="207"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
-                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                    <inset key="sectionInset" minX="10" minY="10" maxX="10" maxY="10"/>
                                 </collectionViewFlowLayout>
                                 <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="8uD-x6-dxK" customClass="ViewMoreDishesCell" customModule="KitchenAnywhere" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="0.0" width="180" height="340"/>
+                                    <collectionViewCell opaque="NO" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="8uD-x6-dxK" customClass="ViewMoreDishesCell" customModule="KitchenAnywhere" customModuleProvider="target">
+                                        <rect key="frame" x="10" y="10" width="180" height="340"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="HsR-A4-tXH">
                                             <rect key="frame" x="0.0" y="0.0" width="180" height="340"/>
@@ -942,9 +942,9 @@
                         <viewLayoutGuide key="safeArea" id="STg-gV-jq0"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="qHV-d3-xJ1" firstAttribute="top" secondItem="STg-gV-jq0" secondAttribute="top" constant="34" id="CYV-OI-XCU"/>
+                            <constraint firstItem="qHV-d3-xJ1" firstAttribute="top" secondItem="VDC-kM-mV0" secondAttribute="bottom" id="CYV-OI-XCU"/>
                             <constraint firstItem="qHV-d3-xJ1" firstAttribute="centerY" secondItem="LIK-1p-KLt" secondAttribute="centerY" id="Fed-DO-ABh"/>
-                            <constraint firstItem="VDC-kM-mV0" firstAttribute="top" secondItem="STg-gV-jq0" secondAttribute="top" constant="5" id="VIN-12-dU8"/>
+                            <constraint firstItem="VDC-kM-mV0" firstAttribute="top" secondItem="STg-gV-jq0" secondAttribute="top" constant="-45" id="VIN-12-dU8"/>
                             <constraint firstItem="VDC-kM-mV0" firstAttribute="leading" secondItem="qHV-d3-xJ1" secondAttribute="leading" id="cF6-aO-oKE"/>
                             <constraint firstItem="VDC-kM-mV0" firstAttribute="trailing" secondItem="qHV-d3-xJ1" secondAttribute="trailing" id="geq-sx-LaY"/>
                             <constraint firstItem="VDC-kM-mV0" firstAttribute="leading" secondItem="STg-gV-jq0" secondAttribute="leading" id="k7r-I9-tKt"/>
@@ -979,7 +979,7 @@
                                 </items>
                             </navigationBar>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="N8x-OU-ghC" userLabel="PopularDishesView">
-                                <rect key="frame" x="0.0" y="88" width="414" height="720"/>
+                                <rect key="frame" x="0.0" y="88" width="414" height="754"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="All Favourite Dishes" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pO6-A9-kYZ">
                                         <rect key="frame" x="16" y="16" width="180" height="24"/>
@@ -993,7 +993,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="4Nm-hf-TBp">
-                                        <rect key="frame" x="16" y="60" width="382" height="660"/>
+                                        <rect key="frame" x="16" y="60" width="382" height="694"/>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                         <collectionView key="tableHeaderView" multipleTouchEnabled="YES" contentMode="scaleAspectFill" bounces="NO" showsHorizontalScrollIndicator="NO" dataMode="prototypes" id="mAv-RD-v15">
                                             <rect key="frame" x="0.0" y="0.0" width="382" height="724"/>
@@ -1057,7 +1057,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="45g-dg-CJi">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="56"/>
+                                <rect key="frame" x="0.0" y="44" width="414" height="56"/>
                                 <items>
                                     <navigationItem title="Orders" id="P15-ky-8r5">
                                         <barButtonItem key="leftBarButtonItem" title="Back" image="chevron.backward" catalog="system" id="j5W-rE-d9b"/>
@@ -1065,7 +1065,7 @@
                                 </items>
                             </navigationBar>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="vLs-ZJ-ocX">
-                                <rect key="frame" x="0.0" y="56" width="414" height="752"/>
+                                <rect key="frame" x="0.0" y="100" width="414" height="742"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             </tableView>
                         </subviews>
@@ -1370,7 +1370,7 @@
                                         <rect key="frame" x="0.0" y="79.5" width="374" height="35"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Delivery Fees" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6L4-0K-K1H">
-                                                <rect key="frame" x="0.0" y="0.0" width="187" height="35"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="187.5" height="35"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="35" id="bU3-Fz-onw"/>
                                                 </constraints>
@@ -1489,7 +1489,7 @@
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="SeS-U4-5mN" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="R2z-gw-Aqh">
-                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="56"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
