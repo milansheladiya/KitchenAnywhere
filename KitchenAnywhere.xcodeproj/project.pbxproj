@@ -55,6 +55,8 @@
 		B688FA86280F3353002E89A7 /* CFDIshListCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B688FA85280F3353002E89A7 /* CFDIshListCollectionViewCell.swift */; };
 		B688FA88280F3405002E89A7 /* CFDishListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B688FA87280F3405002E89A7 /* CFDishListViewController.swift */; };
 		B688FA8A280F3756002E89A7 /* Model_DishList.swift in Sources */ = {isa = PBXBuildFile; fileRef = B688FA89280F3756002E89A7 /* Model_DishList.swift */; };
+		B694FA022822BF8D0041E4DE /* Rules.swift in Sources */ = {isa = PBXBuildFile; fileRef = B694FA012822BF8D0041E4DE /* Rules.swift */; };
+		B694FA042822F2BB0041E4DE /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B694FA032822F2BB0041E4DE /* ContentView.swift */; };
 		B6B24DA7281084C1008844FC /* CFAddDish.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B6B24DA6281084C1008844FC /* CFAddDish.storyboard */; };
 		B6B24DAC2810928A008844FC /* CFAddDishViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6B24DAB2810928A008844FC /* CFAddDishViewController.swift */; };
 		B6B24DAF2810EFBD008844FC /* UtilClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6B24DAE2810EFBD008844FC /* UtilClass.swift */; };
@@ -123,6 +125,8 @@
 		B688FA85280F3353002E89A7 /* CFDIshListCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CFDIshListCollectionViewCell.swift; sourceTree = "<group>"; };
 		B688FA87280F3405002E89A7 /* CFDishListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CFDishListViewController.swift; sourceTree = "<group>"; };
 		B688FA89280F3756002E89A7 /* Model_DishList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model_DishList.swift; sourceTree = "<group>"; };
+		B694FA012822BF8D0041E4DE /* Rules.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Rules.swift; sourceTree = "<group>"; };
+		B694FA032822F2BB0041E4DE /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		B6B24DA6281084C1008844FC /* CFAddDish.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = CFAddDish.storyboard; sourceTree = "<group>"; };
 		B6B24DAB2810928A008844FC /* CFAddDishViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CFAddDishViewController.swift; sourceTree = "<group>"; };
 		B6B24DAE2810EFBD008844FC /* UtilClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UtilClass.swift; sourceTree = "<group>"; };
@@ -326,6 +330,7 @@
 		B670A2DD27F343BE001E5CBE /* KitchenAnywhere */ = {
 			isa = PBXGroup;
 			children = (
+				B694FA002822BF790041E4DE /* Rules */,
 				B6BCDA22281860040012A2F9 /* Firebase */,
 				B6B24DAD2810EF99008844FC /* Utils */,
 				B688FA7A280F2E9C002E89A7 /* View */,
@@ -376,6 +381,14 @@
 			path = CFDishList;
 			sourceTree = "<group>";
 		};
+		B694FA002822BF790041E4DE /* Rules */ = {
+			isa = PBXGroup;
+			children = (
+				B694FA012822BF8D0041E4DE /* Rules.swift */,
+			);
+			path = Rules;
+			sourceTree = "<group>";
+		};
 		B6983992280F495C003B1E0F /* CFAddDish */ = {
 			isa = PBXGroup;
 			children = (
@@ -389,6 +402,7 @@
 			isa = PBXGroup;
 			children = (
 				B6B24DAE2810EFBD008844FC /* UtilClass.swift */,
+				B694FA032822F2BB0041E4DE /* ContentView.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -565,6 +579,7 @@
 				4D45E475281862040054A07D /* SettingsViewController.swift in Sources */,
 				B5D0BE7B2814EC55003FF259 /* FavouriteViewController.swift in Sources */,
 				4D53569C28149C04006F0F83 /* OrderListTableViewCell.swift in Sources */,
+				B694FA022822BF8D0041E4DE /* Rules.swift in Sources */,
 				4DC2CD7128087B7700C82D52 /* String+Extension.swift in Sources */,
 				B670A2E327F343BE001E5CBE /* LoginViewController.swift in Sources */,
 				4D1F4124281247780045B46F /* CartViewController.swift in Sources */,
@@ -586,6 +601,7 @@
 				B6BCDA242818602E0012A2F9 /* Firebase.swift in Sources */,
 				4D3D00E228086A3800BD5EAD /* CategoryCollectionViewCell.swift in Sources */,
 				B5D0BE782814E56D003FF259 /* FavouriteCollectionViewCell.swift in Sources */,
+				B694FA042822F2BB0041E4DE /* ContentView.swift in Sources */,
 				B64FD1202819AF7800102F2C /* ViewMoreDishesCell.swift in Sources */,
 				B6B24DFE2812448B008844FC /* CFViewOrderViewController.swift in Sources */,
 				B688FA88280F3405002E89A7 /* CFDishListViewController.swift in Sources */,
