@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19455" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Kc6-n5-WuB">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Kc6-n5-WuB">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19454"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="collection view cell content view" minToolsVersion="11.0"/>
@@ -254,6 +254,11 @@
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </tabBar>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="selectedIndex">
+                            <integer key="value" value="1"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
                     <connections>
                         <segue destination="fGe-3i-BiP" kind="relationship" relationship="viewControllers" id="Vly-qn-0gp"/>
                         <segue destination="l9U-gG-UAf" kind="relationship" relationship="viewControllers" id="bJk-7d-gOu"/>
@@ -444,6 +449,7 @@
                         <outlet property="txtPassword" destination="bn6-1X-gFS" id="Kci-k7-7mN"/>
                         <outlet property="txtPhoneNo" destination="TtM-O7-m4g" id="aZX-oA-Mqe"/>
                         <outlet property="txtPostalcode" destination="zY7-G3-Dyj" id="JzA-Ta-WaV"/>
+                        <segue destination="0Do-uB-WbJ" kind="presentation" identifier="gotoHomeScreenFromSignup" modalPresentationStyle="fullScreen" id="5Lv-Be-c4x"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -1019,7 +1025,7 @@
                                 </items>
                             </navigationBar>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="N8x-OU-ghC" userLabel="PopularDishesView">
-                                <rect key="frame" x="0.0" y="88" width="414" height="720"/>
+                                <rect key="frame" x="0.0" y="88" width="414" height="754"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="All Favourite Dishes" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pO6-A9-kYZ">
                                         <rect key="frame" x="16" y="16" width="180" height="24"/>
@@ -1033,7 +1039,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="4Nm-hf-TBp">
-                                        <rect key="frame" x="16" y="60" width="382" height="660"/>
+                                        <rect key="frame" x="16" y="60" width="382" height="694"/>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                         <collectionView key="tableHeaderView" multipleTouchEnabled="YES" contentMode="scaleAspectFill" bounces="NO" showsHorizontalScrollIndicator="NO" dataMode="prototypes" id="mAv-RD-v15">
                                             <rect key="frame" x="0.0" y="0.0" width="382" height="724"/>
@@ -1097,7 +1103,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="45g-dg-CJi">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="56"/>
+                                <rect key="frame" x="0.0" y="44" width="414" height="56"/>
                                 <items>
                                     <navigationItem title="Orders" id="P15-ky-8r5">
                                         <barButtonItem key="leftBarButtonItem" title="Back" image="chevron.backward" catalog="system" id="j5W-rE-d9b"/>
@@ -1105,7 +1111,7 @@
                                 </items>
                             </navigationBar>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="vLs-ZJ-ocX">
-                                <rect key="frame" x="0.0" y="56" width="414" height="752"/>
+                                <rect key="frame" x="0.0" y="100" width="414" height="742"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             </tableView>
                         </subviews>
@@ -1410,7 +1416,7 @@
                                         <rect key="frame" x="0.0" y="79.5" width="374" height="35"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Delivery Fees" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6L4-0K-K1H">
-                                                <rect key="frame" x="0.0" y="0.0" width="187" height="35"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="187.5" height="35"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="35" id="bU3-Fz-onw"/>
                                                 </constraints>
@@ -1544,6 +1550,7 @@
     </scenes>
     <inferredMetricsTieBreakers>
         <segue reference="lQl-BT-O3F"/>
+        <segue reference="5Lv-Be-c4x"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="Facebook" width="513" height="513"/>
