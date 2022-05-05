@@ -14,14 +14,13 @@ import FirebaseFirestore
 class FirebaseUtil{
     
     static let auth = Auth.auth()
-     let _db = Firestore.firestore()
+    let _db = Firestore.firestore()
     
     
     //----------------------------------- Insert -----------------------------
     
     
-    func _insertDocumentWithId(_collection:String,_docId: String, _data:[String:Any?]){
-        
+    func _insertDocumentWithId(_collection:String,_docId: String, _data:[String:Any?]) {
         _db.collection(_collection).document(_docId).setData(_data as [String : Any])
         { err in
             if let err = err {
@@ -31,6 +30,7 @@ class FirebaseUtil{
             }
         
         }
+
     }
     
     func _insertDocumentWithRandomId(_collection:String, _data:[String:Any?]){
@@ -88,12 +88,7 @@ class FirebaseUtil{
     
     
     
-    //------------------------------------ Update -------------------------------
-    
-    
-    
-    
-    
+    //------------------------------------ Update -------------------------------    
     //To update some fields of a document without overwriting the entire document, use the update() method:
     
     // update nested object : https://firebase.google.com/docs/firestore/manage-data/add-data#update_fields_in_nested_objects

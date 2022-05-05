@@ -7,6 +7,7 @@
 
 import UIKit
 import SwiftUI
+import Firebase
 
 class SignupViewController: UIViewController {
 
@@ -24,7 +25,7 @@ class SignupViewController: UIViewController {
     
     var fb = FirebaseUtil()
     var mainUtil = MainUtil()
-    
+    let _db = Firestore.firestore()
     // 0 = veg    ,  1 = nonveg
     var UserType = 0
 
@@ -111,11 +112,11 @@ class SignupViewController: UIViewController {
         FirebaseUtil.auth.createUser(withEmail: txtEmail.text!, password: txtPassword.text!, completion: { authResult, error in
             guard let user = authResult?.user, error == nil else {
                    print(error!.localizedDescription)
+                    MainUtil._Alert(self,"Error!", error!.localizedDescription)
                    return
                }
-            print(authResult?.user.uid)
-            
-            let userTypes:String = self.UserType == 0 ? "false" : "true"
+        
+            let userTypes:Bool = self.UserType == 0 ? false : true
             
             let newUser = ["address":self.txtAddress.text!,
                            "email":self.txtEmail.text!,
@@ -123,21 +124,49 @@ class SignupViewController: UIViewController {
                            "isChef":userTypes,
                            "phoneNo":self.txtPhoneNo.text!,
                            "postal_code":self.txtPostalcode.text?.uppercased(),
-                                 "userID":authResult?.user.uid]
+                           "userID":authResult?.user.uid,
+                           "userStatus":"pending"
+            ] as [String : Any]
             
-            self.fb._insertDocumentWithId(_collection: "User", _docId: authResult?.user.uid ?? "ABCD", _data: newUser)
-            
+            self._db.collection("User").document(authResult?.user.uid ?? "ABCD").setData(newUser as [String : Any])
+            { err in
+                if let err = err {
+                    print("Error adding document: \(err)")
+                } else {
+                    let uialert = UIAlertController(title: "Success", message: "Now, you are regiested!", preferredStyle: UIAlertController.Style.alert)
+                    uialert.addAction(UIAlertAction(title: "Okay", style: UIAlertAction.Style.default, handler: { action in
+                            if(!userTypes){
+                                self.loginFoodie(email: self.txtEmail.text!, password: self.txtPassword.text!)
+                            }
+                        }
+                    ))
+                    self.present(uialert, animated: true, completion: nil)
+                    //Login the user if type is foodie
+                    
+                }
+            }
             
         })
-        
-        //CleanForm()
-        MainUtil._Alert(self,"Success", "Now, you are regiested!")
-        
         
         
     }
     
-    
+    func loginFoodie(email:String,password:String){
+        print("login foodie",email,password)
+        FirebaseUtil.auth.signIn(withEmail: email, password: password) { [weak self]
+            result, error in
+            guard result != nil, error == nil else {
+                print("erorr",error)
+                let uialert = UIAlertController(title: "Login Error", message: "Pleasae enter correct password or email.", preferredStyle: UIAlertController.Style.alert)
+                uialert.addAction(UIAlertAction(title: "Okay", style: UIAlertAction.Style.default, handler: nil))
+                self?.present(uialert, animated: true, completion: nil)
+                return
+            }
+            
+            self!.performSegue(withIdentifier: "gotoHomeScreenFromSignup", sender: self)
+
+        }
+    }
     @objc func textFieldDidChange(_ textField: UITextField) {
         if (textField.text!.isEmpty)
         {

@@ -11,6 +11,7 @@ import FirebaseAuth
 class LoginViewController: UIViewController {
 
     let auth = Auth.auth()
+    var fb = FirebaseUtil()
     
     @Published var signedIn = false
 //    
@@ -54,22 +55,11 @@ class LoginViewController: UIViewController {
         {
             loginWithFirebase(email: (emailController.text != nil) ? emailController.text! : "" , password: (passwordController.text != nil) ? passwordController.text! : "")
         }
-        
-        
-        
-        
-        
+     
         
     }
     
     func navigateToHomeScreen(){
-        
-//        self.performSegue(withIdentifier: "goToCFDishList", sender: self)
-        
-//        self.performSegue(withIdentifier: "goToDashboard", sender: self)
-        
-        
-        print("navigate")
         self.performSegue(withIdentifier: "goToHomeScreenBar", sender: self)
     }
     
@@ -80,46 +70,54 @@ class LoginViewController: UIViewController {
         auth.signIn(withEmail: email, password: password) { [weak self]
             result, error in
             guard result != nil, error == nil else {
-                
                 let uialert = UIAlertController(title: "Login Error", message: "Pleasae enter correct password or email.", preferredStyle: UIAlertController.Style.alert)
                       uialert.addAction(UIAlertAction(title: "Okay", style: UIAlertAction.Style.default, handler: nil))
                    self?.present(uialert, animated: true, completion: nil)
                 
                 return
             }
-            
-            DispatchQueue.main.async {
-                self?.signedIn = true
-            }
-            
-//            let storyboard = self?.storyboard?.instantiateViewController(withIdentifier: "HomeVC") as! HomeViewController
-//            self?.navigationController?.pushViewController(storyboard, animated: true)
-
-            self?.navigateToHomeScreen()
-
+            self!.fb._db.collection("User").document(FirebaseUtil.auth.currentUser!.uid).getDocument { (docSnapshot, error) in
+                        if let doc = docSnapshot {
+                            let userStatus:String = doc.get("userStatus") as! String
+                            let isChef:Bool = doc.get("isChef") as! Bool
+                            
+                            //Restrict chef user if profile is not approved
+                            if(userStatus == "accepted" || !isChef){
+                                DispatchQueue.main.async {
+                                    self?.signedIn = true
+                                }
+                                //Redirect user based on user type
+                                if(isChef){
+                                    self?.navigateToChefScreen()
+                                }else{
+                                    self?.navigateToHomeScreen()
+                                }
+                                
+                            }else{
+                                MainUtil._Alert(self!, "Authorization", "Contact Admin at admin@kitchenanywhere.com to approve profile")
+                            }
+                        } else {
+                            if let error = error {
+                                print(error)
+                            }
+                        }
+                    }
         }
         
     }
     
     
     @IBAction func signUp(_ sender: UIButton) {
-//        let storyboard = self.storyboard?.instantiateViewController(withIdentifier: "SignupViewController") as! SignupViewController
-//        self.navigationController?.pushViewController(storyboard, animated: true)
-        
         self.performSegue(withIdentifier: "goToSignup", sender: self)
     }
     
     
     func navigateToFoodieHomeScreen(){
-        
         self.performSegue(withIdentifier: "goToHomeScreenBar", sender: self)
-        
     }
     
     func navigateToChefScreen(){
-        
         self.performSegue(withIdentifier: "goToChefHomeScreen", sender: self)
-        
     }
     
     func navigateToAdminScreen(){
