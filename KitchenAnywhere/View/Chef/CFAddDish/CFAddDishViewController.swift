@@ -7,6 +7,10 @@
 
 import UIKit
 import SwiftUI
+import FirebaseFirestore
+import FirebaseStorage
+import UniformTypeIdentifiers
+
 
 class CFAddDishViewController: UIViewController, UIImagePickerControllerDelegate,UINavigationControllerDelegate {
     
@@ -19,7 +23,7 @@ class CFAddDishViewController: UIViewController, UIImagePickerControllerDelegate
     var txtStatus_:String = "Active"
     var txtQty_:String = "5"
     var txtDescription_:String = "all is wll"
-    var imgURL:String = "https://cdn.cocoacasts.com/cc00ceb0c6bff0d536f25454d50223875d5c79f1/above-the-clouds.jpg"
+    var imgURL:String = "https://firebasestorage.googleapis.com/v0/b/kitchenanywhere-84ad5.appspot.com/o/splashMainLogo.png?alt=media&token=693ad5fe-45d4-4db4-975e-40026a249530"
 
     @IBOutlet weak var txtDishTitle: UITextField!
     
@@ -56,7 +60,6 @@ class CFAddDishViewController: UIViewController, UIImagePickerControllerDelegate
     override func viewDidLoad() {
         super.viewDidLoad()
     
-        print(isEdit)
         if isEdit{
             txtDishTitle.text = txtTitle_
             txtPricePerDish.text = txtPrice_
@@ -166,10 +169,8 @@ class CFAddDishViewController: UIViewController, UIImagePickerControllerDelegate
     
     
     @IBAction func btnGalleryTapped(_ sender: UIButton) {
-        
         imagePicker.delegate = self
         imagePicker.sourceType = UIImagePickerController.SourceType.photoLibrary
-        
         self.present(imagePicker, animated: true, completion: nil)
         
     }
@@ -178,6 +179,9 @@ class CFAddDishViewController: UIViewController, UIImagePickerControllerDelegate
         let img = info[.originalImage] as! UIImage
     
         self.imgFood.image = img
+        let imageURL = info[UIImagePickerController.InfoKey.imageURL] as! URL
+          // Handle your logic here, e.g. uploading file to Cloud Storage for Firebase
+        UploadImage(fileUrl: imageURL)
         self.dismiss(animated: true, completion: nil)
     }
     
@@ -187,7 +191,118 @@ class CFAddDishViewController: UIViewController, UIImagePickerControllerDelegate
         self.dismiss(animated: true, completion: nil)
         
     }
+    @IBAction func submitHandler(_ sender: UIButton) {
+        if(isEdit){
+            editDish()
+        }else{
+            addDish()
+        }
+    }
+    func validateFields() -> String?{
+        // Check that all fields are filled in
+        if txtDishTitle.text?.trimmingCharacters(in: .whitespacesAndNewlines) == "" ||
+            txtPricePerDish.text?.trimmingCharacters(in: .whitespacesAndNewlines) == "" ||
+            txtCusine.text?.trimmingCharacters(in: .whitespacesAndNewlines) == "" ||
+            txtQuantityPerDay.text?.trimmingCharacters(in: .whitespacesAndNewlines) == "" ||
+            txtDescription.text?.trimmingCharacters(in: .whitespacesAndNewlines) == ""
+        {
+            
+            return "Please fill in all fields."
+        }
+        return nil
+    }
+    func UploadImage(fileUrl: URL)
+    {
+        do{
+            let fileExtension = fileUrl.pathExtension
+            let storageref = Storage.storage().reference()
+            let imagenode = storageref.child("\(UUID().uuidString).\(fileExtension)")
+
+            imagenode.putFile(from: fileUrl, metadata: nil){(storageMetaData, error) in
+                
+                if let error = error {
+                        print("Upload error: \(error.localizedDescription)")
+                        return
+                }
+                // Show UIAlertController here
+                                                                                                
+                imagenode.downloadURL { (url, error) in
+                        if let error = error  {
+                          print("Error on getting download url: \(error.localizedDescription)")
+                          return
+                        }
+                    self.imgURL = url!.absoluteString
+                      }
+            }
+        }
     
+    }
+    func addDish(){
+        // Validate the fields
+        let error = validateFields()
+        
+        if error != nil {
+            
+            // There's something wrong with the fields, show error message
+            showAlert(error!,"Error!")
+        }else{
+            let title = txtDishTitle.text?.trimmingCharacters(in: .whitespacesAndNewlines)
+            let price = txtPricePerDish.text?.trimmingCharacters(in: .whitespacesAndNewlines)
+            let cuisineType = txtCusine.text?.trimmingCharacters(in: .whitespacesAndNewlines)
+            let qty = txtQuantityPerDay.text?.trimmingCharacters(in: .whitespacesAndNewlines)
+            let description = txtDescription.text?.trimmingCharacters(in: .whitespacesAndNewlines)
+            // Get a reference to the database
+            let db = Firestore.firestore()
+            // Add a document to a collection
+            db.collection("Dish").addDocument(data: [
+                "dishTitle":title!,
+                "price":Int(price!) as Any,
+                "typeOfDish":cuisineType!,
+                "maxLimit":Int(qty!) as Any,
+                "pending_limit":Int(qty!) as Any,
+                "isActive": statusType == 1 ? false : true,
+                "isVegetarian": FoodType == 1 ? false : true,
+                "description":description!,
+                "categoryId": Int.random(in: 0...5),
+                "dishImageLink":imgURL
+            ]) { error in
+                
+                // Check for errors
+                if error == nil {
+                    // No errors
+                    
+                    // Call get data to retrieve latest data
+                    self.showAlert("Dish Added Successfully","Hurrya!")
+                    self.resetForm()
+                }
+                else {
+                    // Handle the error
+                    self.resetForm()
+                }
+            }
+        }
+        
+    }
+    func showAlert(_ message:String,_ title:String){
+        let uialert = UIAlertController(title: title, message:message, preferredStyle: UIAlertController.Style.alert)
+              uialert.addAction(UIAlertAction(title: "Okay", style: UIAlertAction.Style.default, handler: nil))
+        self.present(uialert, animated: true, completion: nil)
+    }
+    func editDish(){
+        print("edit dish")
+    }
+    func resetForm(){
+        txtDishTitle.text = ""
+        txtPricePerDish.text = ""
+        txtCusine.text = ""
+        txtDescription.text = ""
+        txtQuantityPerDay.text = "1"
+        imgFood.image = UIImage(named: "fastfood")
+        mainUtil.RadioFillBorder(btn: rdbActive)
+        mainUtil.RadioRemoveBorder(btn: rdbDeactive)
+        mainUtil.RadioFillBorder(btn: rdbVegetarian)
+        mainUtil.RadioRemoveBorder(btn: rdbNonvegetarian)
+    }
     // add permission to info file
     
     /*

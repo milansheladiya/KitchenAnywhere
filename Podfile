@@ -8,5 +8,7 @@ target 'KitchenAnywhere' do
   # Pods for KitchenAnywhere
   pod "Kingfisher"
   pod "Firebase/Core"
-  pod "Firebase/Auth" 
+  pod "Firebase/Auth"
+  pod "Firebase/Firestore"
+  pod "Firebase/Storage"
 end

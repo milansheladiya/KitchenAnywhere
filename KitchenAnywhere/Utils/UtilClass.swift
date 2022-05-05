@@ -50,4 +50,29 @@ class MainUtil {
         )
     }
     
+    
+    
+    static func isValidEmail(_ email: String) -> Bool {
+        let emailRegEx = "[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,64}"
+
+        let emailPred = NSPredicate(format:"SELF MATCHES %@", emailRegEx)
+        return emailPred.evaluate(with: email)
+    }
+    
+    static func isValidNumber(_ phone: String) -> Bool {
+        let PHONE_REGEX = "^\\d{3}-\\d{3}-\\d{4}$"
+        let phoneTest = NSPredicate(format: "SELF MATCHES %@", PHONE_REGEX)
+        let result = phoneTest.evaluate(with: phone)
+        return result
+    }
+    
+    
+    static func _Alert(_ uiView: UIViewController,_ title:String,_ msg:String)
+    {
+        let uialert = UIAlertController(title: title, message: msg, preferredStyle: UIAlertController.Style.alert)
+        uialert.addAction(UIAlertAction(title: "Okay", style: UIAlertAction.Style.default, handler: nil))
+        uiView.present(uialert, animated: true, completion: nil)
+    }
+    
+    
 }
