@@ -9,7 +9,7 @@ import UIKit
 
 class CFDishListViewController: UIViewController {
 
-    let dish = CFDishListCollection
+    let dish = dishList.CFDishListCollection
     
     var idxSelected = 0;
   
@@ -92,12 +92,12 @@ class CFDishListViewController: UIViewController {
 
 extension CFDishListViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return CFDishListCollection.count
+        return dishList.CFDishListCollection.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "CFDIshListCollectionViewCell", for: indexPath) as! CFDIshListCollectionViewCell
-        cell.setup(with: CFDishListCollection[indexPath.row])
+        cell.setup(with: dishList.CFDishListCollection[indexPath.row])
         
         cell.editButton.tag = indexPath.row
         cell.editButton.addTarget(self, action: #selector(editDishes), for: .touchUpInside)

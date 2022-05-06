@@ -6,6 +6,8 @@
 //
 
 import UIKit
+import Firebase
+import FirebaseFirestore
 
 class HomeViewController: UIViewController, UISearchResultsUpdating, UISearchBarDelegate {
         
@@ -35,6 +37,55 @@ class HomeViewController: UIViewController, UISearchResultsUpdating, UISearchBar
     @IBOutlet weak var chefSpecialCollectionView: UICollectionView!
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        
+        
+         let db = Firestore.firestore()
+         var response:String = ""
+         
+         db.collection("Dish").getDocuments() { (querySnapshot, err) in
+                 if let err = err {
+                     print("Error getting documents: \(err)")
+                 } else {
+                     var countId = 0
+                     dishList.CFDishListCollection.removeAll()
+                     for document in querySnapshot!.documents {
+                         print("\(document.documentID) => \(document.data())")
+                         
+                         guard let validTeam = document.data() as? Dictionary<String, Any> else {continue}
+                         
+                         
+                         
+                         let DishFirebaseId = document.documentID
+                         
+                         let id = countId
+                         let title = validTeam["dishTitle"] as? String ?? ""
+                         let description = validTeam["description"] as? String ?? ""
+                         let image = validTeam["dishImageLink"] as? String ?? ""
+                         let type = validTeam["typeOfDish"] as? String ?? ""
+                         
+                         let price = validTeam["price"] as? Double ?? 10.0
+                         
+                         
+                         dishList.CFDishListCollection.append(Dish(id:countId, title: title,description:description,image:image,type:type,price:price ,qty: 0,isFavorite:false))
+                         
+                         countId=countId+1
+ //                        let isChef:Bool = document.data().get("isChef") as! Bool
+                     }
+                     
+                     self.popularDishes.removeAll()
+                     self.popularDishes = dishList.CFDishListCollection
+                     self.popularDishesCollectionView.reloadData()
+                     self.chefSpecialCollectionView.reloadData()
+                     
+                 }
+         }
+         
+         
+         print(response)
+         
+        
+        
         categoryCollectionView.delegate = self
         categoryCollectionView.dataSource = self
         popularDishesCollectionView.delegate = self
