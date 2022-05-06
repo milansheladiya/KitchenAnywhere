@@ -15,11 +15,11 @@ class ChefSpecialCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var typeLabel: UILabel!;
     
     func setUp(dish: Dish){
-        titleLabel.text = dish.title
-        dishImageView.kf.setImage(with: dish.image?.asUrl )
-        typeLabel.text = dish.type
+        titleLabel.text = dish.dishTitle
+        dishImageView.kf.setImage(with: dish.dishImageLink?.asUrl )
+        typeLabel.text = dish.isVegetarian == true ? "Veg" : "NonVeg"
         descriptionLabel.text = dish.description
-        dishImageView.kf.setImage(with: dish.image?.asUrl )
+        dishImageView.kf.setImage(with: dish.dishImageLink?.asUrl )
         dishImageView.layer.cornerRadius = 10
     }
    

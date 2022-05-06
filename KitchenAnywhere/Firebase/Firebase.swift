@@ -61,30 +61,44 @@ class FirebaseUtil{
     
     
     // ----------------------------------- read --------------------------------
-    
+    //Data Mapping
+    //https://peterfriese.dev/posts/firestore-codable-the-comprehensive-guide/
     
     //https://firebase.google.com/docs/firestore/query-data/get-data#get_a_document
-    func _readDocumentWithId(_collection:String, _docId:String) -> String {
-        
-        let docRef = _db.collection(_collection).document(_docId)
-        var response:String = ""
-        
-        
-         docRef.getDocument { (document, error) in
-            if let document = document, document.exists {
-                let dataDescription = document.data().map(String.init(describing:)) ?? "nil"
-                response = dataDescription
-                print("Document dat: \(dataDescription)")
-            } else {
-                print("Document does not exist")
-                
+    func _readDocumentWithId(_collection:String, _docId:String, callback: @escaping([String:Any]) -> Void) {
+            
+            let docRef = _db.collection(_collection).document(_docId)
+            var response:String = ""
+            
+                docRef.getDocument { (document, error) in
+                    //DispatchQueue.main.async {
+                    guard let document = document, document.exists  else { return }
+                    print(document.data())
+                    
+                                let dataDescription = document.data().map(String.init(describing:)) ?? "nil"
+                                response = dataDescription
+    //                            print("Document dat: \(dataDescription)")
+                                callback(document.data()!)
+                                
             }
         }
-        
-        print(response)
-        return response
-        
-    }
+    
+    
+    func _readAllDocuments(_collection:String, callback: @escaping(QuerySnapshot) -> Void) {
+            
+            _db.collection(_collection).getDocuments() { (querySnapshot, err) in
+                if let err = err {
+                        print("Error getting documents: \(err)")
+                    } else {
+//                        for document in querySnapshot!.documents {
+//                            print("\(document.documentID) => \(document.data())")
+//                        }
+                    }
+                callback(querySnapshot!)
+                
+            }
+
+        }
     
     
     

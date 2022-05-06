@@ -19,10 +19,10 @@ class CFDIshListCollectionViewCell: UICollectionViewCell {
     
     func setup(with dish: Dish) {
             
-        imgFood.kf.setImage(with: dish.image?.asUrl)
-        lblTitle.text = dish.title
+        imgFood.kf.setImage(with: dish.dishImageLink?.asUrl)
+        lblTitle.text = dish.dishTitle
         
-        imgFoodType.image = dish.type == "Veg" ? #imageLiteral(resourceName: "veg") :  #imageLiteral(resourceName: "non-veg")
+        imgFoodType.image = dish.isVegetarian == true ? #imageLiteral(resourceName: "veg") :  #imageLiteral(resourceName: "non-veg")
         lblPrice.text = "$ " + String ( dish.price )
         
         }

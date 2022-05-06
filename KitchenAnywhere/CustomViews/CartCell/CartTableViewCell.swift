@@ -8,14 +8,14 @@
 import UIKit
 
 protocol CartTableViewCellDelegate:AnyObject {
-    func ItemDeleteHandler (dishId: Int,btnTag:Int)
+    func ItemDeleteHandler (dishId: String,btnTag:Int)
     func incrementDecrementHandler(dishId: Int,btnTag:Int)
 }
 
 class CartTableViewCell: UITableViewCell {
 
     
-    var dishId:Int = 0
+    var dishId:String = "0"
     var btnTag:Int = 0
     
     
@@ -45,14 +45,14 @@ class CartTableViewCell: UITableViewCell {
     
     func setUp(dish: Dish){
         self.dishId = dish.id
-        dishNameLabel.text = dish.title
-        dishTypeLabel.text = dish.type
-        qty.text = String(dish.qty)
+        dishNameLabel.text = dish.dishTitle
+        dishTypeLabel.text = dish.isVegetarian == true ? "Veg" : "NonVeg"
+        qty.text = String(dish.maxLimit)
         dishPrice.text = "$ " + String(dish.price)
         
 //        userNameLabel.text =  user.name
 //        userTypeLabel.text = user.isChef ? "Chef" : "Foodie"
-        dishImage.kf.setImage(with: dish.image?.asUrl )
+        dishImage.kf.setImage(with: dish.dishImageLink?.asUrl )
              // Initialization code
         delete.tintColor = hexStringToUIColor(hex:"#D82148")
     }

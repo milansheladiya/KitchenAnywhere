@@ -8,13 +8,13 @@
 import UIKit
 
 protocol FavouriteCollectionViewCellDelegate:AnyObject {
-    func toggleFavoriteDish(dishId: Int)
+    func toggleFavoriteDish(dishId: String)
 }
 
 class FavouriteCollectionViewCell: UICollectionViewCell {
     weak var delegate: FavouriteCollectionViewCellDelegate?
     static let identifier = String(describing: FavouriteCollectionViewCell .self )
-    var dishId:Int = 0
+    var dishId:String = "0"
     var isFavotite:Bool = false
     @IBOutlet weak var titleLable: UILabel!
     @IBOutlet weak var dishImageView: UIImageView!
@@ -33,14 +33,14 @@ class FavouriteCollectionViewCell: UICollectionViewCell {
     
     func setUp(dish: Dish){
         self.dishId = dish.id
-        self.isFavotite = dish.isFavorite
-        titleLable.text = dish.title
-        dishImageView.kf.setImage(with: dish.image?.asUrl )
-        typeLabel.text = dish.type
+        self.isFavotite = true
+        titleLable.text = dish.dishTitle
+        dishImageView.kf.setImage(with: dish.dishImageLink?.asUrl )
+        typeLabel.text = dish.isVegetarian == true ? "Veg" : "NonVeg"
 //        descriptionLabel.text = dish.description
-        dishImageView.kf.setImage(with: dish.image?.asUrl )
+        dishImageView.kf.setImage(with: dish.dishImageLink?.asUrl )
         dishImageView.layer.cornerRadius = 10
-        quantityLabel.text = String(dish.qty)
+        quantityLabel.text = String(dish.maxLimit)
         if(isFavotite){
             favouriteBtn.setImage(UIImage(systemName: "heart.fill"), for: .normal)
         }else{
