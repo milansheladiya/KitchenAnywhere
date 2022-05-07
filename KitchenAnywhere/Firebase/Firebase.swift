@@ -101,6 +101,23 @@ class FirebaseUtil{
         }
     
     
+    func _readAllDocumentsWithField(_collection:String,_field:String, _value:String, callback: @escaping(QuerySnapshot) -> Void) {
+            
+            _db.collection(_collection).whereField(_field, isEqualTo: _value).getDocuments() { (querySnapshot, err) in
+                if let err = err {
+                        print("Error getting documents: \(err)")
+                    } else {
+//                        for document in querySnapshot!.documents {
+//                            print("\(document.documentID) => \(document.data())")
+//                        }
+                    }
+                callback(querySnapshot!)
+                
+            }
+
+        }
+    
+    
     
     //------------------------------------ Update -------------------------------    
     //To update some fields of a document without overwriting the entire document, use the update() method:

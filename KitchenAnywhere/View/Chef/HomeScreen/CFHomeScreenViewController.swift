@@ -6,12 +6,13 @@
 //
 
 import UIKit
+import Firebase
 
 class CFHomeScreenViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        print("Logied In User : " + Auth.auth().currentUser!.uid)
         // Do any additional setup after loading the view.
     }
     

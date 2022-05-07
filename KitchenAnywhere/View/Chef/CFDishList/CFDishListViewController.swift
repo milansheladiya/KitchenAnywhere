@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Firebase
 
 class CFDishListViewController: UIViewController {
 
@@ -13,6 +14,12 @@ class CFDishListViewController: UIViewController {
     let fb = FirebaseUtil()
     
     var idxSelected = 0;
+    
+    @IBAction func start(_ sender: Any){
+        
+        
+        
+    }
   
     @IBOutlet weak var collectionView: UICollectionView!
     
@@ -23,8 +30,7 @@ class CFDishListViewController: UIViewController {
         collectionView.dataSource = self
         LoadDishes()
     }
-    
-
+ 
     
     @IBAction func GoBack(_ sender: UIButton) {
         print("Back")
@@ -45,19 +51,24 @@ class CFDishListViewController: UIViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         
         if segue.identifier == "goToAddDishes"{
-            print("Prepare \(idxSelected)")
+            print("3 Prepare \(idxSelected) + \(dishList.CFDishListCollection.count)")
+            
             
             let destinationVC = segue.destination as! CFAddDishViewController
+            destinationVC.dish_ = dishList.CFDishListCollection[idxSelected]
             destinationVC.isEdit = true
-            destinationVC.txtTitle_ = dish[idxSelected].dishTitle
-            destinationVC.txtPrice_ = String(dish[idxSelected].price)
-            destinationVC.txtType_ = dish[idxSelected].isVegetarian == true ? "Veg" : "NonVeg"
+            destinationVC.txtTitle_ = dishList.CFDishListCollection[idxSelected].dishTitle
+            destinationVC.txtPrice_ = String(dishList.CFDishListCollection[idxSelected].price)
+            destinationVC.txtType_ = dishList.CFDishListCollection[idxSelected].isVegetarian == true ? "Veg" : "NonVeg"
             destinationVC.txtCusine_ = "Asian"
             destinationVC.txtStatus_ = "Active"
-            destinationVC.txtQty_ = String(dish[idxSelected].maxLimit)
-            destinationVC.txtDescription_ = dish[idxSelected].description
-            destinationVC.imgURL = dish[idxSelected].dishImageLink!
-
+            destinationVC.txtQty_ = String(dishList.CFDishListCollection[idxSelected].maxLimit)
+            destinationVC.txtDescription_ = dishList.CFDishListCollection[idxSelected].description
+            destinationVC.imgURL = dishList.CFDishListCollection[idxSelected].dishImageLink!
+            destinationVC.callbackClosure = {[weak self] in
+                self!.LoadDishes()
+                
+            }
             
         }
         
@@ -68,7 +79,7 @@ class CFDishListViewController: UIViewController {
         
         dishList.CFDishListCollection.removeAll()
         
-        fb._readAllDocuments(_collection: "Dish") { QueryDocumentSnapshot in
+        fb._readAllDocumentsWithField(_collection: "Dish",_field: "chef_id", _value: Auth.auth().currentUser!.uid) { QueryDocumentSnapshot in
             for document in QueryDocumentSnapshot.documents {
                 
                 let dish_ = Dish(
@@ -82,7 +93,7 @@ class CFDishListViewController: UIViewController {
                     isVegetarian: document.data()["isVegetarian"] as! Bool,
                     maxLimit: document.data()["maxLimit"] as! Int,
                     pending_limit: document.data()["pending_limit"] as! Int,
-                    price: document.data()["price"] as! Double,
+                    price: document.data()["price"] as! Double ?? 0.0,
                     typeOfDish: document.data()["typeOfDish"] as! String)
                 dishList.CFDishListCollection.append(dish_)
                 
@@ -92,10 +103,21 @@ class CFDishListViewController: UIViewController {
             self.collectionView.reloadData()
         }
         
+        print("4 new loaded data : \(dishList.CFDishListCollection.count)")
+        
     }
 
 
 }
+
+extension CFDishListViewController: CFDIshListCollectionViewCellDelegate{
+    func dishEditHandller(idx: Int) {
+        print("1 Array Index : \(idx)")
+        idxSelected = idx
+    }
+}
+
+
 
 extension CFDishListViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -108,7 +130,9 @@ extension CFDishListViewController: UICollectionViewDataSource {
         
         cell.editButton.tag = indexPath.row
         print(cell.editButton.tag)
+        cell.idx = indexPath.row
         cell.editButton.addTarget(self, action: #selector(editDishes), for: .touchUpInside)
+        
         return cell
     }
     
@@ -116,7 +140,15 @@ extension CFDishListViewController: UICollectionViewDataSource {
     @objc func editDishes(sender: UIButton){
         
         idxSelected = sender.tag
-        print("AA : \(idxSelected)")
+        print("5 AA : \(idxSelected)")
+        print("-------------------- start ----------------")
+        
+//        guard let secondController = self.storyboard?.instantiateViewController(withIdentifier: "addDishCV") as? CFAddDishViewController else { return }
+//        secondController.callbackClosure = {[weak self] in
+//
+//            self!.LoadDishes()
+//
+//        }
         self.performSegue(withIdentifier: "goToAddDishes", sender: self)
         
     }
@@ -128,4 +160,5 @@ extension CFDishListViewController: UICollectionViewDelegateFlowLayout {
         return CGSize(width: 200, height: 300)
     }
 }
+
 

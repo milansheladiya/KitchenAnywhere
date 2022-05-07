@@ -67,6 +67,9 @@
                                                                     <buttonConfiguration key="configuration" style="plain" title="Edit" subtitle="">
                                                                         <fontDescription key="titleFontDescription" name="Helvetica" family="Helvetica" pointSize="20"/>
                                                                     </buttonConfiguration>
+                                                                    <connections>
+                                                                        <action selector="dishEditHandller:" destination="Qna-ka-Hs4" eventType="touchUpInside" id="2BI-aH-7nW"/>
+                                                                    </connections>
                                                                 </button>
                                                             </subviews>
                                                             <constraints>
