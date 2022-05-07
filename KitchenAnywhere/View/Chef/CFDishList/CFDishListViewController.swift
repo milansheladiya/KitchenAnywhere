@@ -51,20 +51,20 @@ class CFDishListViewController: UIViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         
         if segue.identifier == "goToAddDishes"{
-            print("3 Prepare \(idxSelected) + \(CFDishListCollection.count)")
+            print("3 Prepare \(idxSelected) + \(dishList.CFDishListCollection.count)")
             
             
             let destinationVC = segue.destination as! CFAddDishViewController
-            destinationVC.dish_ = CFDishListCollection[idxSelected]
+            destinationVC.dish_ = dishList.CFDishListCollection[idxSelected]
             destinationVC.isEdit = true
-            destinationVC.txtTitle_ = CFDishListCollection[idxSelected].dishTitle
-            destinationVC.txtPrice_ = String(CFDishListCollection[idxSelected].price)
-            destinationVC.txtType_ = CFDishListCollection[idxSelected].isVegetarian == true ? "Veg" : "NonVeg"
+            destinationVC.txtTitle_ = dishList.CFDishListCollection[idxSelected].dishTitle
+            destinationVC.txtPrice_ = String(dishList.CFDishListCollection[idxSelected].price)
+            destinationVC.txtType_ = dishList.CFDishListCollection[idxSelected].isVegetarian == true ? "Veg" : "NonVeg"
             destinationVC.txtCusine_ = "Asian"
             destinationVC.txtStatus_ = "Active"
-            destinationVC.txtQty_ = String(CFDishListCollection[idxSelected].maxLimit)
-            destinationVC.txtDescription_ = CFDishListCollection[idxSelected].description
-            destinationVC.imgURL = CFDishListCollection[idxSelected].dishImageLink!
+            destinationVC.txtQty_ = String(dishList.CFDishListCollection[idxSelected].maxLimit)
+            destinationVC.txtDescription_ = dishList.CFDishListCollection[idxSelected].description
+            destinationVC.imgURL = dishList.CFDishListCollection[idxSelected].dishImageLink!
             destinationVC.callbackClosure = {[weak self] in
                 self!.LoadDishes()
                 
@@ -103,7 +103,7 @@ class CFDishListViewController: UIViewController {
             self.collectionView.reloadData()
         }
         
-        print("4 new loaded data : \(CFDishListCollection.count)")
+        print("4 new loaded data : \(dishList.CFDishListCollection.count)")
         
     }
 
