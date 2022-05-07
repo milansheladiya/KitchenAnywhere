@@ -83,7 +83,7 @@ class LoginViewController: UIViewController {
                             
                             if(isChef){
                                 
-                                let userStatus:String = doc.get("userStatus") as! String
+                                let userStatus:String = doc.get("userSt atus") as! String
                                 //Restrict chef user if profile is not approved
                                 if(userStatus == "accepted" || !isChef){
                                     DispatchQueue.main.async {
