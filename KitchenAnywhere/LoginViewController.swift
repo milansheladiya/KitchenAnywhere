@@ -22,11 +22,11 @@ class LoginViewController: UIViewController {
     @IBOutlet weak var emailController: UITextField!
     override func viewDidLoad() {
         super.viewDidLoad()
-//        emailController.text = "namr@gmail.com"
-//        passwordController.text = "Namra@123"
+        emailController.text = "johm@gmail.com"
+        passwordController.text = "123456"
         
-        emailController.text = "user"
-        passwordController.text = "user"
+//        emailController.text = "user"
+//        passwordController.text = "user"
         // Do any additional setup after loading the view.
     }
 
@@ -76,26 +76,32 @@ class LoginViewController: UIViewController {
                 
                 return
             }
+            print("uid",FirebaseUtil.auth.currentUser!.uid)
             self!.fb._db.collection("User").document(FirebaseUtil.auth.currentUser!.uid).getDocument { (docSnapshot, error) in
                         if let doc = docSnapshot {
-                            let userStatus:String = doc.get("userStatus") as! String
                             let isChef:Bool = doc.get("isChef") as! Bool
                             
-                            //Restrict chef user if profile is not approved
-                            if(userStatus == "accepted" || !isChef){
-                                DispatchQueue.main.async {
-                                    self?.signedIn = true
-                                }
-                                //Redirect user based on user type
-                                if(isChef){
+                            if(isChef){
+                                
+                                let userStatus:String = doc.get("userStAatus") as! String
+                                //Restrict chef user if profile is not approved
+                                if(userStatus == "accepted" || !isChef){
+                                    DispatchQueue.main.async {
+                                        self?.signedIn = true
+                                    }
+                                    //Redirect user based on user type
+                                    
                                     self?.navigateToChefScreen()
+                                    
                                 }else{
-                                    self?.navigateToHomeScreen()
+                                    MainUtil._Alert(self!, "Authorization", "Contact Admin at admin@kitchenanywhere.com to approve profile")
                                 }
                                 
                             }else{
-                                MainUtil._Alert(self!, "Authorization", "Contact Admin at admin@kitchenanywhere.com to approve profile")
+                                self?.navigateToHomeScreen()
                             }
+                            
+                            
                         } else {
                             if let error = error {
                                 print(error)
