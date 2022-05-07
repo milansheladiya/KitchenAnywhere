@@ -9,7 +9,7 @@ import UIKit
 
 class CFDishListViewController: UIViewController {
 
-    let dish = CFDishListCollection
+    let dish = dishList.CFDishListCollection
     let fb = FirebaseUtil()
     
     var idxSelected = 0;
@@ -66,7 +66,7 @@ class CFDishListViewController: UIViewController {
     
     func LoadDishes(){
         
-        CFDishListCollection.removeAll()
+        dishList.CFDishListCollection.removeAll()
         
         fb._readAllDocuments(_collection: "Dish") { QueryDocumentSnapshot in
             for document in QueryDocumentSnapshot.documents {
@@ -84,7 +84,7 @@ class CFDishListViewController: UIViewController {
                     pending_limit: document.data()["pending_limit"] as! Int,
                     price: document.data()["price"] as! Double,
                     typeOfDish: document.data()["typeOfDish"] as! String)
-                CFDishListCollection.append(dish_)
+                dishList.CFDishListCollection.append(dish_)
                 
                 
                         print("\(document.documentID) => \(document.data())")
