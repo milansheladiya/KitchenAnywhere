@@ -9,13 +9,14 @@ import UIKit
 
 class CFDIshListCollectionViewCell: UICollectionViewCell {
     
+    weak var delegate: CFDIshListCollectionViewCellDelegate?
     @IBOutlet weak var imgFood: UIImageView!
     @IBOutlet weak var lblTitle: UILabel!
     @IBOutlet weak var lblPrice: UILabel!
     @IBOutlet weak var imgFoodType: UIImageView!
     @IBOutlet weak var editButton: UIButton!
     
-    
+    var idx:Int = 0
     
     func setup(with dish: Dish) {
             
@@ -27,7 +28,16 @@ class CFDIshListCollectionViewCell: UICollectionViewCell {
         
         }
     
-    
-    
+    @IBAction func dishEditHandller(_ sender: UIButton) {
+        idx = sender.tag
+        print("2 Edit button tag : \(editButton.tag)")
+        delegate?.dishEditHandller(idx: idx)
+        
+    }
     
 }
+
+protocol CFDIshListCollectionViewCellDelegate: AnyObject{
+    func dishEditHandller(idx: Int)
+}
+

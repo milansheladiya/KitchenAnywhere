@@ -14,7 +14,16 @@ import UniformTypeIdentifiers
 
 class CFAddDishViewController: UIViewController, UIImagePickerControllerDelegate,UINavigationControllerDelegate {
     
+    var callbackClosure : (() -> Void)?
+    
+    override func viewWillDisappear(_ animated: Bool){
+        callbackClosure?()
+    }
+    
+    let fb = FirebaseUtil()
+    
     var isEdit:Bool = false
+    var dish_ :Dish? = nil
     
     var txtTitle_:String = "apple"
     var txtPrice_:String = "2.5"
@@ -251,35 +260,44 @@ class CFAddDishViewController: UIViewController, UIImagePickerControllerDelegate
             let cuisineType = txtCusine.text?.trimmingCharacters(in: .whitespacesAndNewlines)
             let qty = txtQuantityPerDay.text?.trimmingCharacters(in: .whitespacesAndNewlines)
             let description = txtDescription.text?.trimmingCharacters(in: .whitespacesAndNewlines)
-            // Get a reference to the database
-            let db = Firestore.firestore()
-            // Add a document to a collection
-            db.collection("Dish").addDocument(data: [
-                "dishTitle":title!,
-                "price":Int(price!) as Any,
-                "typeOfDish":cuisineType!,
-                "maxLimit":Int(qty!) as Any,
-                "pending_limit":Int(qty!) as Any,
-                "isActive": statusType == 1 ? false : true,
-                "isVegetarian": FoodType == 1 ? false : true,
-                "description":description!,
-                "categoryId": Int.random(in: 0...5),
-                "dishImageLink":imgURL
-            ]) { error in
+            
+            
+           
                 
-                // Check for errors
-                if error == nil {
-                    // No errors
+                // Get a reference to the database
+                let db = Firestore.firestore()
+                // Add a document to a collection
+                db.collection("Dish").addDocument(data: [
+                    "dishTitle":title!,
+                    "price":Double(price!) as Any,
+                    "typeOfDish":cuisineType!,
+                    "maxLimit":Int(qty!) as Any,
+                    "pending_limit":Int(qty!) as Any,
+                    "isActive": statusType == 1 ? false : true,
+                    "isVegetarian": FoodType == 1 ? false : true,
+                    "description":description!,
+                    "categoryId": Int.random(in: 0...5),
+                    "dishImageLink":imgURL
+                ]) { error in
                     
-                    // Call get data to retrieve latest data
-                    self.showAlert("Dish Added Successfully","Hurrya!")
-                    self.resetForm()
+                    // Check for errors
+                    if error == nil {
+                        // No errors
+                        
+                        // Call get data to retrieve latest data
+                        self.showAlert("Dish Added Successfully","Hurrya!")
+                        self.resetForm()
+                    }
+                    else {
+                        // Handle the error
+                        self.resetForm()
+                    }
                 }
-                else {
-                    // Handle the error
-                    self.resetForm()
-                }
-            }
+                
+            
+            
+            
+            
         }
         
     }
@@ -288,9 +306,43 @@ class CFAddDishViewController: UIViewController, UIImagePickerControllerDelegate
               uialert.addAction(UIAlertAction(title: "Okay", style: UIAlertAction.Style.default, handler: nil))
         self.present(uialert, animated: true, completion: nil)
     }
+    
     func editDish(){
         print("edit dish")
+            
+        // Validate the fields
+        let error = validateFields()
+        
+        if error != nil {
+            
+            // There's something wrong with the fields, show error message
+            showAlert(error!,"Error!")
+        }else{
+            let title = txtDishTitle.text?.trimmingCharacters(in: .whitespacesAndNewlines)
+            let price = txtPricePerDish.text?.trimmingCharacters(in: .whitespacesAndNewlines)
+            let cuisineType = txtCusine.text?.trimmingCharacters(in: .whitespacesAndNewlines)
+            let qty = txtQuantityPerDay.text?.trimmingCharacters(in: .whitespacesAndNewlines)
+            let description = txtDescription.text?.trimmingCharacters(in: .whitespacesAndNewlines)
+            
+        
+        print(Int(price!) as Any)
+            fb._updateExistingFieldInDocumentWithId(_collection: "Dish", _docId: dish_!.id, _data: [
+                "dishTitle":title!,
+                "price":Double(price!) as Any,
+                "typeOfDish":cuisineType!,
+                "maxLimit":Int(qty!) as Any,
+                "pending_limit":Int(qty!) as Any,
+                "isActive": statusType == 1 ? false : true,
+                "isVegetarian": FoodType == 1 ? false : true,
+                "description":description!,
+//                    "categoryId": Int.random(in: 0...5),
+                "dishImageLink":imgURL])
+            self.showAlert("Dish Updated Successfully","Hurrya!")
+        
+        }
+        
     }
+    
     func resetForm(){
         txtDishTitle.text = ""
         txtPricePerDish.text = ""

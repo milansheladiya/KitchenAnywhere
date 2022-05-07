@@ -25,8 +25,8 @@ class LoginViewController: UIViewController {
 //        emailController.text = "namr@gmail.com"
 //        passwordController.text = "Namra@123"
         
-        emailController.text = "user"
-        passwordController.text = "user"
+        emailController.text = "johm@gmail.com"
+        passwordController.text = "123456"
         // Do any additional setup after loading the view.
     }
 
