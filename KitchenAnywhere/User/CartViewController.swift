@@ -52,7 +52,7 @@ extension CartViewController: CartTableViewCellDelegate{
             print(String(dishId) + " " + String(btnTag))
     }
     
-        func ItemDeleteHandler(dishId: Int,btnTag:Int) {
+        func ItemDeleteHandler(dishId: String,btnTag:Int) {
             print(String(dishId) + " " + String(btnTag))
         }
         

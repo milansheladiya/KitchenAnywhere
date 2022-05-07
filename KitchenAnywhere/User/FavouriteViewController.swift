@@ -46,10 +46,10 @@ class FavouriteViewController: UIViewController, UICollectionViewDelegate, UICol
         
     }
     
-    func toggleFavoriteDish(dishId: Int) {
+    func toggleFavoriteDish(dishId: String) {
         
-            let index = dishId-1
-        favouriteDishes[index].isFavorite = !favouriteDishes[dishId-1].isFavorite
+//            let index = dishId-1
+//        favouriteDishes[index].isFavorite = !favouriteDishes[dishId-1].isFavorite
     }
     
 

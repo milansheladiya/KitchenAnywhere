@@ -49,9 +49,9 @@ class ViewMoreDishesViewController: UIViewController, UICollectionViewDelegate,V
         navigationController?.pushViewController(controller, animated: true)
     }
     
-    func toggleFavoriteDish(dishId: Int) {
-        let index = dishId-1
-        AllDishes[index].isFavorite = !AllDishes[dishId-1].isFavorite
+    func toggleFavoriteDish(dishId: String) {
+//        let index = dishId-1
+//        AllDishes[index].isFavorite = !AllDishes[dishId-1].isFavorite
     }
     
 //    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {

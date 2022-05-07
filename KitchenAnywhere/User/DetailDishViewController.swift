@@ -29,10 +29,10 @@ class DetailDishViewController: UIViewController {
 
     private func populateView()
     {
-        DishImageView.kf.setImage(with: dish?.image?.asUrl)
-        DishTitle.text = dish.title
+        DishImageView.kf.setImage(with: dish?.dishImageLink?.asUrl)
+        DishTitle.text = dish.dishTitle
         DishDescription.text = dish.description
-        DishType.text = dish.type
+        DishType.text = dish.isVegetarian == true ? "Veg" : "NonVeg"
         DishPrice.text = "$ " + String ( dish.price )
     }
 

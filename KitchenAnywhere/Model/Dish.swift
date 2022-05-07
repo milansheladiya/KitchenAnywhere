@@ -8,12 +8,16 @@
 import Foundation
 
 struct Dish{
-    let id: Int
-    let title: String
+    let id: String
+    let categoryId:Int
+    let chef_id:String
+    let dishTitle: String
     let description: String
-    let image: String?
-    let type: String
+    let dishImageLink: String?
+    let isActive:Bool
+    let isVegetarian: Bool
+    let maxLimit: Int
+    let pending_limit: Int
     let price: Double
-    let qty: Int
-    var isFavorite:Bool
+    let typeOfDish:String
 }
