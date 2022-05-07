@@ -6,6 +6,8 @@
 //
 
 import UIKit
+import Firebase
+import FirebaseFirestore
 
 class HomeViewController: UIViewController, UISearchResultsUpdating, UISearchBarDelegate {
         
@@ -35,6 +37,63 @@ class HomeViewController: UIViewController, UISearchResultsUpdating, UISearchBar
     @IBOutlet weak var chefSpecialCollectionView: UICollectionView!
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        
+        
+         let db = Firestore.firestore()
+         var response:String = ""
+         
+         db.collection("Dish").getDocuments() { (querySnapshot, err) in
+                 if let err = err {
+                     print("Error getting documents: \(err)")
+                 } else {
+                     var countId = 0
+                     dishList.CFDishListCollection.removeAll()
+                     for document in querySnapshot!.documents {
+                         print("\(document.documentID) => \(document.data())")
+                         
+                         guard let validTeam = document.data() as? Dictionary<String, Any> else {continue}
+                         
+                         
+                         
+                         let DishFirebaseId = document.documentID
+                         
+                         let id = countId
+                         let dishTitle = validTeam["dishTitle"] as? String ?? ""
+                         let description = validTeam["description"] as? String ?? ""
+                         let dishImageLink = validTeam["dishImageLink"] as? String ?? ""
+                         let typeOfDish = validTeam["typeOfDish"] as? String ?? ""
+                         let categoryId = validTeam["categoryId"] as? Int ?? 2
+                         let chef_id = validTeam["chef_id"] as? String ?? ""
+                         let isActive = validTeam["isActive"] as? Bool ?? true
+                         let isVegetarian = validTeam["isVegetarian"] as? Bool ?? true
+                         let maxLimit = validTeam["maxLimit"] as? Int ?? 10
+                         let pending_limit = validTeam["pending_limit"] as? Int ?? 10
+                         let price = validTeam["price"] as? Double ?? 10.0
+                         
+                         
+                  
+                         dishList.CFDishListCollection.append(Dish(id: DishFirebaseId, categoryId: categoryId, chef_id: chef_id, dishTitle: dishTitle, description: description, dishImageLink: dishImageLink, isActive: isActive, isVegetarian: isVegetarian, maxLimit: maxLimit, pending_limit: pending_limit, price: price, typeOfDish: typeOfDish))
+                         
+                         
+                         
+                         countId=countId+1
+ //                        let isChef:Bool = document.data().get("isChef") as! Bool
+                     }
+                     
+                     self.popularDishes.removeAll()
+                     self.popularDishes = dishList.CFDishListCollection
+                     self.popularDishesCollectionView.reloadData()
+                     self.chefSpecialCollectionView.reloadData()
+                     
+                 }
+         }
+         
+         
+         print(response)
+         
+        
+        
         categoryCollectionView.delegate = self
         categoryCollectionView.dataSource = self
         popularDishesCollectionView.delegate = self

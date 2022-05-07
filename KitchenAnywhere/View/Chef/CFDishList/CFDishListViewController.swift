@@ -10,7 +10,7 @@ import Firebase
 
 class CFDishListViewController: UIViewController {
 
-    var dish = CFDishListCollection
+    let dish = dishList.CFDishListCollection
     let fb = FirebaseUtil()
     
     var idxSelected = 0;
@@ -77,7 +77,7 @@ class CFDishListViewController: UIViewController {
     
     func LoadDishes(){
         
-        CFDishListCollection.removeAll()
+        dishList.CFDishListCollection.removeAll()
         
         fb._readAllDocumentsWithField(_collection: "Dish",_field: "chef_id", _value: Auth.auth().currentUser!.uid) { QueryDocumentSnapshot in
             for document in QueryDocumentSnapshot.documents {
@@ -95,7 +95,7 @@ class CFDishListViewController: UIViewController {
                     pending_limit: document.data()["pending_limit"] as! Int,
                     price: document.data()["price"] as! Double ?? 0.0,
                     typeOfDish: document.data()["typeOfDish"] as! String)
-                CFDishListCollection.append(dish_)
+                dishList.CFDishListCollection.append(dish_)
                 
                 
                         print("\(document.documentID) => \(document.data())")
@@ -121,12 +121,12 @@ extension CFDishListViewController: CFDIshListCollectionViewCellDelegate{
 
 extension CFDishListViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return CFDishListCollection.count
+        return dishList.CFDishListCollection.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "CFDIshListCollectionViewCell", for: indexPath) as! CFDIshListCollectionViewCell
-        cell.setup(with: CFDishListCollection[indexPath.row])
+        cell.setup(with: dishList.CFDishListCollection[indexPath.row])
         
         cell.editButton.tag = indexPath.row
         print(cell.editButton.tag)
