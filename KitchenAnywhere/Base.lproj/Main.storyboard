@@ -1140,7 +1140,7 @@
             <objects>
                 <viewController storyboardIdentifier="CartVC" id="4vU-Xe-bfl" customClass="CartViewController" customModule="KitchenAnywhere" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Xu0-8O-JV0">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <navigationBar contentMode="scaleToFill" id="hHu-Ct-rrL">
@@ -1153,14 +1153,14 @@
                                 </items>
                             </navigationBar>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="Zwi-8V-1r2">
-                                <rect key="frame" x="20" y="88" width="374" height="714"/>
+                                <rect key="frame" x="20" y="88" width="374" height="768"/>
                                 <subviews>
                                     <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="VuM-8M-nRf">
-                                        <rect key="frame" x="0.0" y="0.0" width="374" height="540"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="374" height="594"/>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                     </tableView>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="57q-So-k9g" userLabel="total ">
-                                        <rect key="frame" x="0.0" y="560" width="374" height="154"/>
+                                        <rect key="frame" x="0.0" y="614" width="374" height="154"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" translatesAutoresizingMaskIntoConstraints="NO" id="xZx-kh-5QC" userLabel="SubTotal">
                                                 <rect key="frame" x="0.0" y="0.0" width="374" height="27"/>
@@ -1549,7 +1549,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="lQl-BT-O3F"/>
+        <segue reference="6Jb-Vx-w2w"/>
         <segue reference="5Lv-Be-c4x"/>
     </inferredMetricsTieBreakers>
     <resources>
