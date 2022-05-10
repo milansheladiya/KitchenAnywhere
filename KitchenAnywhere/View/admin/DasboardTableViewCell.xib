@@ -59,17 +59,27 @@
                         <color key="textColor" red="0.0" green="0.46000000000000002" blue="0.89000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="34s-OH-OLy" userLabel="statusLabel">
+                        <rect key="frame" x="304" y="11" width="112" height="53"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
                 </subviews>
                 <constraints>
                     <constraint firstItem="vl1-mj-iYb" firstAttribute="height" secondItem="nZv-Hq-PKb" secondAttribute="height" id="0L7-MT-j5x"/>
+                    <constraint firstItem="34s-OH-OLy" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" id="8La-hK-DbG"/>
                     <constraint firstItem="vl1-mj-iYb" firstAttribute="width" secondItem="nZv-Hq-PKb" secondAttribute="width" id="L3u-Wx-uPR"/>
                     <constraint firstItem="vl1-mj-iYb" firstAttribute="trailing" secondItem="H2p-sc-9uM" secondAttribute="trailingMargin" id="OOl-qF-eLW"/>
+                    <constraint firstItem="34s-OH-OLy" firstAttribute="leading" secondItem="nZv-Hq-PKb" secondAttribute="leading" id="bJa-Ou-ab3"/>
                     <constraint firstItem="nZv-Hq-PKb" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="dUG-4f-ryX"/>
                     <constraint firstItem="vl1-mj-iYb" firstAttribute="centerY" secondItem="nZv-Hq-PKb" secondAttribute="centerY" id="dhN-nJ-Rtv"/>
+                    <constraint firstItem="34s-OH-OLy" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="fKH-gG-0T7"/>
                     <constraint firstItem="ZUf-dd-pN5" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" id="lYf-ZG-Ido"/>
                     <constraint firstItem="vl1-mj-iYb" firstAttribute="leading" secondItem="nZv-Hq-PKb" secondAttribute="trailing" constant="10" id="oBR-Xh-kga"/>
                     <constraint firstItem="ZUf-dd-pN5" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="8" id="pbI-TL-8YZ"/>
                     <constraint firstAttribute="bottom" secondItem="ZUf-dd-pN5" secondAttribute="bottom" constant="8" id="tCf-86-13W"/>
+                    <constraint firstItem="34s-OH-OLy" firstAttribute="trailing" secondItem="vl1-mj-iYb" secondAttribute="trailing" id="uRf-5e-gDX"/>
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
@@ -78,6 +88,7 @@
                 <outlet property="rejectBtn" destination="vl1-mj-iYb" id="7hI-K3-4rB"/>
                 <outlet property="userNameLabel" destination="l8d-Sa-ZM7" id="c1t-Um-BA3"/>
                 <outlet property="userProgfileImage" destination="ZUf-dd-pN5" id="9DV-VI-mov"/>
+                <outlet property="userStatusLabel" destination="34s-OH-OLy" id="OCl-xa-3Ka"/>
                 <outlet property="userTypeLabel" destination="GyZ-1n-pD3" id="32X-PO-6jQ"/>
             </connections>
             <point key="canvasLocation" x="76.811594202898561" y="-8.3705357142857135"/>

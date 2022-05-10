@@ -89,11 +89,6 @@ class HomeViewController: UIViewController, UISearchResultsUpdating, UISearchBar
                  }
          }
          
-         
-         print(response)
-         
-        
-        
         categoryCollectionView.delegate = self
         categoryCollectionView.dataSource = self
         popularDishesCollectionView.delegate = self
