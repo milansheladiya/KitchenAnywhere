@@ -7,6 +7,10 @@
 
 import UIKit
 import Kingfisher
+protocol CategoryCollectionViewCellDelegate:AnyObject {
+    func categoryViewHandller(idx: Int)
+}
+
 class CategoryCollectionViewCell: UICollectionViewCell {
     static let identifier = String(describing: CategoryCollectionViewCell.self )
     @IBOutlet weak var categoryImageView: UIImageView!
