@@ -14,11 +14,12 @@ struct Dish{
     let dishTitle: String
     let description: String
     let dishImageLink: String?
-    let isActive:Bool
+    var isActive:Bool
     let isVegetarian: Bool
     let maxLimit: Int
     let pending_limit: Int
     let price: Double
     let typeOfDish:String
-    let qty: Int
+    var qty: Int
+    var isFavorite: Bool
 }

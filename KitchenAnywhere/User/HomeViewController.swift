@@ -23,7 +23,7 @@ class HomeViewController: UIViewController, UISearchResultsUpdating, UISearchBar
     ]
     
     var popularDishes:[Dish] = [
-        .init(id: "5FurE5Cjac1zqnyEVD4x", categoryId: 3, chef_id: "eJqjiK3GUdfwrEMSnLJx0zggKto2", dishTitle: "Burger", description: "Really Awesome", dishImageLink: "https://firebasestorage.googleapis.com:443/v0/b/kitchenanywhere-84ad5.appspot.com/o/CDB64B87-8646-479C-B27C-CF2C80B17D26.jpeg?alt=media&token=fa847a61-6a18-4de8-b308-412d21394e0f", isActive: true, isVegetarian: true, maxLimit: 20, pending_limit: 20, price: 10, typeOfDish: "Fast food",qty: 0),
+        .init(id: "5FurE5Cjac1zqnyEVD4x", categoryId: 3, chef_id: "eJqjiK3GUdfwrEMSnLJx0zggKto2", dishTitle: "Burger", description: "Really Awesome", dishImageLink: "https://firebasestorage.googleapis.com:443/v0/b/kitchenanywhere-84ad5.appspot.com/o/CDB64B87-8646-479C-B27C-CF2C80B17D26.jpeg?alt=media&token=fa847a61-6a18-4de8-b308-412d21394e0f", isActive: true, isVegetarian: true, maxLimit: 20, pending_limit: 20, price: 10, typeOfDish: "Fast food",qty: 0,isFavorite: false),
     ]
 
     @IBOutlet weak var categoryCollectionView: UICollectionView!
@@ -64,7 +64,7 @@ class HomeViewController: UIViewController, UISearchResultsUpdating, UISearchBar
                          
                          
                   
-                         dishList.CFDishListCollection.append(Dish(id: DishFirebaseId, categoryId: categoryId, chef_id: chef_id, dishTitle: dishTitle, description: description, dishImageLink: dishImageLink, isActive: isActive, isVegetarian: isVegetarian, maxLimit: maxLimit, pending_limit: pending_limit, price: price, typeOfDish: typeOfDish , qty: qty))
+                         dishList.CFDishListCollection.append(Dish(id: DishFirebaseId, categoryId: categoryId, chef_id: chef_id, dishTitle: dishTitle, description: description, dishImageLink: dishImageLink, isActive: isActive, isVegetarian: isVegetarian, maxLimit: maxLimit, pending_limit: pending_limit, price: price, typeOfDish: typeOfDish , qty: qty,isFavorite: false))
                          
                          
                          
@@ -224,8 +224,36 @@ extension HomeViewController:UICollectionViewDelegate,UICollectionViewDataSource
     func toggleFavoriteDish(dishId: String) {
         
         print(dishId)
+        print(popularDishes)
 //        let index = dishId-1
 //        popularDishes[index].isFavorite = !popularDishes[dishId-1].isFavorite
+        
+                for (var dish) in popularDishes {
+                    if (dishId == dish.id)
+                    {
+                        dish.isFavorite = !dish.isFavorite
+
+                        if (dish.isFavorite)
+                        {
+                            FavouriteDishList.CFDishListCollection.append(dish)
+                        }
+                        else
+                        {
+                            var i = 0
+                            for (var DeleteDish) in FavouriteDishList.CFDishListCollection
+                            {
+                                if( dish.id == DeleteDish.id)
+                                {
+                                    i = i+1
+                                    break
+                                }
+                                i = i+1
+                            }
+                            FavouriteDishList.CFDishListCollection.remove(at: i)
+                        }
+                        
+                    }
+                }
     }
     
     
