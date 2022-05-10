@@ -20,4 +20,5 @@ struct Dish{
     let pending_limit: Int
     let price: Double
     let typeOfDish:String
+    let qty: Int
 }

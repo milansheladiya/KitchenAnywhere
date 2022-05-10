@@ -94,7 +94,8 @@ class CFDishListViewController: UIViewController {
                     maxLimit: document.data()["maxLimit"] as! Int,
                     pending_limit: document.data()["pending_limit"] as! Int,
                     price: document.data()["price"] as! Double ?? 0.0,
-                    typeOfDish: document.data()["typeOfDish"] as! String)
+                    typeOfDish: document.data()["typeOfDish"] as! String,
+                    qty: 0)
                 dishList.CFDishListCollection.append(dish_)
                 
                 

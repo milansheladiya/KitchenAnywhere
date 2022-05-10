@@ -13,7 +13,7 @@ class FavouriteViewController: UIViewController, UICollectionViewDelegate, UICol
     
     
     
-    var favouriteDishes = dishList.CFDishListCollection
+    var favouriteDishes = FavouriteDishList.CFDishListCollection
 
     
     @IBOutlet weak var favouriteDishesCollectionView: UICollectionView!
