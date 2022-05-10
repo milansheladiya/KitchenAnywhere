@@ -31,7 +31,7 @@ class DishCollectionViewCell: UICollectionViewCell {
     
     func setUp(dish: Dish){
         self.dishId = dish.id
-        self.isFavotite = false
+        self.isFavotite = dish.isFavorite
         titleLable.text = dish.dishTitle
         dishImageView.kf.setImage(with: dish.dishImageLink?.asUrl )
         typeLabel.text = dish.isVegetarian == true ? "Veg" : "NonVeg"

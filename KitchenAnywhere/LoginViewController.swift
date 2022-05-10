@@ -22,11 +22,9 @@ class LoginViewController: UIViewController {
     @IBOutlet weak var emailController: UITextField!
     override func viewDidLoad() {
         super.viewDidLoad()
-        emailController.text = "johm@gmail.com"
-        passwordController.text = "123456"
         
-        emailController.text = "johm@gmail.com"
-        passwordController.text = "123456"
+        emailController.text = "Np@gmail.com"
+        passwordController.text = "Np@123"
         // Do any additional setup after loading the view.
     }
 
