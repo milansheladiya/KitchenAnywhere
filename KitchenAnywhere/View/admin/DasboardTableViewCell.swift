@@ -7,7 +7,7 @@
 
 import UIKit
 protocol DasboardTableViewCellDelegate:AnyObject {
-    func profileApproveRejectHandler (userId: Int,btnTag:Int)
+    func profileApproveRejectHandler (userId: String,btnTag:Int)
 }
 class DasboardTableViewCell: UITableViewCell {
     weak var delegate: DasboardTableViewCellDelegate?
@@ -16,9 +16,10 @@ class DasboardTableViewCell: UITableViewCell {
     @IBOutlet weak var userNameLabel: UILabel!
     @IBOutlet weak var userTypeLabel: UILabel!
     @IBOutlet weak var userProgfileImage: UIImageView!
+    @IBOutlet weak var userStatusLabel: UILabel!
     
     static let identifier = String(describing: DasboardTableViewCell  .self )
-    var userId:Int = 0
+    var userId:String = ""
     var btnTag:Int = 0
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -31,8 +32,19 @@ class DasboardTableViewCell: UITableViewCell {
         delegate? .profileApproveRejectHandler(userId: userId,btnTag:btnTag)
     }
     func setUp(user: User){
-        self.userId = user.id
-        userNameLabel.text =  user.name
+        //checkmark.circle.fill
+        self.userId = user.userId
+        if(user.userStatus == "pending"){
+            userStatusLabel.isHidden = true
+        }else{
+            print("user cell",user)
+            approveBtn.isHidden = true
+            rejectBtn.isHidden = true
+            userStatusLabel.isHidden = false
+            userStatusLabel.text = user.userStatus.uppercased()
+            userStatusLabel.textColor = user.userStatus == "approved" ? hexStringToUIColor(hex:"#6BCB77") : hexStringToUIColor(hex:"#D82148")
+        }
+        userNameLabel.text = user.fullName
         userTypeLabel.text = user.isChef ? "Chef" : "Foodie"
         userProgfileImage.kf.setImage(with: user.profileImage.asUrl )
     }
