@@ -22,16 +22,16 @@ class OrderListTableViewCell: UITableViewCell {
         super.awakeFromNib()
         
     }
-    func setup(with order: Order) {
-        dishTitleLabel.text = order.title
-        orderNumberLabel.text = "#Order-"+order.orderId
-        qauntityLabel.text = String(order.orderQuantity)
+    func setup(with order: Dish) {
+        dishTitleLabel.text = order.dishTitle
+//        orderNumberLabel.text = "#Order-"+order.orderId
+        qauntityLabel.text = String(order.qty)
         priceLabel.text = "$ " + String ( order.price )
-        pickupStatusLabel.text = order.pickupStatus
-        pickupStatusLabel.textColor = order.pickupStatus == "Pending" ? MainUtil.getUIColor(hex:"#FFD93D") :
-        MainUtil.getUIColor(hex:"#6BCB77")
-        dishImage.kf.setImage(with: order.image?.asUrl )
+//        pickupStatusLabel.text = order.pickupStatus
+//        pickupStatusLabel.textColor = order.pickupStatus == "Pending" ? MainUtil.getUIColor(hex:"#FFD93D") :
+//        MainUtil.getUIColor(hex:"#6BCB77")
+        dishImage.kf.setImage(with: order.dishImageLink?.asUrl )
         dishImage.layer.cornerRadius = 10
-        imgFoodType.image = order.type == "Veg" ? #imageLiteral(resourceName: "veg") :  #imageLiteral(resourceName: "non-veg")
+        imgFoodType.image = order.isVegetarian == true ? #imageLiteral(resourceName: "veg") :  #imageLiteral(resourceName: "non-veg")
     }
 }
