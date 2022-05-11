@@ -7,7 +7,7 @@
 
 import Foundation
 
-let CFViewOrderCollection = [
+var CFViewOrderCollection = [
     Order(orderId:"QhExHmV4q2wB6uY95evQ",
           chefId:"XrsN00COWQhAdn91rc9CsS4Eb3g1",
           userId:"bFot9ojnTBZVdSlQSS405IDKxbV2",

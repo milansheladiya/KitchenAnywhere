@@ -12,7 +12,7 @@ class OrderList
     static var OrderCollection:[Order] = []
 }
 
-struct Order{
+struct Order:Codable{
     let orderId: String
     let chefId: String
     let userId: String

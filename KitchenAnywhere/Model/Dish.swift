@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct Dish{
+struct Dish:Codable{
     let id: String
     let categoryId:Int
     let chef_id:String
