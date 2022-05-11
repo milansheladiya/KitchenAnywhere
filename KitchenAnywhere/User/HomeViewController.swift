@@ -219,6 +219,7 @@ extension HomeViewController:UICollectionViewDelegate,UICollectionViewDataSource
             navigationController?.pushViewController(controller, animated: true)
         }
     }
+    
     func toggleFavoriteDish(dishId: String) {
         
         print(dishId)
@@ -262,6 +263,34 @@ extension HomeViewController:UICollectionViewDelegate,UICollectionViewDataSource
        
     }
     
+    func incrementQtyDish(dishId: String , qty: Int)
+    {
+        var index = 0
+        for (var dish) in HomeViewController.popularDishes {
+                    if (dishId == dish.id)
+                    {
+                        break
+                    }
+            index = index + 1
+                }
+        
+        HomeViewController.popularDishes[index].qty = qty
+        dishList.CFDishListCollection = HomeViewController.popularDishes
+    }
     
+    func decrementQtyDish(dishId: String , qty: Int)
+    {
+        var index = 0
+        for (var dish) in HomeViewController.popularDishes {
+                    if (dishId == dish.id)
+                    {
+                        break
+                    }
+            index = index + 1
+                }
+        
+        HomeViewController.popularDishes[index].qty = qty
+        dishList.CFDishListCollection = HomeViewController.popularDishes
+    }
     
 }

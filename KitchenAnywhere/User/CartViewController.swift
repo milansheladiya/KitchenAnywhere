@@ -11,7 +11,7 @@ import UIKit
 class CartViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     
-    var cart=dishList.CFDishListCollection
+    var cart=cartList.cart
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return cart.count

@@ -7,6 +7,11 @@
 
 import Foundation
 
+class OrderList
+{
+    static var OrderCollection:[Order] = []
+}
+
 struct Order{
     let orderId: String
     let chefId: String

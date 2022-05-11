@@ -39,6 +39,7 @@ class DetailDishViewController: UIViewController {
     
     @IBAction func addToCart(_ sender: UIButton) {
         
+        cartList.cart.append(dish)
         let uialert = UIAlertController(title: "Cart", message: "Added to Cart!", preferredStyle: UIAlertController.Style.alert)
               uialert.addAction(UIAlertAction(title: "Okay", style: UIAlertAction.Style.default, handler: nil))
         self.present(uialert, animated: true, completion: nil)
