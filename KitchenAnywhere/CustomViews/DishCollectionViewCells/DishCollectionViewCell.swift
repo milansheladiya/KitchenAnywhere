@@ -8,8 +8,8 @@
 import UIKit
 protocol DishCollectionViewCellDelegate:AnyObject {
     func toggleFavoriteDish(dishId: String)
-    func incrementQtyDish(dishId: String , qty: Int)
-    func decrementQtyDish(dishId: String , qty: Int)
+    func incrementBtn(dishId: String , qty: Int)
+    func decrementBtn(dishId: String , qty: Int)
 }
 class DishCollectionViewCell: UICollectionViewCell {
     weak var delegate: DishCollectionViewCellDelegate?
@@ -29,7 +29,7 @@ class DishCollectionViewCell: UICollectionViewCell {
         var qty = Int(quantityLabel.text!)! + 1
         quantityLabel.text = String(qty)
         
-        delegate?.incrementQtyDish(dishId:dishId , qty:qty ?? 0)
+        delegate?.incrementBtn(dishId:dishId , qty:4)
     }
     
     @IBAction func decrementBtn(_ sender: UIButton) {
@@ -40,7 +40,7 @@ class DishCollectionViewCell: UICollectionViewCell {
         {
             quantityLabel.text = String(qty-1)
         }
-        delegate?.decrementQtyDish(dishId:dishId , qty:qty ?? 0)
+        delegate?.decrementBtn(dishId:dishId , qty:7)
     }
     
     func setUp(dish: Dish){

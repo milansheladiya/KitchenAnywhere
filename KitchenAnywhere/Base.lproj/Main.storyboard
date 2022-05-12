@@ -665,6 +665,8 @@
                     </navigationItem>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
+                        <outlet property="btnBarCart" destination="Ljz-dv-9GO" id="AIx-OQ-ITI"/>
+                        <outlet property="btnCart" destination="Ljz-dv-9GO" id="gvQ-Va-0HI"/>
                         <outlet property="categoryCollectionView" destination="af2-sG-mZd" id="lU5-DZ-gzu"/>
                         <outlet property="chefSpecialCollectionView" destination="XLl-ek-Cdw" id="dFh-Zk-s6V"/>
                         <outlet property="popularDishesCollectionView" destination="pcY-8S-Woi" id="lfs-aW-qd9"/>
@@ -810,10 +812,10 @@
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="QC3-iJ-Xj1" userLabel="Add Qty">
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="1" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="QC3-iJ-Xj1" userLabel="Add Qty">
                                                 <rect key="frame" x="88.5" y="0.0" width="293.5" height="34"/>
                                                 <accessibility key="accessibilityConfiguration" hint="Add Quantity"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <textInputTraits key="textInputTraits"/>
                                             </textField>
                                         </subviews>
@@ -861,6 +863,7 @@
                         <outlet property="DishTitle" destination="nIJ-n7-HAS" id="T4J-xi-5LP"/>
                         <outlet property="DishType" destination="V5z-ra-UjM" id="Je3-47-amI"/>
                         <outlet property="dishImageView" destination="wmJ-q7-aSu" id="elM-PG-QAV"/>
+                        <outlet property="txtQty" destination="QC3-iJ-Xj1" id="MeI-Ts-1wX"/>
                         <segue destination="4vU-Xe-bfl" kind="presentation" identifier="goToCart" id="lQl-BT-O3F"/>
                     </connections>
                 </viewController>
@@ -871,7 +874,7 @@
         <!--Profile-->
         <scene sceneID="ckO-Vc-9dE">
             <objects>
-                <viewController storyboardIdentifier="userProfileCV" id="fGe-3i-BiP" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="userProfileCV" id="fGe-3i-BiP" customClass="UserProfileViewController" customModule="KitchenAnywhere" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="kHG-jF-VaY">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -882,42 +885,42 @@
                                 <color key="tintColor" red="0.046700395050000003" green="0.4948113952" blue="0.24183145040000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <rect key="contentStretch" x="1" y="0.0" width="1" height="1"/>
                             </imageView>
-                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="UserName" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="t23-6Z-xr4">
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" enabled="NO" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="UserName" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="t23-6Z-xr4">
                                 <rect key="frame" x="30" y="266" width="352" height="34"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="plr-te-pj1">
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" enabled="NO" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="plr-te-pj1">
                                 <rect key="frame" x="29" y="323" width="353" height="34"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Phone no." textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="4W4-Uq-Lcx">
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" selected="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Phone no." textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="4W4-Uq-Lcx">
                                 <rect key="frame" x="30" y="385" width="352" height="34"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Postal Code" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Ffi-9a-DXE">
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" selected="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Postal Code" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Ffi-9a-DXE">
                                 <rect key="frame" x="29" y="443" width="353" height="34"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Address" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="OOb-q4-NGe">
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" selected="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Address" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="OOb-q4-NGe">
                                 <rect key="frame" x="30" y="504" width="352" height="34"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="User Type - Chef" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="SUU-X3-bAI">
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" enabled="NO" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="User Type - Chef" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="SUU-X3-bAI">
                                 <rect key="frame" x="61" y="589" width="294" height="34"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="19"/>
@@ -931,6 +934,9 @@
                                     <color key="baseForegroundColor" systemColor="systemGroupedBackgroundColor"/>
                                     <color key="baseBackgroundColor" red="0.25664006649999999" green="0.49763257579999998" blue="0.26370709190000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 </buttonConfiguration>
+                                <connections>
+                                    <action selector="savePressed:" destination="fGe-3i-BiP" eventType="touchUpInside" id="OdE-AW-fy4"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="User Profile" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1cT-eE-DJ9">
                                 <rect key="frame" x="149" y="65" width="119" height="21"/>
@@ -944,6 +950,14 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Profile" image="person.fill" catalog="system" selectedImage="person.fill" id="Z8i-g2-0KY"/>
+                    <connections>
+                        <outlet property="txtAddress" destination="OOb-q4-NGe" id="gDw-MY-6zH"/>
+                        <outlet property="txtEmail" destination="plr-te-pj1" id="FOz-1X-cwM"/>
+                        <outlet property="txtPhoneNo" destination="4W4-Uq-Lcx" id="CZb-V5-6nL"/>
+                        <outlet property="txtPostalCode" destination="Ffi-9a-DXE" id="cAi-NL-yva"/>
+                        <outlet property="txtUserName" destination="t23-6Z-xr4" id="T2J-zS-cRz"/>
+                        <outlet property="txtUserType" destination="SUU-X3-bAI" id="tpy-A7-Kra"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="eq3-VK-tAD" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -1148,7 +1162,11 @@
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                 <items>
                                     <navigationItem title="Your Cart" id="jcU-Cy-iOF">
-                                        <barButtonItem key="leftBarButtonItem" title="Back" image="chevron.backward" catalog="system" id="VUg-b1-xgv"/>
+                                        <barButtonItem key="leftBarButtonItem" title="Back" image="chevron.backward" catalog="system" id="VUg-b1-xgv">
+                                            <connections>
+                                                <action selector="goBack:" destination="4vU-Xe-bfl" id="L6B-ku-Rgm"/>
+                                            </connections>
+                                        </barButtonItem>
                                     </navigationItem>
                                 </items>
                             </navigationBar>
@@ -1255,6 +1273,9 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="lblSubTotal" destination="09Q-8o-7Wx" id="lIa-hE-QRZ"/>
+                        <outlet property="lblTax" destination="WcE-rC-7xa" id="0HI-9u-fRw"/>
+                        <outlet property="lblTotal" destination="0Rs-uG-MdJ" id="Xbx-bD-cSz"/>
                         <outlet property="listView" destination="VuM-8M-nRf" id="WdY-Qg-bN6"/>
                         <segue destination="Bqo-1N-3vs" kind="presentation" identifier="goToCheckOut" modalPresentationStyle="fullScreen" id="mLS-Xg-8Bp"/>
                     </connections>

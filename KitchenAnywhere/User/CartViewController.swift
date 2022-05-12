@@ -4,12 +4,15 @@
 //
 //  Created by Namra Patel on 2022-04-21.
 //
-
 import UIKit
 
 
 class CartViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
+    
+    @IBOutlet weak var lblSubTotal: UILabel!
+    @IBOutlet weak var lblTax: UILabel!
+    @IBOutlet weak var lblTotal: UILabel!
     
     var cart=cartList.cart
     
@@ -24,15 +27,15 @@ class CartViewController: UIViewController, UITableViewDelegate, UITableViewData
         return cell
     }
     
+    @IBAction func goBack(_ sender: UIBarButtonItem) {
+        self.dismiss(animated: true, completion: nil)
+    }
+    
+    
     @IBAction func GoToCheckOut(_ sender: UIButton) {
-//
+
         self.performSegue(withIdentifier: "goToCheckOut", sender: self)
-//
-//        let controller = PaymentViewController.instantiate()
-        
-        
-//        navigationController?.pushViewController(controller, animated: true)
-        
+ 
     }
     
     @IBOutlet weak var listView: UITableView!
@@ -43,19 +46,39 @@ class CartViewController: UIViewController, UITableViewDelegate, UITableViewData
             listView.dataSource = self
         
         
+        lblSubTotal.text = "$0"
+        lblTax.text = "$0"
+        lblTotal.text = "$0"
+        
+        BillCalculation()
     }
+    
+    func BillCalculation(){
+            var subTotal:Double = 0.0
+            for dish in cartList.cart {
+                subTotal = subTotal + (dish.price * Double(dish.qty))
+            }
+            lblSubTotal.text = "$ \(String(subTotal))"
+            lblTax.text = "$ \(String(subTotal * 0.15))"
+            lblTotal.text = "$ \(String(subTotal + (subTotal * 0.15)))"
+            
+        }
+    
 }
     
 extension CartViewController: CartTableViewCellDelegate{
     func incrementDecrementHandler(dishId: Int, btnTag: Int) {
         
-            print(String(dishId) + " " + String(btnTag))
+            print(String(dishId) + " = " + String(btnTag))
+        BillCalculation()
+//        listView.reloadData()
     }
     
         func ItemDeleteHandler(dishId: String,btnTag:Int) {
             print(String(dishId) + " " + String(btnTag))
+            BillCalculation()
+//            listView.reloadData()
         }
         
     }
     
-

@@ -51,6 +51,7 @@
 		B670A2E627F343BE001E5CBE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B670A2E427F343BE001E5CBE /* Main.storyboard */; };
 		B670A2E827F343BE001E5CBE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B670A2E727F343BE001E5CBE /* Assets.xcassets */; };
 		B670A2EB27F343BE001E5CBE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B670A2E927F343BE001E5CBE /* LaunchScreen.storyboard */; };
+		B68588E8282C40F500B31C07 /* UserProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B68588E7282C40F500B31C07 /* UserProfileViewController.swift */; };
 		B688FA7E280F2ED2002E89A7 /* CFDishList.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B688FA7D280F2ED2002E89A7 /* CFDishList.storyboard */; };
 		B688FA86280F3353002E89A7 /* CFDIshListCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B688FA85280F3353002E89A7 /* CFDIshListCollectionViewCell.swift */; };
 		B688FA88280F3405002E89A7 /* CFDishListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B688FA87280F3405002E89A7 /* CFDishListViewController.swift */; };
@@ -121,6 +122,7 @@
 		B670A2E727F343BE001E5CBE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B670A2EA27F343BE001E5CBE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		B670A2EC27F343BE001E5CBE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B68588E7282C40F500B31C07 /* UserProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfileViewController.swift; sourceTree = "<group>"; };
 		B688FA7D280F2ED2002E89A7 /* CFDishList.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = CFDishList.storyboard; sourceTree = "<group>"; };
 		B688FA85280F3353002E89A7 /* CFDIshListCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CFDIshListCollectionViewCell.swift; sourceTree = "<group>"; };
 		B688FA87280F3405002E89A7 /* CFDishListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CFDishListViewController.swift; sourceTree = "<group>"; };
@@ -185,6 +187,7 @@
 				4D45E474281862040054A07D /* SettingsViewController.swift */,
 				B5D0BE7A2814EC55003FF259 /* FavouriteViewController.swift */,
 				B64FD1222819B36D00102F2C /* ViewMoreDishesViewController.swift */,
+				B68588E7282C40F500B31C07 /* UserProfileViewController.swift */,
 			);
 			path = User;
 			sourceTree = "<group>";
@@ -583,6 +586,7 @@
 				4DC2CD7128087B7700C82D52 /* String+Extension.swift in Sources */,
 				B670A2E327F343BE001E5CBE /* LoginViewController.swift in Sources */,
 				4D1F4124281247780045B46F /* CartViewController.swift in Sources */,
+				B68588E8282C40F500B31C07 /* UserProfileViewController.swift in Sources */,
 				B688FA8A280F3756002E89A7 /* Model_DishList.swift in Sources */,
 				4D1F411D281239730045B46F /* CartTableViewCell.swift in Sources */,
 				B670A2DF27F343BE001E5CBE /* AppDelegate.swift in Sources */,
