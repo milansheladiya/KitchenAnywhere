@@ -23,12 +23,22 @@ class HomeViewController: UIViewController, UISearchResultsUpdating, UISearchBar
     ]
     
     static var popularDishes = dishList.CFDishListCollection
-
+    
+    let badgeSize: CGFloat = 20
+    let badgeTag = 9830384
+    
+    @IBOutlet weak var btnCart: UIBarButtonItem!
+    @IBOutlet weak var btnBarCart: UIBarButtonItem!
+    
+    
     @IBOutlet weak var categoryCollectionView: UICollectionView!
     @IBOutlet weak var popularDishesCollectionView: UICollectionView!
     @IBOutlet weak var chefSpecialCollectionView: UICollectionView!
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        
+        
          let db = Firestore.firestore()
          var response:String = ""
          
@@ -263,8 +273,9 @@ extension HomeViewController:UICollectionViewDelegate,UICollectionViewDataSource
        
     }
     
-    func incrementQtyDish(dishId: String , qty: Int)
+    func incrementBtn(dishId: String , qty: Int)
     {
+        print("=======================-------===================================")
         var index = 0
         for (var dish) in HomeViewController.popularDishes {
                     if (dishId == dish.id)
@@ -278,7 +289,7 @@ extension HomeViewController:UICollectionViewDelegate,UICollectionViewDataSource
         dishList.CFDishListCollection = HomeViewController.popularDishes
     }
     
-    func decrementQtyDish(dishId: String , qty: Int)
+    func decrementBtn(dishId: String , qty: Int)
     {
         var index = 0
         for (var dish) in HomeViewController.popularDishes {
