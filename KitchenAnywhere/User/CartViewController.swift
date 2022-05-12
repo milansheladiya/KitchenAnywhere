@@ -51,6 +51,7 @@ class CartViewController: UIViewController, UITableViewDelegate, UITableViewData
         lblTotal.text = "$0"
         
         BillCalculation()
+        listView.reloadData()
     }
     
     func BillCalculation(){

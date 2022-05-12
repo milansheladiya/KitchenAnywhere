@@ -94,11 +94,11 @@ class CartTableViewCell: UITableViewCell {
                     idx = idx + 1
                     if dish_.id == self.dishId
                     {
-                        print("--------------------- match===========")
+                        print("--------------------- match= \(cartList.cart[idx].qty)==========")
                         if cartList.cart[idx].qty > 1 {
                             var q1 = cartList.cart[idx].qty
                             qty.text = String(q1-1)
-                            cartList.cart[idx].qty = q1
+                            cartList.cart[idx].qty = q1 - 1
                         }
                         
                         

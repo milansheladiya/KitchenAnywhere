@@ -86,6 +86,8 @@ class LoginViewController: UIViewController {
                         if let doc = docSnapshot {
                             let isChef:Bool = doc.get("isChef") as! Bool
                             
+                            UserList.GlobleUser = User(userId: doc.get("userID") as! String, fullName: doc.get("fullName") as! String, email: doc.get("email") as! String, address: doc.get("address") as! String, phoneNo: doc.get("phoneNo") as! String, postal_code: doc.get("postal_code") as! String, isChef: doc.get("isChef") as! Bool, isAdmin: false, profileImage: UserList.profileImages[0], userStatus: doc.get("userStatus") as! String)
+                            
                             if(isChef){
                                 
                                 let userStatus:String = doc.get("userStatus") as! String
