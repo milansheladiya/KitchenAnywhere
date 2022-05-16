@@ -22,15 +22,23 @@ class HomeViewController: UIViewController, UISearchResultsUpdating, UISearchBar
         .init(categoryId: 5, categoryTitle: "Snacks", categoryImage: "https://picsum.photos/100/200")
     ]
     
-    var popularDishes:[Dish] = [
-        .init(id: "5FurE5Cjac1zqnyEVD4x", categoryId: 3, chef_id: "eJqjiK3GUdfwrEMSnLJx0zggKto2", dishTitle: "Burger", description: "Really Awesome", dishImageLink: "https://firebasestorage.googleapis.com:443/v0/b/kitchenanywhere-84ad5.appspot.com/o/CDB64B87-8646-479C-B27C-CF2C80B17D26.jpeg?alt=media&token=fa847a61-6a18-4de8-b308-412d21394e0f", isActive: true, isVegetarian: true, maxLimit: 20, pending_limit: 20, price: 10, typeOfDish: "Fast food"),
-    ]
-
+    static var popularDishes = dishList.CFDishListCollection
+    
+    let badgeSize: CGFloat = 20
+    let badgeTag = 9830384
+    
+    @IBOutlet weak var btnCart: UIBarButtonItem!
+    @IBOutlet weak var btnBarCart: UIBarButtonItem!
+    
+    
     @IBOutlet weak var categoryCollectionView: UICollectionView!
     @IBOutlet weak var popularDishesCollectionView: UICollectionView!
     @IBOutlet weak var chefSpecialCollectionView: UICollectionView!
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        
+        
          let db = Firestore.firestore()
          var response:String = ""
          
@@ -60,10 +68,11 @@ class HomeViewController: UIViewController, UISearchResultsUpdating, UISearchBar
                          let maxLimit = validTeam["maxLimit"] as? Int ?? 10
                          let pending_limit = validTeam["pending_limit"] as? Int ?? 10
                          let price = validTeam["price"] as? Double ?? 10.0
+                         let qty = 0
                          
                          
                   
-                         dishList.CFDishListCollection.append(Dish(id: DishFirebaseId, categoryId: categoryId, chef_id: chef_id, dishTitle: dishTitle, description: description, dishImageLink: dishImageLink, isActive: isActive, isVegetarian: isVegetarian, maxLimit: maxLimit, pending_limit: pending_limit, price: price, typeOfDish: typeOfDish))
+                         dishList.CFDishListCollection.append(Dish(id: DishFirebaseId, categoryId: categoryId, chef_id: chef_id, dishTitle: dishTitle, description: description, dishImageLink: dishImageLink, isActive: isActive, isVegetarian: isVegetarian, maxLimit: maxLimit, pending_limit: pending_limit, price: price, typeOfDish: typeOfDish , qty: qty,isFavorite: false))
                          
                          
                          
@@ -71,8 +80,8 @@ class HomeViewController: UIViewController, UISearchResultsUpdating, UISearchBar
  //                        let isChef:Bool = document.data().get("isChef") as! Bool
                      }
                      
-                     self.popularDishes.removeAll()
-                     self.popularDishes = dishList.CFDishListCollection
+                     HomeViewController.popularDishes.removeAll()
+                     HomeViewController.popularDishes = dishList.CFDishListCollection
                      self.popularDishesCollectionView.reloadData()
                      self.chefSpecialCollectionView.reloadData()
                      
@@ -110,7 +119,7 @@ class HomeViewController: UIViewController, UISearchResultsUpdating, UISearchBar
             let destinationVC = nav.topViewController as! ViewMoreDishesViewController
 //            let destinationVC = segue.destination as! ViewMoreDishesViewController
             
-            var filteredDishArr = popularDishes.filter
+            var filteredDishArr = HomeViewController.popularDishes.filter
             {
                 dish in
                 let matchedDish =  dish.categoryId == categories[idxSelected].categoryId
@@ -125,7 +134,7 @@ class HomeViewController: UIViewController, UISearchResultsUpdating, UISearchBar
     func updateSearchResults(for searchController: UISearchController) {
         let searchText = searchController.searchBar.text!
         
-        filteredArr = popularDishes.filter
+        filteredArr = HomeViewController.popularDishes.filter
         {
             dish in
             if(searchText != ""){
@@ -169,9 +178,9 @@ extension HomeViewController:UICollectionViewDelegate,UICollectionViewDataSource
             if(searchController.isActive){
                 return filteredArr.count
             }
-            return popularDishes.count
+            return HomeViewController.popularDishes.count
         case chefSpecialCollectionView:
-            return popularDishes.count
+            return HomeViewController.popularDishes.count
         default:
             return 0
         }
@@ -189,13 +198,13 @@ extension HomeViewController:UICollectionViewDelegate,UICollectionViewDataSource
             if(searchController.isActive){
                 cell.setUp(dish: filteredArr[indexPath.row])
             }else{
-                cell.setUp(dish: popularDishes[indexPath.row])
+                cell.setUp(dish: HomeViewController.popularDishes[indexPath.row])
             }
             cell.delegate = self
             return cell
         case chefSpecialCollectionView:
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: ChefSpecialCollectionViewCell.identifier, for: indexPath) as! ChefSpecialCollectionViewCell
-            cell.setUp(dish: popularDishes[indexPath.row])
+            cell.setUp(dish: HomeViewController.popularDishes[indexPath.row])
             return cell
         default:
             return UICollectionViewCell()
@@ -214,17 +223,85 @@ extension HomeViewController:UICollectionViewDelegate,UICollectionViewDataSource
         {
             let controller = DetailDishViewController.instantiate()
             
-            controller.dish = collectionView == popularDishesCollectionView ? popularDishes[indexPath.row] : popularDishes[indexPath.row] 
+            controller.dish = collectionView == popularDishesCollectionView ? HomeViewController.popularDishes[indexPath.row] : HomeViewController.popularDishes[indexPath.row]
             
             
             navigationController?.pushViewController(controller, animated: true)
         }
     }
+    
     func toggleFavoriteDish(dishId: String) {
+        
+        print(dishId)
+        
 //        let index = dishId-1
 //        popularDishes[index].isFavorite = !popularDishes[dishId-1].isFavorite
+        var index = 0
+        for (var dish) in HomeViewController.popularDishes {
+                    if (dishId == dish.id)
+                    {
+                        dish.isFavorite = !dish.isFavorite
+                        
+                        print(HomeViewController.popularDishes)
+                        if (dish.isFavorite)
+                        {
+                            FavouriteDishList.CFDishListCollection.append(dish)
+                        }
+                        else
+                        {
+                            var i = 0
+                            for (var DeleteDish) in FavouriteDishList.CFDishListCollection
+                            {
+                                if( dish.id == DeleteDish.id)
+                                {
+//                                    i = i+1
+                                    break
+                                }
+                                i = i+1
+                            }
+                            FavouriteDishList.CFDishListCollection.remove(at: i)
+                        }
+                        
+                        break
+                        
+                    }
+            index = index + 1
+                }
+        
+        HomeViewController.popularDishes[index].isFavorite = !HomeViewController.popularDishes[index].isFavorite
+        
+       
     }
     
+    func incrementBtn(dishId: String , qty: Int)
+    {
+        print("=======================-------===================================")
+        var index = 0
+        for (var dish) in HomeViewController.popularDishes {
+                    if (dishId == dish.id)
+                    {
+                        break
+                    }
+            index = index + 1
+                }
+        
+        HomeViewController.popularDishes[index].qty = qty
+        dishList.CFDishListCollection = HomeViewController.popularDishes
+    }
     
+    func decrementBtn(dishId: String , qty: Int)
+    {
+        var index = 0
+        for (var dish) in HomeViewController.popularDishes {
+                    if (dishId == dish.id)
+                    {
+                        break
+                    }
+            index = index + 1
+                }
+        
+        HomeViewController.popularDishes[index].qty = qty
+        dishList.CFDishListCollection = HomeViewController.popularDishes
+    }
     
 }

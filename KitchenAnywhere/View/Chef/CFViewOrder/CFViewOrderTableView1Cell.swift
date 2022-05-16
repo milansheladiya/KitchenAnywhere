@@ -37,7 +37,7 @@ class CFViewOrderTableView1Cell: UITableViewCell {
         // Configure the view for the selected state
     }
     
-    func setup(with order: Order) {
+    func setup(with order: Dish) {
         
         self.layer.shadowColor = UIColor.black.cgColor
         self.layer.shadowOffset = .zero
@@ -45,15 +45,15 @@ class CFViewOrderTableView1Cell: UITableViewCell {
         self.layer.shadowOpacity = 0.2
         self.layer.cornerRadius = 10
         
-        imgFood.kf.setImage(with: order.image?.asUrl)
-        lblTitle.text = order.title
-        lblQty.text = String(order.orderQuantity)
+        imgFood.kf.setImage(with: order.dishImageLink?.asUrl)
+        lblTitle.text = order.dishTitle
+        lblQty.text = String(order.qty)
         lblPrice.text = "$ " + String ( order.price )
         
-        lblFoodie.text = order.nameOfFoodie
-        lblFoodieContact.text = order.contactOfFoodie
+//        lblFoodie.text = order.nameOfFoodie
+//        lblFoodieContact.text = order.contactOfFoodie
         
-        imgFoodType.image = order.type == "Veg" ? #imageLiteral(resourceName: "veg") :  #imageLiteral(resourceName: "non-veg")
+        imgFoodType.image = order.isVegetarian == true ? #imageLiteral(resourceName: "veg") :  #imageLiteral(resourceName: "non-veg")
         
         
         

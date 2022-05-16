@@ -8,6 +8,8 @@
 import UIKit
 protocol DishCollectionViewCellDelegate:AnyObject {
     func toggleFavoriteDish(dishId: String)
+    func incrementBtn(dishId: String , qty: Int)
+    func decrementBtn(dishId: String , qty: Int)
 }
 class DishCollectionViewCell: UICollectionViewCell {
     weak var delegate: DishCollectionViewCellDelegate?
@@ -23,15 +25,27 @@ class DishCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var favouriteBtn: UIButton!
     
     @IBAction func incrementBtn(_ sender: UIButton) {
+        print("hello")
+        var qty = Int(quantityLabel.text!)! + 1
+        quantityLabel.text = String(qty)
         
+        delegate?.incrementBtn(dishId:dishId , qty:4)
     }
     
     @IBAction func decrementBtn(_ sender: UIButton) {
+        
+        var qty = Int(quantityLabel.text!)!
+        
+        if(qty>0)
+        {
+            quantityLabel.text = String(qty-1)
+        }
+        delegate?.decrementBtn(dishId:dishId , qty:7)
     }
     
     func setUp(dish: Dish){
         self.dishId = dish.id
-        self.isFavotite = false
+        self.isFavotite = dish.isFavorite
         titleLable.text = dish.dishTitle
         dishImageView.kf.setImage(with: dish.dishImageLink?.asUrl )
         typeLabel.text = dish.isVegetarian == true ? "Veg" : "NonVeg"

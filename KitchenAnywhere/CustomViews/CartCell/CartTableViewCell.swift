@@ -4,7 +4,6 @@
 //
 //  Created by Dishant Desai on 2022-04-21.
 //
-
 import UIKit
 
 protocol CartTableViewCellDelegate:AnyObject {
@@ -47,7 +46,7 @@ class CartTableViewCell: UITableViewCell {
         self.dishId = dish.id
         dishNameLabel.text = dish.dishTitle
         dishTypeLabel.text = dish.isVegetarian == true ? "Veg" : "NonVeg"
-        qty.text = String(dish.maxLimit)
+        qty.text = String(dish.qty)
         dishPrice.text = "$ " + String(dish.price)
         
 //        userNameLabel.text =  user.name
@@ -61,6 +60,8 @@ class CartTableViewCell: UITableViewCell {
     @IBAction func ItemDeleteHandler(_ sender: UIButton) {
         btnTag = sender.tag
         delegate? .ItemDeleteHandler(dishId: dishId,btnTag:btnTag)
+        cartList.cart = cartList.cart.filter { $0.id != self.dishId }
+        
     }
     
     @IBAction func incrementDecrementHandler(_ sender: UIButton) {
@@ -69,17 +70,40 @@ class CartTableViewCell: UITableViewCell {
         
         if(btnTag==1)
         {
-            var q1 = Int(qty.text!)! + 1
-            qty.text = String(q1)
+            
+            var idx:Int = 0 - 1
+            for dish_ in cartList.cart{
+                print("--------------------- inn===========")
+                idx = idx + 1
+                if dish_.id == self.dishId
+                {
+                    var q1 = cartList.cart[idx].qty + 1
+                    qty.text = String(q1)
+                    print("--------------------- match===========")
+                    cartList.cart[idx].qty = q1
+                }
+            }
         }
         else
         {
             
-            var q1 = Int(qty.text!)!
-            
-            if(q1>0)
-            {
-                qty.text = String(q1-1)
+                
+                var idx:Int = 0 - 1
+                for dish_ in cartList.cart{
+                    print("--------------------- inn===========")
+                    idx = idx + 1
+                    if dish_.id == self.dishId
+                    {
+                        print("--------------------- match= \(cartList.cart[idx].qty)==========")
+                        if cartList.cart[idx].qty > 1 {
+                            var q1 = cartList.cart[idx].qty
+                            qty.text = String(q1-1)
+                            cartList.cart[idx].qty = q1 - 1
+                        }
+                        
+                        
+                    }
+                
             }
             
         }

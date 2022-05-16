@@ -7,18 +7,21 @@
 
 import Foundation
 
-struct Order{
+class OrderList
+{
+    static var OrderCollection:[Order] = []
+}
+
+struct Order:Codable{
     let orderId: String
+    let chefId: String
     let userId: String
+    let dishList: [Dish]
+    
     let nameOfFoodie: String
     let contactOfFoodie: String
-    let dishId: String
-    let title: String
-    let description: String
-    let image: String?
-    let type: String
-    let price: Double
-    let orderQuantity:Int
-    let pickupStatus: String
+    
+    let orderStatus: String
+    let orderDate: Date
 }
 

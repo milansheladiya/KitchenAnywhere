@@ -13,7 +13,7 @@ class FavouriteViewController: UIViewController, UICollectionViewDelegate, UICol
     
     
     
-    var favouriteDishes = dishList.CFDishListCollection
+    var favouriteDishes = FavouriteDishList.CFDishListCollection
 
     
     @IBOutlet weak var favouriteDishesCollectionView: UICollectionView!
@@ -47,9 +47,41 @@ class FavouriteViewController: UIViewController, UICollectionViewDelegate, UICol
     }
     
     func toggleFavoriteDish(dishId: String) {
+
+        var index = 0
+        for (var dish) in HomeViewController.popularDishes {
+                    if (dishId == dish.id)
+                    {
+                        dish.isFavorite = !dish.isFavorite
+                        
+                        print(HomeViewController.popularDishes)
+                        if (dish.isFavorite)
+                        {
+                            FavouriteDishList.CFDishListCollection.append(dish)
+                        }
+                        else
+                        {
+                            var i = 0
+                            for (var DeleteDish) in FavouriteDishList.CFDishListCollection
+                            {
+                                if( dish.id == DeleteDish.id)
+                                {
+//                                    i = i+1
+                                    break
+                                }
+                                i = i+1
+                            }
+                            FavouriteDishList.CFDishListCollection.remove(at: i)
+                        }
+                        
+                        break
+                        
+                    }
+            index = index + 1
+                }
         
-//            let index = dishId-1
-//        favouriteDishes[index].isFavorite = !favouriteDishes[dishId-1].isFavorite
+        HomeViewController.popularDishes[index].isFavorite = !HomeViewController.popularDishes[index].isFavorite
+
     }
     
 

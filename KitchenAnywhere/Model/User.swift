@@ -42,5 +42,10 @@ class UserList{
         "https://images.unsplash.com/photo-1477533521073-d060f0ca12fc?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxjb2xsZWN0aW9uLXBhZ2V8NDN8OTQ1MjQ5NHx8ZW58MHx8fHw%3D&auto=format&fit=crop&w=800&q=60",
         "https://images.unsplash.com/photo-1569124589354-615739ae007b?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80"
     ]
+    
+    
+    static var GlobleUser:User = UserListCollection[0]
 
 }
+
+

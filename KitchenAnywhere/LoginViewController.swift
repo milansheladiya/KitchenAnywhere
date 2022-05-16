@@ -22,11 +22,16 @@ class LoginViewController: UIViewController {
     @IBOutlet weak var emailController: UITextField!
     override func viewDidLoad() {
         super.viewDidLoad()
-        emailController.text = "johm@gmail.com"
-        passwordController.text = "123456"
+        
+//        emailController.text = "Np@gmail.com"
+//        passwordController.text = "Np@123"
         
         emailController.text = "johm@gmail.com"
         passwordController.text = "123456"
+        
+//        emailController.text = "milan@gmail.com"
+//        passwordController.text = "123456"
+        
         // Do any additional setup after loading the view.
     }
 
@@ -80,6 +85,8 @@ class LoginViewController: UIViewController {
             self!.fb._db.collection("User").document(FirebaseUtil.auth.currentUser!.uid).getDocument { (docSnapshot, error) in
                         if let doc = docSnapshot {
                             let isChef:Bool = doc.get("isChef") as! Bool
+                            
+                            UserList.GlobleUser = User(userId: doc.get("userID") as! String, fullName: doc.get("fullName") as! String, email: doc.get("email") as! String, address: doc.get("address") as! String, phoneNo: doc.get("phoneNo") as! String, postal_code: doc.get("postal_code") as! String, isChef: doc.get("isChef") as! Bool, isAdmin: false, profileImage: UserList.profileImages[0], userStatus: doc.get("userStatus") as! String)
                             
                             if(isChef){
                                 

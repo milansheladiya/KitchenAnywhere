@@ -74,5 +74,26 @@ class MainUtil {
         uiView.present(uialert, animated: true, completion: nil)
     }
     
+    static func _AlertWithDismiss(_ uiView: UIViewController,_ title:String,_ msg:String)
+    {
+        let uialert = UIAlertController(title: title, message: msg, preferredStyle: UIAlertController.Style.alert)
+        uialert.addAction(UIAlertAction(title: "Okay", style: UIAlertAction.Style.default, handler: nil))
+        uiView.present(uialert, animated: true, completion: {
+            uiView.dismiss(animated: true, completion: nil)
+        })
+    }
+    
+    
+    static func getTextfield(view: UIView) -> [UITextField] {
+        var results = [UITextField]()
+        for subview in view.subviews as [UIView] {
+            if let textField = subview as? UITextField {
+                results += [textField]
+            } else {
+                results += getTextfield(view: subview)
+            }
+        }
+        return results
+    }
     
 }
