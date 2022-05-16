@@ -33,7 +33,6 @@ class CFDishListViewController: UIViewController {
  
     
     @IBAction func GoBack(_ sender: UIButton) {
-        print("Back")
         self.dismiss(animated: true, completion: nil)
         
 //        self.performSegue(withIdentifier: "goToLogin", sender: self)
@@ -51,7 +50,6 @@ class CFDishListViewController: UIViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         
         if segue.identifier == "goToAddDishes"{
-            print("3 Prepare \(idxSelected) + \(dishList.CFDishListCollection.count)")
             
             
             let destinationVC = segue.destination as! CFAddDishViewController
@@ -103,8 +101,6 @@ class CFDishListViewController: UIViewController {
             self.collectionView.reloadData()
         }
         
-        print("4 new loaded data : \(dishList.CFDishListCollection.count)")
-        
     }
 
 
@@ -112,7 +108,6 @@ class CFDishListViewController: UIViewController {
 
 extension CFDishListViewController: CFDIshListCollectionViewCellDelegate{
     func dishEditHandller(idx: Int) {
-        print("1 Array Index : \(idx)")
         idxSelected = idx
     }
 }
@@ -129,7 +124,6 @@ extension CFDishListViewController: UICollectionViewDataSource {
         cell.setup(with: dishList.CFDishListCollection[indexPath.row])
         
         cell.editButton.tag = indexPath.row
-        print(cell.editButton.tag)
         cell.idx = indexPath.row
         cell.editButton.addTarget(self, action: #selector(editDishes), for: .touchUpInside)
         
@@ -140,8 +134,6 @@ extension CFDishListViewController: UICollectionViewDataSource {
     @objc func editDishes(sender: UIButton){
         
         idxSelected = sender.tag
-        print("5 AA : \(idxSelected)")
-        print("-------------------- start ----------------")
         
 //        guard let secondController = self.storyboard?.instantiateViewController(withIdentifier: "addDishCV") as? CFAddDishViewController else { return }
 //        secondController.callbackClosure = {[weak self] in

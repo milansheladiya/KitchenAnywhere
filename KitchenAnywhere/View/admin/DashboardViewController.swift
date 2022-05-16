@@ -17,8 +17,12 @@ class DashboardViewController: UIViewController,UITableViewDataSource {
         listView.allowsSelection = false
         loadUserData()
         // Do any additional setup after loading the view.
+        listView.refreshControl = UIRefreshControl()
+        listView.refreshControl?.addTarget(self, action: #selector(didPullToRefresh), for: .valueChanged)
     }
-    
+    @objc func didPullToRefresh(){
+        loadUserData()
+    }
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return UserList.UserListCollection.count
     }
@@ -54,6 +58,7 @@ class DashboardViewController: UIViewController,UITableViewDataSource {
                     UserList.UserListCollection.append(user)
                 }
             }
+            self.listView.refreshControl?.endRefreshing()
             self.listView.reloadData()
         }
     }
