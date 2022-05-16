@@ -36,8 +36,9 @@ class DasboardTableViewCell: UITableViewCell {
         self.userId = user.userId
         if(user.userStatus == "pending"){
             userStatusLabel.isHidden = true
+            approveBtn.isHidden = false
+            rejectBtn.isHidden = false
         }else{
-            print("user cell",user)
             approveBtn.isHidden = true
             rejectBtn.isHidden = true
             userStatusLabel.isHidden = false

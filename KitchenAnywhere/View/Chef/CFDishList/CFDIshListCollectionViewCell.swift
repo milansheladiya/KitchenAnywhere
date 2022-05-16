@@ -30,7 +30,6 @@ class CFDIshListCollectionViewCell: UICollectionViewCell {
     
     @IBAction func dishEditHandller(_ sender: UIButton) {
         idx = sender.tag
-        print("2 Edit button tag : \(editButton.tag)")
         delegate?.dishEditHandller(idx: idx)
         
     }

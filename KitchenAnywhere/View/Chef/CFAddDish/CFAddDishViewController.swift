@@ -308,7 +308,6 @@ class CFAddDishViewController: UIViewController, UIImagePickerControllerDelegate
     }
     
     func editDish(){
-        print("edit dish")
             
         // Validate the fields
         let error = validateFields()
@@ -324,8 +323,6 @@ class CFAddDishViewController: UIViewController, UIImagePickerControllerDelegate
             let qty = txtQuantityPerDay.text?.trimmingCharacters(in: .whitespacesAndNewlines)
             let description = txtDescription.text?.trimmingCharacters(in: .whitespacesAndNewlines)
             
-        
-        print(Int(price!) as Any)
             fb._updateExistingFieldInDocumentWithId(_collection: "Dish", _docId: dish_!.id, _data: [
                 "dishTitle":title!,
                 "price":Double(price!) as Any,
