@@ -53,6 +53,8 @@ class SignupViewController: UIViewController {
         
         mainUtil.RadioFillBorder(btn: btnFoodie)
         
+        MainUtil.GetNotification("Title", "Sub msg title")
+        
         // Do any additional setup after loading the view.
     }
     
