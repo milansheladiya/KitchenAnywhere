@@ -10,6 +10,7 @@ import SwiftUI
 import FirebaseFirestore
 import FirebaseStorage
 import UniformTypeIdentifiers
+import Firebase
 
 
 class CFAddDishViewController: UIViewController, UIImagePickerControllerDelegate,UINavigationControllerDelegate {
@@ -268,6 +269,7 @@ class CFAddDishViewController: UIViewController, UIImagePickerControllerDelegate
                 let db = Firestore.firestore()
                 // Add a document to a collection
                 db.collection("Dish").addDocument(data: [
+                    "chef_id":Auth.auth().currentUser!.uid,
                     "dishTitle":title!,
                     "price":Double(price!) as Any,
                     "typeOfDish":cuisineType!,
@@ -277,7 +279,10 @@ class CFAddDishViewController: UIViewController, UIImagePickerControllerDelegate
                     "isVegetarian": FoodType == 1 ? false : true,
                     "description":description!,
                     "categoryId": Int.random(in: 0...5),
-                    "dishImageLink":imgURL
+                    "dishImageLink":imgURL,
+                    "favouriteUserID":[],
+                    "qty":0,
+                    "start":0
                 ]) { error in
                     
                     // Check for errors

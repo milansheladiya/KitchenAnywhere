@@ -25,6 +25,14 @@ class CFViewOrderViewController: UIViewController,UITableViewDelegate,UITableVie
         //reload data
         CFViewOrderCollection.removeAll()
         LoadDishes()
+        if dishList.CFDishListCollection.count == 0 {
+            
+//            let uialert = UIAlertController(title: "Info", message: "Waiting for Order!", preferredStyle: UIAlertController.Style.alert)
+//            uialert.addAction(UIAlertAction(title: "Okay", style: UIAlertAction.Style.default, handler: nil))
+//            present(uialert, animated: true, completion: nil)
+//            
+           
+        }
         
         // Do any additional setup after loading the view.
     }
@@ -124,7 +132,7 @@ class CFViewOrderViewController: UIViewController,UITableViewDelegate,UITableVie
             self.tblViewOrderList.reloadData()
         }
         
-        print("4 new loaded data : \(dishList.CFDishListCollection.count)")
+        print(" new loaded data : \(dishList.CFDishListCollection.count)")
         
     }
     

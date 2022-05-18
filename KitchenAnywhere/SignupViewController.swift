@@ -43,6 +43,14 @@ class SignupViewController: UIViewController {
         txtCPassword.addTarget(self, action: #selector(SignupViewController.textFieldDidChange(_:)), for: .editingChanged)
         
         
+        txtFullName.text = "Dhruv"
+        txtEmail.text = "dhruv@gmail.com"
+        txtAddress.text = "5055 roslyn Avenue"
+        txtPostalcode.text = "H3W2L7"
+        txtPhoneNo.text = "534-876-6789"
+        txtPassword.text = "123456"
+        txtCPassword.text = "123456"
+        
         mainUtil.RadioFillBorder(btn: btnFoodie)
         
         // Do any additional setup after loading the view.
@@ -136,7 +144,13 @@ class SignupViewController: UIViewController {
                     let uialert = UIAlertController(title: "Success", message: "Now, you are regiested!", preferredStyle: UIAlertController.Style.alert)
                     uialert.addAction(UIAlertAction(title: "Okay", style: UIAlertAction.Style.default, handler: { action in
                             if(!userTypes){
+                                print("login process ----------------")
                                 self.loginFoodie(email: self.txtEmail.text!, password: self.txtPassword.text!)
+                                self.CleanForm()
+                            }
+                            else
+                            {
+                                self.dismiss(animated: true, completion: nil)
                             }
                         }
                     ))
@@ -152,7 +166,7 @@ class SignupViewController: UIViewController {
     }
     
     func loginFoodie(email:String,password:String){
-        print("login foodie",email,password)
+        print("login foodie \(email) - \(password)")
         FirebaseUtil.auth.signIn(withEmail: email, password: password) { [weak self]
             result, error in
             guard result != nil, error == nil else {
@@ -193,6 +207,7 @@ class SignupViewController: UIViewController {
     }
     
     func CleanForm(){
+        print("Form clearing ---------------")
         txtFullName.text = ""
         txtEmail.text = ""
         txtAddress.text = ""
