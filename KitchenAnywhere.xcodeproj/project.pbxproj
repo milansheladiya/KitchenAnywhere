@@ -71,6 +71,11 @@
 		B6BCDA242818602E0012A2F9 /* Firebase.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6BCDA232818602E0012A2F9 /* Firebase.swift */; };
 		B6BCDA27281867900012A2F9 /* CFHomeScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B6BCDA26281867900012A2F9 /* CFHomeScreen.storyboard */; };
 		B6BCDA2D28186CAB0012A2F9 /* CFHomeScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6BCDA2C28186CAB0012A2F9 /* CFHomeScreenViewController.swift */; };
+		DAE5B2522835861F00CA2F99 /* Kithchen_AnyWhere_IOS.pdf in Resources */ = {isa = PBXBuildFile; fileRef = DAE5B24D2835861F00CA2F99 /* Kithchen_AnyWhere_IOS.pdf */; };
+		DAE5B2532835861F00CA2F99 /* Sequence diagram.pdf in Resources */ = {isa = PBXBuildFile; fileRef = DAE5B24E2835861F00CA2F99 /* Sequence diagram.pdf */; };
+		DAE5B2542835861F00CA2F99 /* Activity_diagram.pdf in Resources */ = {isa = PBXBuildFile; fileRef = DAE5B24F2835861F00CA2F99 /* Activity_diagram.pdf */; };
+		DAE5B2552835861F00CA2F99 /* Kitchen_Anywhere_Use case diagram.pdf in Resources */ = {isa = PBXBuildFile; fileRef = DAE5B2502835861F00CA2F99 /* Kitchen_Anywhere_Use case diagram.pdf */; };
+		DAE5B2562835861F00CA2F99 /* Kitchen_anyWhere_UML class.pdf in Resources */ = {isa = PBXBuildFile; fileRef = DAE5B2512835861F00CA2F99 /* Kitchen_anyWhere_UML class.pdf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -142,6 +147,11 @@
 		B6BCDA232818602E0012A2F9 /* Firebase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Firebase.swift; sourceTree = "<group>"; };
 		B6BCDA26281867900012A2F9 /* CFHomeScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = CFHomeScreen.storyboard; sourceTree = "<group>"; };
 		B6BCDA2C28186CAB0012A2F9 /* CFHomeScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CFHomeScreenViewController.swift; sourceTree = "<group>"; };
+		DAE5B24D2835861F00CA2F99 /* Kithchen_AnyWhere_IOS.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = Kithchen_AnyWhere_IOS.pdf; sourceTree = "<group>"; };
+		DAE5B24E2835861F00CA2F99 /* Sequence diagram.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = "Sequence diagram.pdf"; sourceTree = "<group>"; };
+		DAE5B24F2835861F00CA2F99 /* Activity_diagram.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = Activity_diagram.pdf; sourceTree = "<group>"; };
+		DAE5B2502835861F00CA2F99 /* Kitchen_Anywhere_Use case diagram.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = "Kitchen_Anywhere_Use case diagram.pdf"; sourceTree = "<group>"; };
+		DAE5B2512835861F00CA2F99 /* Kitchen_anyWhere_UML class.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = "Kitchen_anyWhere_UML class.pdf"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -333,6 +343,7 @@
 		B670A2DD27F343BE001E5CBE /* KitchenAnywhere */ = {
 			isa = PBXGroup;
 			children = (
+				DAE5B24C283585FD00CA2F99 /* Documentations */,
 				B694FA002822BF790041E4DE /* Rules */,
 				B6BCDA22281860040012A2F9 /* Firebase */,
 				B6B24DAD2810EF99008844FC /* Utils */,
@@ -438,6 +449,18 @@
 			path = HomeScreen;
 			sourceTree = "<group>";
 		};
+		DAE5B24C283585FD00CA2F99 /* Documentations */ = {
+			isa = PBXGroup;
+			children = (
+				DAE5B24F2835861F00CA2F99 /* Activity_diagram.pdf */,
+				DAE5B2512835861F00CA2F99 /* Kitchen_anyWhere_UML class.pdf */,
+				DAE5B2502835861F00CA2F99 /* Kitchen_Anywhere_Use case diagram.pdf */,
+				DAE5B24D2835861F00CA2F99 /* Kithchen_AnyWhere_IOS.pdf */,
+				DAE5B24E2835861F00CA2F99 /* Sequence diagram.pdf */,
+			);
+			path = Documentations;
+			sourceTree = "<group>";
+		};
 		E0C9F71CC9C82EBEBC876A05 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -507,10 +530,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				B6BCDA27281867900012A2F9 /* CFHomeScreen.storyboard in Resources */,
+				DAE5B2562835861F00CA2F99 /* Kitchen_anyWhere_UML class.pdf in Resources */,
 				B6B24DA7281084C1008844FC /* CFAddDish.storyboard in Resources */,
 				B6B24E0A2814622D008844FC /* CFViewOrderTableView1Cell.xib in Resources */,
+				DAE5B2522835861F00CA2F99 /* Kithchen_AnyWhere_IOS.pdf in Resources */,
 				4D3D00E328086A3800BD5EAD /* CategoryCollectionViewCell.xib in Resources */,
 				4DCFD56E2812277200AF7ABE /* AdminDashboard.storyboard in Resources */,
+				DAE5B2532835861F00CA2F99 /* Sequence diagram.pdf in Resources */,
 				4D53569D28149C04006F0F83 /* OrderListTableViewCell.xib in Resources */,
 				4D38F36328109563005BAE50 /* DasboardTableViewCell.xib in Resources */,
 				B688FA7E280F2ED2002E89A7 /* CFDishList.storyboard in Resources */,
@@ -523,8 +549,10 @@
 				B5D0BE792814E56D003FF259 /* FavouriteCollectionViewCell.xib in Resources */,
 				4DC2CD792808A5EE00C82D52 /* DishCollectionViewCell.xib in Resources */,
 				B64FD1212819AF7800102F2C /* ViewMoreDishesCell.xib in Resources */,
+				DAE5B2542835861F00CA2F99 /* Activity_diagram.pdf in Resources */,
 				B54CC4ED280CDDC400A96FA7 /* GoogleService-Info.plist in Resources */,
 				B6B24DFB2812444B008844FC /* CFViewOrder.storyboard in Resources */,
+				DAE5B2552835861F00CA2F99 /* Kitchen_Anywhere_Use case diagram.pdf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
