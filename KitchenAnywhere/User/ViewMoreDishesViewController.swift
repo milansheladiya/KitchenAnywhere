@@ -24,8 +24,8 @@ class ViewMoreDishesViewController: UIViewController, UICollectionViewDelegate,V
         ViewMoreCollections.dataSource = self
         
         ViewMoreCollections.register(UINib(nibName: ViewMoreDishesCell.identifier, bundle: nil), forCellWithReuseIdentifier: ViewMoreDishesCell.identifier)
-        dishList.CFDishListCollection.removeAll()
-        LoadDishes()
+//        dishList.CFDishListCollection.removeAll()
+//        LoadDishes()
         
         // Do any additional setup after loading the view.
     }
