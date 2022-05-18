@@ -8,6 +8,7 @@
 import UIKit
 import SwiftUI
 import Firebase
+import UserNotifications
 
 class SignupViewController: UIViewController {
 
@@ -53,10 +54,39 @@ class SignupViewController: UIViewController {
         
         mainUtil.RadioFillBorder(btn: btnFoodie)
         
-        MainUtil.GetNotification("Title", "Sub msg title")
+//        MainUtil.GetNotification("Title", "Sub msg title")
+
+        UNUserNotificationCenter.current().requestAuthorization(options:
+                    [[.alert, .sound, .badge]],
+                        completionHandler: { (granted, error) in
+                    // Handle Error
+                })
         
+        sendNotification()
         // Do any additional setup after loading the view.
     }
+    
+    func sendNotification() {
+        let content = UNMutableNotificationContent()
+        content.title = "Meeting Reminder"
+        content.subtitle = "messageSubtitle"
+        content.body = "Don't forget to bring coffee."
+        content.badge = 1
+
+        let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 1,
+                    repeats: false)
+
+            let requestIdentifier = "demoNotification"
+            let request = UNNotificationRequest(identifier: requestIdentifier,
+                content: content, trigger: trigger)
+
+            UNUserNotificationCenter.current().add(request,
+                withCompletionHandler: { (error) in
+                    // Handle error
+            })
+        
+        
+                                                        }
     
     @IBAction func minimizePressed(_ sender: UIButton) {
         

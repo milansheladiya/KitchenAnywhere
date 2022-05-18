@@ -34,8 +34,8 @@ class PaymentViewController: UIViewController {
                 subTotal = subTotal + (dish.price * Double(dish.qty))
             }
             lblSubTotal.text = "$ \(String(subTotal))"
-            lblTax.text = "$ \(String(subTotal * 0.15))"
-            lblTotal.text = "$ \(String(subTotal + (subTotal * 0.15)))"
+            lblTax.text = "$ \(String(format: "%.2f",(subTotal * 0.15)))"
+            lblTotal.text = "$ \(String(format: "%.2f",(subTotal + (subTotal * 0.15))))"
             
         }
     
@@ -47,9 +47,15 @@ class PaymentViewController: UIViewController {
     }
     func showAlert(_ message:String,_ title:String){
         let uialert = UIAlertController(title: title, message:message, preferredStyle: UIAlertController.Style.alert)
-              uialert.addAction(UIAlertAction(title: "Okay", style: UIAlertAction.Style.default, handler: nil))
+        uialert.addAction(UIAlertAction(title: "Okay", style: UIAlertAction.Style.default, handler: {_ in 
+                  self.dismiss(animated: true, completion: nil)
+              }))
         self.present(uialert, animated: true, completion: {
-            self.dismiss(animated: true, completion: nil)
+            cartList.cart.removeAll()
+            self.lblSubTotal.text = "$ 0"
+            self.lblTax.text = "$ 0"
+            self.lblTotal.text = "$ 0"
+            
         })
     }
     
@@ -105,7 +111,7 @@ class PaymentViewController: UIViewController {
             if error == nil {
                 cartList.cart = []
                 self.showAlert("Ordered Successfully","Hurrya!")
-
+                
             }
             else {
                 // Handle the error
