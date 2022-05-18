@@ -29,6 +29,11 @@ class CFDishListViewController: UIViewController {
         collectionView.delegate = self
         collectionView.dataSource = self
         LoadDishes()
+        
+        if dishList.CFDishListCollection.count == 0 {
+            MainUtil._Alert(self, "Inform", "Please add your first Dish!")
+        }
+        
     }
  
     

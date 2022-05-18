@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import UserNotifications
 
 class MainUtil {
     
@@ -94,6 +95,27 @@ class MainUtil {
             }
         }
         return results
+    }
+    
+    static func GetNotification(_ title:String, _ substring: String){
+        print("notification called --------------")
+        let center = UNUserNotificationCenter.current()
+        
+        let content = UNMutableNotificationContent()
+        content.title = title
+        content.body = substring
+        content.sound = .default
+        
+        let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 1, repeats: false)
+        
+        let request = UNNotificationRequest(identifier: "Info", content: content, trigger: trigger)
+        
+        center.add(request){
+            (error) in
+            if error != nil{
+                print("error in notification")
+            }
+        }
     }
     
 }

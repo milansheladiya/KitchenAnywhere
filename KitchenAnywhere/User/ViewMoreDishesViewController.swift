@@ -6,10 +6,11 @@
 //
 
 import UIKit
+import Firebase
 
 class ViewMoreDishesViewController: UIViewController, UICollectionViewDelegate,ViewMoreDishesCellDelegate, UICollectionViewDataSource {
     
-    
+    let fb = FirebaseUtil()
     var AllDishes = dishList.CFDishListCollection
     
     @IBOutlet weak var ViewMoreCollections: UICollectionView!
@@ -23,18 +24,20 @@ class ViewMoreDishesViewController: UIViewController, UICollectionViewDelegate,V
         ViewMoreCollections.dataSource = self
         
         ViewMoreCollections.register(UINib(nibName: ViewMoreDishesCell.identifier, bundle: nil), forCellWithReuseIdentifier: ViewMoreDishesCell.identifier)
-
+        dishList.CFDishListCollection.removeAll()
+        LoadDishes()
+        
         // Do any additional setup after loading the view.
     }
     
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return AllDishes.count
+        return dishList.CFDishListCollection.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: ViewMoreDishesCell.identifier, for: indexPath) as! ViewMoreDishesCell
-        cell.setUp(dish: AllDishes[indexPath.row])
+        cell.setUp(dish: dishList.CFDishListCollection[indexPath.row])
         return cell
     }
     
@@ -65,15 +68,36 @@ class ViewMoreDishesViewController: UIViewController, UICollectionViewDelegate,V
 //
 //    }
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    func LoadDishes(){
+        
+        dishList.CFDishListCollection.removeAll()
+        
+        fb._readAllDocuments(_collection: "Dish") { QueryDocumentSnapshot in
+            for document in QueryDocumentSnapshot.documents {
+                
+                let dish_ = Dish(
+                    id: document.documentID,
+                    categoryId: document.data()["categoryId"] as! Int,
+                    chef_id: document.data()["chef_id"] as! String,
+                    dishTitle: document.data()["dishTitle"] as! String,
+                    description: document.data()["description"] as! String,
+                    dishImageLink:document.data()["dishImageLink"] as? String,
+                    isActive: document.data()["isActive"] as! Bool,
+                    isVegetarian: document.data()["isVegetarian"] as! Bool,
+                    maxLimit: document.data()["maxLimit"] as! Int,
+                    pending_limit: document.data()["pending_limit"] as! Int,
+                    price: document.data()["price"] as! Double ?? 0.0,
+                    typeOfDish: document.data()["typeOfDish"] as! String,
+                    qty: 0,isFavorite: false)
+                
+                dishList.CFDishListCollection.append(dish_)
+                    }
+            self.ViewMoreCollections.reloadData()
+        }
+        
+        print(" new loaded data : \(dishList.CFDishListCollection.count)")
+        
     }
-    */
 
 
 }
