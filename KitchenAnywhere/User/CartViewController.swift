@@ -14,6 +14,8 @@ class CartViewController: UIViewController, UITableViewDelegate, UITableViewData
     @IBOutlet weak var lblTax: UILabel!
     @IBOutlet weak var lblTotal: UILabel!
     
+    
+    
     var cart=cartList.cart
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -51,8 +53,12 @@ class CartViewController: UIViewController, UITableViewDelegate, UITableViewData
         lblTotal.text = "$0"
         
         BillCalculation()
-        listView.reloadData()
+        listView.reloadData()        
+       
     }
+    
+    
+
     
     func BillCalculation(){
             var subTotal:Double = 0.0
@@ -60,8 +66,8 @@ class CartViewController: UIViewController, UITableViewDelegate, UITableViewData
                 subTotal = subTotal + (dish.price * Double(dish.qty))
             }
             lblSubTotal.text = "$ \(String(subTotal))"
-            lblTax.text = "$ \(String(subTotal * 0.15))"
-            lblTotal.text = "$ \(String(subTotal + (subTotal * 0.15)))"
+            lblTax.text = "$ \(String(format: "%.2f",(subTotal * 0.15)))"
+            lblTotal.text = "$ \(String(format: "%.2f",(subTotal + (subTotal * 0.15))))"
             
         }
     
@@ -72,13 +78,13 @@ extension CartViewController: CartTableViewCellDelegate{
         
             print(String(dishId) + " = " + String(btnTag))
         BillCalculation()
-//        listView.reloadData()
+        listView.reloadData()
     }
     
         func ItemDeleteHandler(dishId: String,btnTag:Int) {
             print(String(dishId) + " " + String(btnTag))
             BillCalculation()
-//            listView.reloadData()
+            listView.reloadData()
         }
         
     }
