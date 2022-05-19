@@ -25,8 +25,8 @@
       
 - **Chef**
 
-      email - chef
-      password - chef
+      email - johm@gmail.com
+      password - 123456
       
 - **Admin**
 
