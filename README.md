@@ -83,6 +83,9 @@
                   UI
                   Change the quantity
                   Delete dishes from cart
+            => View More
+                  UI
+                  Set Data in UI
             => Order
                   Create proper formate of order and all dish of order
                   Add order detail to firebase
