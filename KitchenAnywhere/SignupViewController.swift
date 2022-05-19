@@ -43,14 +43,14 @@ class SignupViewController: UIViewController {
         txtPassword.addTarget(self, action: #selector(SignupViewController.textFieldDidChange(_:)), for: .editingChanged)
         txtCPassword.addTarget(self, action: #selector(SignupViewController.textFieldDidChange(_:)), for: .editingChanged)
         
-        
-        txtFullName.text = "Dhruv"
-        txtEmail.text = "dhruv@gmail.com"
-        txtAddress.text = "5055 roslyn Avenue"
-        txtPostalcode.text = "H3W2L7"
-        txtPhoneNo.text = "534-876-6789"
-        txtPassword.text = "123456"
-        txtCPassword.text = "123456"
+        // user deatils for testing
+//        txtFullName.text = "Dhruv"
+//        txtEmail.text = "dhruv@gmail.com"
+//        txtAddress.text = "5055 roslyn Avenue"
+//        txtPostalcode.text = "H3W2L7"
+//        txtPhoneNo.text = "534-876-6789"
+//        txtPassword.text = "123456"
+//        txtCPassword.text = "123456"
         
         mainUtil.RadioFillBorder(btn: btnFoodie)
         
