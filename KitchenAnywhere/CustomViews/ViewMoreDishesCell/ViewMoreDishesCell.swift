@@ -42,7 +42,7 @@ class ViewMoreDishesCell: UICollectionViewCell {
         descriptionLabel.text = dish.description
         dishImageView.kf.setImage(with: dish.dishImageLink?.asUrl )
         dishImageView.layer.cornerRadius = 10
-        quantityLabel.text = String(dish.maxLimit)
+        quantityLabel.text = String(dish.qty)
         if(isFavotite){
             favouriteBtn.setImage(UIImage(systemName: "heart.fill"), for: .normal)
         }else{
