@@ -13,8 +13,8 @@
 
   - Milan Sheladiya (2092040)
   - Namra Patel (2093971)
-  - Nency Patel
-  - Dishant Desai(2094440)
+  - Nency Patel (2093945)
+  - Dishant Desai (2094440)
 
 ## Project Credentials
 
