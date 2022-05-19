@@ -24,6 +24,9 @@ class FavouriteCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var quantityLabel: UILabel!
     @IBOutlet weak var favouriteBtn: UIButton!
     
+    @IBOutlet weak var btnPlus: UIButton!
+    @IBOutlet weak var btnLess: UIButton!
+    
     @IBAction func incrementBtn(_ sender: UIButton) {
         
     }
@@ -32,6 +35,11 @@ class FavouriteCollectionViewCell: UICollectionViewCell {
     }
     
     func setUp(dish: Dish){
+        
+//        btnPlus.isHidden = true
+//        btnLess.isHidden = true
+//        quantityLabel.isHidden = true
+        
         self.dishId = dish.id
         self.isFavotite = true
         titleLable.text = dish.dishTitle
@@ -40,7 +48,7 @@ class FavouriteCollectionViewCell: UICollectionViewCell {
 //        descriptionLabel.text = dish.description
         dishImageView.kf.setImage(with: dish.dishImageLink?.asUrl )
         dishImageView.layer.cornerRadius = 10
-        quantityLabel.text = String(dish.maxLimit)
+        quantityLabel.text = String(dish.qty)
         if(isFavotite){
             favouriteBtn.setImage(UIImage(systemName: "heart.fill"), for: .normal)
         }else{

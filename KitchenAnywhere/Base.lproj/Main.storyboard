@@ -1056,20 +1056,20 @@
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="15" minimumInteritemSpacing="0.0" id="pw5-jd-qDh">
-                                                <size key="itemSize" width="302" height="249"/>
+                                                <size key="itemSize" width="206" height="249"/>
                                                 <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                                 <size key="footerReferenceSize" width="0.0" height="0.0"/>
                                                 <inset key="sectionInset" minX="20" minY="0.0" maxX="60" maxY="0.0"/>
                                             </collectionViewFlowLayout>
                                             <cells>
                                                 <collectionViewCell autoresizesSubviews="NO" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFill" id="Ful-WN-4fV">
-                                                    <rect key="frame" x="20" y="0.0" width="302" height="249"/>
+                                                    <rect key="frame" x="68" y="0.0" width="206" height="249"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="5GB-6u-yTM">
-                                                        <rect key="frame" x="0.0" y="0.0" width="302" height="249"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="206" height="249"/>
                                                         <autoresizingMask key="autoresizingMask"/>
                                                     </collectionViewCellContentView>
-                                                    <size key="customSize" width="302" height="249"/>
+                                                    <size key="customSize" width="206" height="249"/>
                                                 </collectionViewCell>
                                             </cells>
                                         </collectionView>
@@ -1102,7 +1102,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="KuR-k5-gRx" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2683" y="2245"/>
+            <point key="canvasLocation" x="2682.608695652174" y="2244.6428571428569"/>
         </scene>
         <!--Order List View Controller-->
         <scene sceneID="Qvi-fb-PyJ">
