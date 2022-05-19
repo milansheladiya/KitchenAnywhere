@@ -78,13 +78,13 @@ extension CartViewController: CartTableViewCellDelegate{
         
             print(String(dishId) + " = " + String(btnTag))
         BillCalculation()
-        listView.reloadData()
+//        listView.reloadData()
     }
     
         func ItemDeleteHandler(dishId: String,btnTag:Int) {
             print(String(dishId) + " " + String(btnTag))
             BillCalculation()
-            listView.reloadData()
+//            listView.reloadData()
         }
         
     }
