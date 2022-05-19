@@ -24,6 +24,9 @@ class ViewMoreDishesCell: UICollectionViewCell {
     
     @IBOutlet weak var quantityLabel: UILabel!
     @IBOutlet weak var favouriteBtn: UIButton!
+    @IBOutlet weak var btnPlus: UIButton!
+    @IBOutlet weak var btnLess: UIButton!
+    
     
     @IBAction func incrementBtn(_ sender: UIButton) {
         
@@ -33,6 +36,11 @@ class ViewMoreDishesCell: UICollectionViewCell {
     }
     
     func setUp(dish: Dish){
+        
+        btnPlus.isHidden = true
+        btnLess.isHidden = true
+        quantityLabel.isHidden = true
+        
         self.dishId = dish.id
 //        self.isFavotite = true
         self.layer.cornerRadius = 6

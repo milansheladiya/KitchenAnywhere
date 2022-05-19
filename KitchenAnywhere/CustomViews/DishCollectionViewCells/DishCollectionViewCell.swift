@@ -24,6 +24,9 @@ class DishCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var quantityLabel: UILabel!
     @IBOutlet weak var favouriteBtn: UIButton!
     
+    @IBOutlet weak var btnPlus: UIButton!
+    @IBOutlet weak var btnLess: UIButton!
+    
     @IBAction func incrementBtn(_ sender: UIButton) {
         print("hello")
         var qty = Int(quantityLabel.text!)! + 1
@@ -44,6 +47,11 @@ class DishCollectionViewCell: UICollectionViewCell {
     }
     
     func setUp(dish: Dish){
+        
+        btnPlus.isHidden = true
+        btnLess.isHidden = true
+        quantityLabel.isHidden = true
+        
         self.dishId = dish.id
         self.isFavotite = dish.isFavorite
         titleLable.text = dish.dishTitle

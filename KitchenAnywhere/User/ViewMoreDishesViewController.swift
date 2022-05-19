@@ -46,7 +46,7 @@ class ViewMoreDishesViewController: UIViewController, UICollectionViewDelegate,V
 
         let controller = DetailDishViewController.instantiate()
 
-        controller.dish = collectionView == ViewMoreCollections ? AllDishes[indexPath.row] : AllDishes[indexPath.row]
+        controller.dish = collectionView == ViewMoreCollections ? dishList.CFDishListCollection[indexPath.row] : dishList.CFDishListCollection[indexPath.row]
         
         
         navigationController?.pushViewController(controller, animated: true)

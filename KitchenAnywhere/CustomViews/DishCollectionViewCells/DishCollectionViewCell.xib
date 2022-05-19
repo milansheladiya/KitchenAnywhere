@@ -147,6 +147,8 @@
             </constraints>
             <size key="customSize" width="158" height="260"/>
             <connections>
+                <outlet property="btnLess" destination="ZOp-u7-Dnh" id="ZXX-MV-0YO"/>
+                <outlet property="btnPlus" destination="jF7-yQ-zCr" id="di7-XQ-29B"/>
                 <outlet property="descriptionLabel" destination="aaI-jn-msZ" id="fNq-Po-oem"/>
                 <outlet property="dishImageView" destination="Sc8-Kb-k6h" id="nBR-Hu-Y28"/>
                 <outlet property="favouriteBtn" destination="mtO-rM-ZA1" id="vsf-X1-8kT"/>
