@@ -14,6 +14,7 @@ class HomeViewController: UIViewController, UISearchResultsUpdating, UISearchBar
     let searchController =  UISearchController()
     var filteredArr = [Dish]()
     var idxSelected = 0;
+    var isViewMore = true;
     var categories:[DishCategory] = [
         .init(categoryId: 1, categoryTitle: "Indian Cuisine", categoryImage: "https://picsum.photos/100/200"),
         .init(categoryId: 2, categoryTitle: "Italian Cuisine", categoryImage: "https://picsum.photos/100/200"),
@@ -127,7 +128,12 @@ class HomeViewController: UIViewController, UISearchResultsUpdating, UISearchBar
                     return matchedDish
                 return true
             }
-            destinationVC.AllDishes = filteredDishArr
+            if(isViewMore){
+                destinationVC.AllDishes = dishList.CFDishListCollection
+            }else{
+                destinationVC.AllDishes = filteredDishArr
+            }
+            
         }
         
     }
@@ -159,7 +165,7 @@ class HomeViewController: UIViewController, UISearchResultsUpdating, UISearchBar
     }
     
     @IBAction func viewMorePressed(_ sender: UIButton) {
-        
+        isViewMore = true
         self.performSegue(withIdentifier: "goToViewMore", sender: self)
         
     }
@@ -169,6 +175,7 @@ class HomeViewController: UIViewController, UISearchResultsUpdating, UISearchBar
 extension HomeViewController:UICollectionViewDelegate,UICollectionViewDataSource,DishCollectionViewCellDelegate,CategoryCollectionViewCellDelegate
 {
     func categoryViewHandller(idx: Int) {
+        isViewMore = false
         idxSelected = idx
     }
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
