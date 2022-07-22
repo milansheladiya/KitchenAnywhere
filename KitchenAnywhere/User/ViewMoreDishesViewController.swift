@@ -32,12 +32,12 @@ class ViewMoreDishesViewController: UIViewController, UICollectionViewDelegate,V
     
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return dishList.CFDishListCollection.count
+        return AllDishes.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: ViewMoreDishesCell.identifier, for: indexPath) as! ViewMoreDishesCell
-        cell.setUp(dish: dishList.CFDishListCollection[indexPath.row])
+        cell.setUp(dish: AllDishes[indexPath.row])
         return cell
     }
     
